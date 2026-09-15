@@ -1,0 +1,5 @@
+name = "default"
+description = "General-purpose fallback subagent for delegated work."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "high"
+developer_instructions = """Complete the delegated task within scope. Inspect the relevant context, perform the requested work, verify the result, and report findings, changes, verification, and remaining risks."""

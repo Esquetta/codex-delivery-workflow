@@ -1,111 +1,61 @@
 # Codex Delivery Workflow
 
-This is a small, portable reference for planning and reviewing Codex work. It extracts the useful parts of a personal setup into an inspectable repository; it is not a distributed runtime or a copy of that private configuration.
+How I organize AI-assisted software development with a primary Codex session, specialist agents, explicit task ownership, and independent review.
 
-It is for developers who want a clear handoff between a primary Codex session, a bounded implementation role, and an independent review role. Native Codex performs the execution. This repository does not synchronize memory across tasks, guarantee a model is available, or make a claim about token or performance savings.
+This repository documents a real personal workflow and ships a portable version of its agent profiles and development skills. The first release contained only two starter roles. The expanded reference includes a **120-role specialist snapshot**, the **six-skill delivery workflow pack**, context and tool boundaries, and worked examples with stated evidence limits.
 
-## Route the work
+## Explore the system
 
-Choose the smallest sufficient route. Keep requirements, architecture, scope decisions, and final acceptance with the primary session.
+| Question | Start here |
+| --- | --- |
+| What runs where, and what does each layer do? | [System architecture](docs/architecture/system.md) |
+| How do planning, execution, tests, and review connect? | [Workflow map](docs/architecture/workflows.md) |
+| Which specialist should own a task? | [Agent selection](docs/guides/agent-selection.md) and [machine-readable catalog](agents/catalog.json) |
+| What context reaches an agent or another task? | [Context and handoffs](docs/architecture/context-and-handoffs.md) |
+| How do I debug failures and verify changes? | [Testing and debugging](docs/guides/testing-and-debugging.md) |
+| What happened in real work? | [Worked examples and evidence](docs/guides/worked-examples.md) |
+| What should I install? | [Installation and compatibility](docs/guides/installation.md) |
 
-| Route | Use it when | Ownership |
+## What is included
+
+- **120 specialist profiles** in [agents/specialists](agents/specialists), captured from the source installation on 2026-09-15. All are configured for Terra / high. This is an inventory, not 120 simultaneously running agents.
+- **Two separate starter roles:** [delivery_worker](agents/delivery_worker.toml) and [delivery_reviewer](agents/delivery_reviewer.toml). These were authored for the portable first release and are not counted in the 120-role snapshot.
+- **Six skills:** [routing](skills/codex-delivery-workflow/SKILL.md), [planning](skills/writing-plans/SKILL.md), [execution](skills/executing-plans/SKILL.md), [delegated development](skills/subagent-driven-development/SKILL.md), [parallel work](skills/dispatching-parallel-agents/SKILL.md), and [review](skills/requesting-code-review/SKILL.md).
+- [Task](examples/task-packet.md) and [review](examples/review-packet.md) packet examples.
+- A standard-library [validator](scripts/validate.py) and [regression checks](tests/test_validate.py).
+
+## Four routes, one accountable primary
+
+| Route | Execution | Acceptance |
 | --- | --- | --- |
-| `solo` | The scope is known and small. | Primary plans, changes, verifies, and self-reviews. |
-| `delegate` | One bounded implementation or research task reduces primary work. | Delegate owns the packet; primary continues useful non-duplicate work and verifies the result. |
-| `audit` | The primary completed a material-risk change or independent review is requested. | Primary implements and verifies; a fresh reviewer inspects the fixed result. |
-| `full` | The work is broad or high-risk. | Worker implements a bounded area; primary verifies; a fresh reviewer reviews the finished result. |
+| solo | Primary handles a small known-scope change. | Primary checks the actual result. |
+| delegate | A selected specialist owns a bounded task while the primary does useful independent work. | Primary inspects changes and verification. |
+| audit | Primary implements and verifies a material-risk change. | A fresh reviewer checks Standards and Spec separately. |
+| full | Specialists implement scoped work; primary integrates and verifies it. | A fresh reviewer checks the fixed result. |
 
-```mermaid
-flowchart LR
-  P[Primary: scope and acceptance] --> R{Smallest route}
-  R --> S[Solo]
-  R --> D[Delegate: worker and primary verification]
-  R --> A[Audit or full]
-  A --> V[Primary verification]
-  V --> Q[Fresh reviewer]
-```
+A new agent is not required for every phase. Shared-file work stays sequential unless it is genuinely isolated. Concurrency is limited by the running Codex environment and includes the primary. Missing context goes back to the owner; it is not a reason for blind retries.
 
-Do not delegate work merely to restate what the primary already knows. When delegates are useful, assign non-overlapping files or questions, retain useful primary work, and count the primary session in the runtime concurrency limit. The available slot count is runtime state, not a permanent setting in this workflow.
+The source setup prefers Astra / medium for the primary and Terra / high for specialists. These are configuration choices, not a guarantee of model availability or live routing. Preserve an explicitly selected primary model. A fresh reviewer provides context separation, not independent model training.
 
-Each packet states the exact owned scope, preserved interfaces, constraints, existing authorization, and concrete verification. A request to make a change does not reveal the sandbox that actually ran it: record requested permissions separately from observed sandbox or permission metadata.
+## Read before installing
 
-For `audit` and `full`, review a fixed change range or exact artifact hashes. The reviewer performs two independent passes:
+Browse the catalog and select roles that match your work. The full catalog is not a recommended bulk installation. Existing skill names may collide with personal or plugin skills; the installation guide explains that boundary.
 
-- **Standards** asks whether the change is correct, safe, maintainable, and adequately verified.
-- **Spec** asks whether the approved requirements were met without unauthorized scope.
+The repository does not contain personal account settings, credentials, local machine paths, private projects, session logs, or scheduled job-application instructions. It does not implement a new agent runtime or automatic cross-task context synchronization. Codex and connected tools perform execution.
 
-A reviewer never fixes files. If an implementation change follows review, the primary re-verifies and a new reviewer reviews the revised fixed point. The previous verdict is no longer current. A fresh reviewer gives fresh-context independence; it does not prove independence between model families.
+Passing static validation does not prove that a particular host loaded a skill, used the configured model, enforced a sandbox, or ran an application correctly. We do not claim measured token savings or production reliability from the size of this catalog.
 
-## Roles supplied here
+## Validate
 
-The original, short role profiles are [`delivery_worker.toml`](agents/delivery_worker.toml) and [`delivery_reviewer.toml`](agents/delivery_reviewer.toml). Both request `gpt-5.6-terra` with `high` reasoning. The worker requests `workspace-write`; the reviewer requests `read-only`.
-
-The recommended primary preference from the source setup is `gpt-6-astra` with `medium` reasoning. Preserve a model explicitly selected for the current task, and respect actual account and runtime availability. A TOML file is static configuration evidence; it does not prove that a role was discovered, selected, or enforced at runtime. In particular, a reviewer is read-only only when the observed runtime sandbox metadata confirms it.
-
-For native invocation, dispatch `delivery_worker` for a bounded `delegate` or `full` packet and `delivery_reviewer` for `audit` or `full` after primary verification. Before dispatch, check exposed role availability and that its metadata matches Terra/high. If the role is absent or conflicts, stop that lane and report the mismatch; do not silently substitute another role. Dispatch a reviewer with `fork_turns: none` and no model or reasoning override so it receives fresh context. No per-spawn model or reasoning override is needed for these pinned roles. Do not infer that installing this reference disables plugins, skills, or any other configuration.
-
-## Install manually (opt in)
-
-The installed skill is self-contained: copying only `skills/codex-delivery-workflow` remains functional. The examples are repository companions, not required runtime files.
-
-From a local clone, set `$repo` to its path. The following PowerShell commands refuse to overwrite the three destination paths.
-
-```powershell
-$repo = '<path-to-local-clone>'
-$codexHome = Join-Path $HOME '.codex'
-$skillSource = Join-Path $repo 'skills\codex-delivery-workflow'
-$skillDestination = Join-Path $codexHome 'skills\codex-delivery-workflow'
-$agentsDestination = Join-Path $codexHome 'agents'
-
-if ((Test-Path -LiteralPath $skillDestination) -or
-    (Test-Path -LiteralPath (Join-Path $agentsDestination 'delivery_worker.toml')) -or
-    (Test-Path -LiteralPath (Join-Path $agentsDestination 'delivery_reviewer.toml'))) {
-    throw 'Installation stopped: a destination already exists.'
-}
-
-New-Item -ItemType Directory -Force -Path (Join-Path $codexHome 'skills'), $agentsDestination | Out-Null
-Copy-Item -Recurse -LiteralPath $skillSource -Destination $skillDestination
-Copy-Item -LiteralPath (Join-Path $repo 'agents\delivery_worker.toml') -Destination $agentsDestination
-Copy-Item -LiteralPath (Join-Path $repo 'agents\delivery_reviewer.toml') -Destination $agentsDestination
-```
-
-On POSIX systems, use the same opt-in check and copy paths under `~/.codex`:
+Use Python 3.11 or newer from the repository root:
 
 ```sh
-repo='/path/to/codex-delivery-workflow'
-skill_destination="$HOME/.codex/skills/codex-delivery-workflow"
-worker_destination="$HOME/.codex/agents/delivery_worker.toml"
-reviewer_destination="$HOME/.codex/agents/delivery_reviewer.toml"
-
-if [ -e "$skill_destination" ] || [ -e "$worker_destination" ] || [ -e "$reviewer_destination" ]; then
-  printf '%s\n' 'Installation stopped: a destination already exists.' >&2
-  exit 1
-fi
-
-mkdir -p "$HOME/.codex/skills" "$HOME/.codex/agents"
-cp -R "$repo/skills/codex-delivery-workflow" "$skill_destination"
-cp "$repo/agents/delivery_worker.toml" "$worker_destination"
-cp "$repo/agents/delivery_reviewer.toml" "$reviewer_destination"
-```
-
-Reopen Codex after installing. Then verify that the skill and roles are discovered in a fresh session and inspect that session's exposed role/model/sandbox metadata before describing any behavior as runtime-observed.
-
-## Fictional packet flow
-
-The [worker packet](examples/task-packet.md) and [review packet](examples/review-packet.md) illustrate an idempotency fix for a fictional order-submission API. They are example prompts only, not a record of a customer incident, a past execution, or a test result.
-
-Neither packet authorizes a commit, merge, push, release, or deployment. Those actions require their own authorization and evidence.
-
-## Static validation
-
-Run the repository validator with Python 3.11 or newer:
-
-```powershell
 python -X utf8 scripts/validate.py
+python -B -m unittest discover -s tests -v
 ```
 
-It checks the expected file set, skill frontmatter, role TOML fields, repository-local Markdown links, machine-specific source-path markers, and obvious credential-shaped text. It is static validation, not a security guarantee or proof of installed/runtime behavior.
+Checks cover catalog/profile consistency, skill metadata, local and install-time links, required public documentation, and common accidental disclosure markers. The text scan is a guard against obvious mistakes, not a full secret scanner or security audit.
 
 ## Attribution
 
-This portable adaptation is informed by [Sol Advisor](https://github.com/DannyMac180/sol-advisor), [VoltAgent's awesome-codex-subagents](https://github.com/VoltAgent/awesome-codex-subagents), and [obra/superpowers](https://github.com/obra/superpowers). See [NOTICE.md](NOTICE.md).
+The specialist snapshot is locally adapted from [VoltAgent's awesome-codex-subagents](https://github.com/VoltAgent/awesome-codex-subagents). Routing and review draw on [Sol Advisor](https://github.com/DannyMac180/sol-advisor) and [Superpowers](https://github.com/obra/superpowers), alongside local workflow adaptations. The snapshot is not a claim that every file matches the latest upstream version. Copyright and MIT notices are retained in [NOTICE.md](NOTICE.md).

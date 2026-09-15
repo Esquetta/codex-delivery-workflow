@@ -1,0 +1,728 @@
+{
+  "snapshot_date": "2026-09-15",
+  "source": "Local specialist profiles adapted from VoltAgent awesome-codex-subagents",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "high",
+  "agents": [
+    {
+      "name": "accessibility-tester",
+      "description": "Use when a task needs an accessibility audit of UI changes, interaction flows, or component behavior.",
+      "path": "agents/specialists/accessibility-tester.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "ad-security-reviewer",
+      "description": "Use when a task needs Active Directory security review across identity boundaries, delegation, GPO exposure, or directory hardening.",
+      "path": "agents/specialists/ad-security-reviewer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "agent-installer",
+      "description": "Use when a task needs help selecting, copying, or organizing custom agent files from this repository into Codex agent directories.",
+      "path": "agents/specialists/agent-installer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "agent-organizer",
+      "description": "Use when the parent agent needs help choosing subagents and dividing a larger task into clean delegated threads.",
+      "path": "agents/specialists/agent-organizer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "ai-engineer",
+      "description": "Use when a task needs implementation or debugging of model-backed application features, agent flows, or evaluation hooks.",
+      "path": "agents/specialists/ai-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "angular-architect",
+      "description": "Use when a task needs Angular-specific help for component architecture, dependency injection, routing, signals, or enterprise application structure.",
+      "path": "agents/specialists/angular-architect.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "api-designer",
+      "description": "Use when a task needs API contract design, evolution planning, or compatibility review before implementation starts.",
+      "path": "agents/specialists/api-designer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "architect-reviewer",
+      "description": "Use when a task needs architectural review for coupling, system boundaries, long-term maintainability, or design coherence.",
+      "path": "agents/specialists/architect-reviewer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "azure-infra-engineer",
+      "description": "Use when a task needs Azure-specific infrastructure review or implementation across resources, networking, identity, or automation.",
+      "path": "agents/specialists/azure-infra-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "backend-developer",
+      "description": "Use when a task needs scoped backend implementation or backend bug fixes after the owning path is known.",
+      "path": "agents/specialists/backend-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "browser-debugger",
+      "description": "Use when a task needs browser-based reproduction, UI evidence gathering, or client-side debugging through a browser MCP server.",
+      "path": "agents/specialists/browser-debugger.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "business-analyst",
+      "description": "Use when a task needs requirements clarified, scope normalized, or acceptance criteria extracted from messy inputs before engineering work starts.",
+      "path": "agents/specialists/business-analyst.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "chaos-engineer",
+      "description": "Use when a task needs resilience analysis for dependency failure, degraded modes, recovery behavior, or controlled fault-injection planning.",
+      "path": "agents/specialists/chaos-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "cloud-architect",
+      "description": "Use when a task needs cloud architecture review across compute, storage, networking, reliability, or multi-service design.",
+      "path": "agents/specialists/cloud-architect.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "code-mapper",
+      "description": "Use when the parent agent needs a high-confidence map of code paths, ownership boundaries, and execution flow before changes are made.",
+      "path": "agents/specialists/code-mapper.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Use when a task needs a broader code-health review covering maintainability, design clarity, and risky implementation choices in addition to correctness.",
+      "path": "agents/specialists/code-reviewer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "competitive-analyst",
+      "description": "Use when a task needs a grounded comparison of tools, products, libraries, or implementation options.",
+      "path": "agents/specialists/competitive-analyst.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "compliance-auditor",
+      "description": "Use when a task needs compliance-oriented review of controls, auditability, policy alignment, or evidence gaps in a regulated workflow.",
+      "path": "agents/specialists/compliance-auditor.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "content-marketer",
+      "description": "Use when a task needs product-adjacent content strategy or messaging that still has to stay grounded in real technical capabilities.",
+      "path": "agents/specialists/content-marketer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "context-manager",
+      "description": "Use when a task needs a compact project context summary that other subagents can rely on before deeper work begins.",
+      "path": "agents/specialists/context-manager.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "cpp-pro",
+      "description": "Use when a task needs C++ work involving performance-sensitive code, memory ownership, concurrency, or systems-level integration.",
+      "path": "agents/specialists/cpp-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "csharp-developer",
+      "description": "Use when a task needs C# or .NET application work involving services, APIs, async flows, or application architecture.",
+      "path": "agents/specialists/csharp-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "customer-success-manager",
+      "description": "Use when a task needs support-pattern synthesis, adoption risk analysis, or customer-facing operational guidance from engineering context.",
+      "path": "agents/specialists/customer-success-manager.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "data-analyst",
+      "description": "Use when a task needs data interpretation, metric breakdown, trend explanation, or decision support from existing analytics outputs.",
+      "path": "agents/specialists/data-analyst.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "data-engineer",
+      "description": "Use when a task needs ETL, ingestion, transformation, warehouse, or data-pipeline implementation and debugging.",
+      "path": "agents/specialists/data-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "data-researcher",
+      "description": "Use when a task needs source gathering and synthesis around datasets, metrics, data pipelines, or evidence-backed quantitative questions.",
+      "path": "agents/specialists/data-researcher.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "data-scientist",
+      "description": "Use when a task needs statistical reasoning, experiment interpretation, feature analysis, or model-oriented data exploration.",
+      "path": "agents/specialists/data-scientist.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "database-administrator",
+      "description": "Use when a task needs operational database administration review for availability, backups, recovery, permissions, or runtime health.",
+      "path": "agents/specialists/database-administrator.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "database-optimizer",
+      "description": "Use when a task needs database performance analysis for query plans, schema design, indexing, or data access patterns.",
+      "path": "agents/specialists/database-optimizer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "debugger",
+      "description": "Use when a task needs deep bug isolation across code paths, stack traces, runtime behavior, or failing tests.",
+      "path": "agents/specialists/debugger.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "default",
+      "description": "General-purpose fallback subagent for delegated work.",
+      "path": "agents/specialists/default.toml",
+      "sandbox_mode": null
+    },
+    {
+      "name": "deployment-engineer",
+      "description": "Use when a task needs deployment workflow changes, release strategy updates, or rollout and rollback safety analysis.",
+      "path": "agents/specialists/deployment-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "devops-engineer",
+      "description": "Use when a task needs CI, deployment pipeline, release automation, or environment configuration work.",
+      "path": "agents/specialists/devops-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "devops-incident-responder",
+      "description": "Use when a task needs rapid operational triage across CI, deployments, infrastructure automation, and service delivery failures.",
+      "path": "agents/specialists/devops-incident-responder.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "django-developer",
+      "description": "Use when a task needs Django-specific work across models, views, forms, ORM behavior, or admin and middleware flows.",
+      "path": "agents/specialists/django-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "docker-expert",
+      "description": "Use when a task needs Dockerfile review, image optimization, multi-stage build fixes, or container runtime debugging.",
+      "path": "agents/specialists/docker-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "docs-researcher",
+      "description": "Use when a task needs documentation-backed verification of APIs, version-specific behavior, or framework options.",
+      "path": "agents/specialists/docs-researcher.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "dotnet-core-expert",
+      "description": "Use when a task needs modern .NET and ASP.NET Core expertise for APIs, hosting, middleware, or cross-platform application behavior.",
+      "path": "agents/specialists/dotnet-core-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "dotnet-framework-4.8-expert",
+      "description": "Use when a task needs .NET Framework 4.8 expertise for legacy enterprise applications, compatibility constraints, or Windows-bound integrations.",
+      "path": "agents/specialists/dotnet-framework-4.8-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "electron-pro",
+      "description": "Use when a task needs Electron-specific implementation or debugging across main/renderer/preload boundaries, packaging, and desktop runtime behavior.",
+      "path": "agents/specialists/electron-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "elixir-expert",
+      "description": "Use when a task needs Elixir and OTP expertise for processes, supervision, fault tolerance, or Phoenix application behavior.",
+      "path": "agents/specialists/elixir-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "error-coordinator",
+      "description": "Use when multiple errors or symptoms need to be grouped, prioritized, and assigned to the right debugging or review agents.",
+      "path": "agents/specialists/error-coordinator.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "error-detective",
+      "description": "Use when a task needs log, exception, or stack-trace analysis to identify the most probable failure source quickly.",
+      "path": "agents/specialists/error-detective.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "explorer",
+      "description": "Read-heavy subagent for codebase exploration and focused investigation.",
+      "path": "agents/specialists/explorer.toml",
+      "sandbox_mode": null
+    },
+    {
+      "name": "flutter-expert",
+      "description": "Use when a task needs Flutter expertise for widget behavior, state management, rendering issues, or mobile cross-platform implementation.",
+      "path": "agents/specialists/flutter-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "frontend-developer",
+      "description": "Use when a task needs scoped frontend implementation or UI bug fixes with production-level behavior and quality.",
+      "path": "agents/specialists/frontend-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "fullstack-developer",
+      "description": "Use when one bounded feature or bug spans frontend and backend and a single worker should own the entire path.",
+      "path": "agents/specialists/fullstack-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "golang-pro",
+      "description": "Use when a task needs Go expertise for concurrency, service implementation, interfaces, tooling, or performance-sensitive backend paths.",
+      "path": "agents/specialists/golang-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "graphql-architect",
+      "description": "Use when a task needs GraphQL schema evolution, resolver architecture, federation design, or distributed graph performance/security review.",
+      "path": "agents/specialists/graphql-architect.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "incident-responder",
+      "description": "Use when a task needs broad production incident triage, containment planning, or evidence-driven root cause analysis.",
+      "path": "agents/specialists/incident-responder.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "it-ops-orchestrator",
+      "description": "Use when a task needs coordinated operational planning across infrastructure, incident response, identity, endpoint, and admin workflows.",
+      "path": "agents/specialists/it-ops-orchestrator.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "java-architect",
+      "description": "Use when a task needs Java application or service architecture help across framework boundaries, JVM behavior, or large codebase structure.",
+      "path": "agents/specialists/java-architect.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "javascript-pro",
+      "description": "Use when a task needs JavaScript-focused work for runtime behavior, browser or Node execution, or application-level code that is not TypeScript-led.",
+      "path": "agents/specialists/javascript-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "knowledge-synthesizer",
+      "description": "Use when multiple agents have returned findings and the parent agent needs a distilled, non-redundant synthesis.",
+      "path": "agents/specialists/knowledge-synthesizer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "kotlin-specialist",
+      "description": "Use when a task needs Kotlin expertise for JVM applications, Android code, coroutines, or modern strongly typed service logic.",
+      "path": "agents/specialists/kotlin-specialist.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "kubernetes-specialist",
+      "description": "Use when a task needs Kubernetes manifest review, rollout safety analysis, or cluster workload debugging.",
+      "path": "agents/specialists/kubernetes-specialist.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "laravel-specialist",
+      "description": "Use when a task needs Laravel-specific work across routing, Eloquent, queues, validation, or application structure.",
+      "path": "agents/specialists/laravel-specialist.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "legal-advisor",
+      "description": "Use when a task needs legal-risk spotting in product or engineering behavior, especially around terms, data handling, or externally visible commitments.",
+      "path": "agents/specialists/legal-advisor.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "llm-architect",
+      "description": "Use when a task needs architecture review for prompts, tool use, retrieval, evaluation, or multi-step LLM workflows.",
+      "path": "agents/specialists/llm-architect.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "m365-admin",
+      "description": "Use when a task needs Microsoft 365 administration help across Exchange Online, Teams, SharePoint, identity, or tenant-level automation.",
+      "path": "agents/specialists/m365-admin.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "machine-learning-engineer",
+      "description": "Use when a task needs ML system implementation work across training pipelines, feature flow, model serving, or inference integration.",
+      "path": "agents/specialists/machine-learning-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "market-researcher",
+      "description": "Use when a task needs market landscape, positioning, or demand-side research tied to a technical product or category.",
+      "path": "agents/specialists/market-researcher.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "microservices-architect",
+      "description": "Use when a task needs service-boundary design, inter-service contract review, or distributed-system architecture decisions.",
+      "path": "agents/specialists/microservices-architect.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "ml-engineer",
+      "description": "Use when a task needs practical machine learning implementation across feature engineering, inference wiring, and model-backed application logic.",
+      "path": "agents/specialists/ml-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "mlops-engineer",
+      "description": "Use when a task needs model deployment, registry, pipeline, monitoring, or environment orchestration for machine learning systems.",
+      "path": "agents/specialists/mlops-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "mobile-app-developer",
+      "description": "Use when a task needs app-level mobile product work across screens, state, API integration, and release-sensitive mobile behavior.",
+      "path": "agents/specialists/mobile-app-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "mobile-developer",
+      "description": "Use when a task needs mobile implementation or debugging across app lifecycle, API integration, and device/platform-specific UX constraints.",
+      "path": "agents/specialists/mobile-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "multi-agent-coordinator",
+      "description": "Use when a task needs a concrete multi-agent plan with clear role separation, dependencies, and result integration.",
+      "path": "agents/specialists/multi-agent-coordinator.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "network-engineer",
+      "description": "Use when a task needs network-path analysis, service connectivity debugging, load-balancer review, or infrastructure network design input.",
+      "path": "agents/specialists/network-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "nextjs-developer",
+      "description": "Use when a task needs Next.js-specific work across routing, rendering modes, server actions, data fetching, or deployment-sensitive frontend behavior.",
+      "path": "agents/specialists/nextjs-developer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "nlp-engineer",
+      "description": "Use when a task needs NLP-specific implementation or analysis involving text processing, embeddings, ranking, or language-model-adjacent pipelines.",
+      "path": "agents/specialists/nlp-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "payment-integration",
+      "description": "Use when a task needs payment-flow review or implementation for checkout, idempotency, webhooks, retries, or settlement state handling.",
+      "path": "agents/specialists/payment-integration.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "penetration-tester",
+      "description": "Use when a task needs adversarial review of an application path for exploitability, abuse cases, or practical attack surface analysis.",
+      "path": "agents/specialists/penetration-tester.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "performance-engineer",
+      "description": "Use when a task needs performance investigation for slow requests, hot paths, rendering regressions, or scalability bottlenecks.",
+      "path": "agents/specialists/performance-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "performance-monitor",
+      "description": "Use when a task needs ongoing performance-signal interpretation across build, runtime, or operational metrics before deeper optimization starts.",
+      "path": "agents/specialists/performance-monitor.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "php-pro",
+      "description": "Use when a task needs PHP expertise for application logic, framework integration, runtime debugging, or server-side code evolution.",
+      "path": "agents/specialists/php-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "platform-engineer",
+      "description": "Use when a task needs internal platform, golden-path, or self-service infrastructure design for developers.",
+      "path": "agents/specialists/platform-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "postgres-pro",
+      "description": "Use when a task needs PostgreSQL-specific expertise for schema design, performance behavior, locking, or operational database features.",
+      "path": "agents/specialists/postgres-pro.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "powershell-5.1-expert",
+      "description": "Use when a task needs Windows PowerShell 5.1 expertise for legacy automation, full .NET Framework interop, or Windows administration scripts.",
+      "path": "agents/specialists/powershell-5.1-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "powershell-7-expert",
+      "description": "Use when a task needs modern PowerShell 7 expertise for cross-platform automation, scripting, or .NET-based operational tooling.",
+      "path": "agents/specialists/powershell-7-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "powershell-security-hardening",
+      "description": "Use when a task needs PowerShell-focused hardening across script safety, admin automation, execution controls, or Windows security posture.",
+      "path": "agents/specialists/powershell-security-hardening.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "product-manager",
+      "description": "Use when a task needs product framing, prioritization, or feature-shaping based on engineering reality and user impact.",
+      "path": "agents/specialists/product-manager.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "project-manager",
+      "description": "Use when a task needs dependency mapping, milestone planning, sequencing, or delivery-risk coordination across multiple workstreams.",
+      "path": "agents/specialists/project-manager.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "prompt-engineer",
+      "description": "Use when a task needs prompt revision, instruction design, eval-oriented prompt comparison, or prompt-output contract tightening.",
+      "path": "agents/specialists/prompt-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "python-pro",
+      "description": "Use when a task needs a Python-focused subagent for runtime behavior, packaging, typing, testing, or framework-adjacent implementation.",
+      "path": "agents/specialists/python-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "qa-expert",
+      "description": "Use when a task needs test strategy, acceptance coverage planning, or risk-based QA guidance for a feature or release.",
+      "path": "agents/specialists/qa-expert.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "quant-analyst",
+      "description": "Use when a task needs quantitative analysis of models, strategies, simulations, or numeric decision logic.",
+      "path": "agents/specialists/quant-analyst.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "rails-expert",
+      "description": "Use when a task needs Ruby on Rails expertise for models, controllers, jobs, callbacks, or convention-driven application changes.",
+      "path": "agents/specialists/rails-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "react-specialist",
+      "description": "Use when a task needs a React-focused agent for component behavior, state flow, rendering bugs, or modern React patterns.",
+      "path": "agents/specialists/react-specialist.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "research-analyst",
+      "description": "Use when a task needs a structured investigation of a technical topic, implementation approach, or design question.",
+      "path": "agents/specialists/research-analyst.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "resume-refiner",
+      "description": "Use when a task needs a professional resume, CV, or LinkedIn profile reviewed, refined, or optimized for clarity, impact, and role alignment.",
+      "path": "agents/specialists/resume-refiner.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "reviewer",
+      "description": "Use when a task needs PR-style review focused on correctness, security, behavior regressions, and missing tests.",
+      "path": "agents/specialists/reviewer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "rust-engineer",
+      "description": "Use when a task needs Rust expertise for ownership-heavy systems code, async runtime behavior, or performance-sensitive implementation.",
+      "path": "agents/specialists/rust-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "sales-engineer",
+      "description": "Use when a task needs technically accurate solution positioning, customer-question handling, or implementation tradeoff explanation for pre-sales contexts.",
+      "path": "agents/specialists/sales-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "scientific-literature-researcher",
+      "description": "Use when a task needs evidence-grounded answers from published research, including methods, results, sample sizes, and quality-weighted synthesis.",
+      "path": "agents/specialists/scientific-literature-researcher.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "scrum-master",
+      "description": "Use when a task needs process facilitation, iteration planning, or workflow friction analysis for an engineering team.",
+      "path": "agents/specialists/scrum-master.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "search-specialist",
+      "description": "Use when a task needs fast, high-signal searching of the codebase or external sources before deeper analysis begins.",
+      "path": "agents/specialists/search-specialist.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "security-auditor",
+      "description": "Use when a task needs focused security review of code, auth flows, secrets handling, input validation, or infrastructure configuration.",
+      "path": "agents/specialists/security-auditor.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "security-engineer",
+      "description": "Use when a task needs infrastructure and platform security engineering across IAM, secrets, network controls, or hardening work.",
+      "path": "agents/specialists/security-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "seo-specialist",
+      "description": "Use when a task needs search-focused technical review across crawlability, metadata, rendering, information architecture, or content discoverability.",
+      "path": "agents/specialists/seo-specialist.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "spring-boot-engineer",
+      "description": "Use when a task needs Spring Boot expertise for service behavior, configuration, data access, or enterprise API implementation.",
+      "path": "agents/specialists/spring-boot-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "sql-pro",
+      "description": "Use when a task needs SQL query design, query review, schema-aware debugging, or database migration analysis.",
+      "path": "agents/specialists/sql-pro.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "sre-engineer",
+      "description": "Use when a task needs reliability engineering work involving SLOs, alerting, error budgets, operational safety, or service resilience.",
+      "path": "agents/specialists/sre-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "swift-expert",
+      "description": "Use when a task needs Swift expertise for iOS or macOS code, async flows, Apple platform APIs, or strongly typed application logic.",
+      "path": "agents/specialists/swift-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "task-distributor",
+      "description": "Use when a broad task needs to be broken into concrete sub-tasks with clear boundaries for multiple agents or contributors.",
+      "path": "agents/specialists/task-distributor.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "technical-writer",
+      "description": "Use when a task needs release notes, migration notes, onboarding material, or developer-facing prose derived from real code changes.",
+      "path": "agents/specialists/technical-writer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "terraform-engineer",
+      "description": "Use when a task needs Terraform module design, plan review, state-aware change analysis, or IaC refactoring.",
+      "path": "agents/specialists/terraform-engineer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "terragrunt-expert",
+      "description": "Use when a task needs Terragrunt-specific help for module orchestration, environment layering, dependency wiring, or DRY infrastructure structure.",
+      "path": "agents/specialists/terragrunt-expert.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "test-automator",
+      "description": "Use when a task needs implementation of automated tests, test harness improvements, or targeted regression coverage.",
+      "path": "agents/specialists/test-automator.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "trend-analyst",
+      "description": "Use when a task needs trend synthesis across technology shifts, adoption patterns, or emerging implementation directions.",
+      "path": "agents/specialists/trend-analyst.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "typescript-pro",
+      "description": "Use when a task needs strong TypeScript help for types, interfaces, refactors, or compiler-driven fixes.",
+      "path": "agents/specialists/typescript-pro.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "ui-designer",
+      "description": "Use when a task needs concrete UI decisions, interaction design, and implementation-ready design guidance before or during development.",
+      "path": "agents/specialists/ui-designer.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "ui-fixer",
+      "description": "Use when a UI issue is already reproduced and the parent agent wants the smallest safe patch.",
+      "path": "agents/specialists/ui-fixer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "ux-researcher",
+      "description": "Use when a task needs UI feedback synthesized into actionable product and implementation guidance.",
+      "path": "agents/specialists/ux-researcher.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "vue-expert",
+      "description": "Use when a task needs Vue expertise for component behavior, Composition API patterns, routing, or state and rendering issues.",
+      "path": "agents/specialists/vue-expert.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "websocket-engineer",
+      "description": "Use when a task needs real-time transport and state work across WebSocket lifecycle, message contracts, and reconnect/failure behavior.",
+      "path": "agents/specialists/websocket-engineer.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "windows-infra-admin",
+      "description": "Use when a task needs Windows infrastructure administration across Active Directory, DNS, DHCP, GPO, or Windows automation.",
+      "path": "agents/specialists/windows-infra-admin.toml",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "name": "wordpress-master",
+      "description": "Use when a task needs WordPress-specific implementation or debugging across themes, plugins, content architecture, or operational site behavior.",
+      "path": "agents/specialists/wordpress-master.toml",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "name": "worker",
+      "description": "Execution-focused subagent for implementation and fixes.",
+      "path": "agents/specialists/worker.toml",
+      "sandbox_mode": null
+    },
+    {
+      "name": "workflow-orchestrator",
+      "description": "Use when the parent agent needs an explicit Codex subagent workflow for a complex task with multiple stages.",
+      "path": "agents/specialists/workflow-orchestrator.toml",
+      "sandbox_mode": "read-only"
+    }
+  ]
+}
