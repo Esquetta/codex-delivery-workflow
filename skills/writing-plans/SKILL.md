@@ -73,5 +73,8 @@ If implementation is already authorized, hand off to
 [executing-plans](../executing-plans/SKILL.md),
 [subagent-driven-development](../subagent-driven-development/SKILL.md), or
 [dispatching-parallel-agents](../dispatching-parallel-agents/SKILL.md) according to
-ownership and dependencies. Do not request the same approval again. If the request was
-planning only, return the complete plan and wait for implementation authorization.
+ownership and dependencies. Identify the active host before that handoff and use only
+its native dispatch contract from
+[codex-delivery-workflow](../codex-delivery-workflow/SKILL.md). Do not request the same
+approval again. If the request was planning only, return the complete plan and wait for
+implementation authorization.

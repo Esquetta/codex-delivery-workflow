@@ -33,7 +33,10 @@ For a small, known issue, the primary can follow this procedure directly. A dedi
 debugger is useful only for an independent, bounded root-cause investigation with a
 clear entry point and return evidence. A test specialist is useful only when test work
 has independent file ownership and a settled interface; it is not a default extra
-reviewer. Use the packet rules in
+reviewer. On Claude Code, generated read-only roles can inspect only with `Read`,
+`Grep`, and `Glob`; the primary runs tests and external checks, then supplies the
+observed output. Verify actual runtime tools after any allowlist because the parent
+permission mode can override it. Use the packet rules in
 [codex-delivery-workflow](../../skills/codex-delivery-workflow/SKILL.md) and inspect
 actual changes before accepting a worker report.
 

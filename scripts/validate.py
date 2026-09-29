@@ -13,6 +13,8 @@ import tomllib
 from pathlib import Path
 from urllib.parse import unquote
 
+from export_claude import build_outputs
+
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = {
     "codex-delivery-workflow", "writing-plans", "executing-plans",
@@ -28,6 +30,9 @@ REQUIRED = {
     "docs/guides/agent-selection.md", "docs/guides/installation.md",
     "docs/guides/testing-and-debugging.md", "docs/guides/worked-examples.md",
     "scripts/validate.py", "tests/test_validate.py",
+    "AGENTS.md", "CLAUDE.md", "claude/catalog.json",
+    "scripts/export_claude.py", "tests/test_export_claude.py",
+    "docs/guides/claude-code.md",
 } | {f"skills/{name}/SKILL.md" for name in SKILLS}
 ROLE_FIELDS = {
     "name", "description", "model", "model_reasoning_effort",
@@ -73,7 +78,8 @@ def allowed_path(path: str) -> bool:
         return True
     parts = path.split("/")
     return (
-        len(parts) == 3 and parts[:2] == ["agents", "specialists"] and path.endswith(".toml")
+        (len(parts) in (3, 4) and parts[:2] == ["claude", "agents"] and path.endswith(".md"))
+        or len(parts) == 3 and parts[:2] == ["agents", "specialists"] and path.endswith(".toml")
         or len(parts) >= 3 and parts[0] == "skills" and parts[1] in SKILLS and path.endswith(".md")
         or len(parts) == 3 and parts[0] == "docs" and parts[1] in {"architecture", "guides"} and path.endswith(".md")
     )
@@ -198,6 +204,19 @@ def validate_files(files: dict[str, str]) -> list[str]:
             errors.append(f"credential-shaped text: {path}")
     catalog = check_catalog(files, errors)
     check_roles(files, catalog, errors)
+    try:
+        expected = build_outputs(files)
+    except (ValueError, KeyError, TypeError, tomllib.TOMLDecodeError) as error:
+        errors.append(f"cannot generate Claude adapter: {type(error).__name__}")
+    else:
+        actual = {p: c for p, c in files.items() if p.startswith("claude/")}
+        for path in sorted(set(expected) | set(actual)):
+            if expected.get(path) != actual.get(path):
+                errors.append(f"Claude adapter drift: {path}")
+    if "@AGENTS.md" not in files.get("CLAUDE.md", "").splitlines():
+        errors.append("CLAUDE.md must import @AGENTS.md")
+    if any(name in files.get("AGENTS.md", "") for name in ("Furkan Tasci", "Esquetta")):
+        errors.append("portable AGENTS.md contains personal identity")
     check_skills(files, errors)
     check_links(files, errors)
     return errors
@@ -211,7 +230,7 @@ def main() -> int:
         for error in sorted(set(errors)):
             print(f"- {error}")
         return 1
-    print(f"PASS: {len(files)} files; 120 specialist profiles, 2 starter roles, 6 skills.")
+    print(f"PASS: {len(files)} files; 120 Codex specialists, 2 starters, 122 Claude profiles, 6 shared skills.")
     print("Catalog, metadata, package links, and installed-skill links are consistent.")
     print("NOTE: static disclosure checks are not a security audit or runtime proof.")
     return 0

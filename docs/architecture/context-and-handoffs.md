@@ -20,7 +20,11 @@ Choose context deliberately:
 | Selected recent turns | A task depends on a few recent decisions | Earlier assumptions may still need direct verification. |
 | Full history | Work depends on substantial prior discussion | More context and possible stale assumptions; use intentionally. |
 
-A final reviewer always starts fresh and receives the work product, approved requirements, and verification evidence. Do not supply the primary's private reasoning or desired verdict.
+A final reviewer always starts fresh and receives the work product, approved
+requirements, and verification evidence. In Claude Code this means a fresh native
+subagent, not a parent fork. Do not supply the primary's private reasoning or desired
+verdict. Cross-model review context is independent review context; it is not proof of
+training or model-family independence.
 
 ## Worker to primary
 
@@ -30,7 +34,10 @@ For changes, inspect the actual files or diff. Run the relevant parent checks. F
 
 ## Between project tasks
 
-Native task-reading and messaging tools can retrieve or relay material changes when available and authorized. A compact handoff should contain:
+Native task-reading, messaging, or subagent-resume capabilities can retrieve or relay
+material changes when available and authorized. Use the capability the active host
+actually provides; do not assume another host has an identically named function. A
+compact handoff should contain:
 
 - Source task and current branch/commit or artifact identity.
 - The changed decision or interface and its evidence.
@@ -38,7 +45,12 @@ Native task-reading and messaging tools can retrieve or relay material changes w
 - The required next action and forbidden scope.
 - What remains unverified.
 
-This repository does **not** automatically synchronize all project chats. A shared checkout exposes file changes, not another task's complete conversation. Separate worktrees or hosts may not even share those files. There is no installed startup hook, event bus, or background context service here.
+This repository does **not** provide a cross-session synchronization service for Codex
+or Claude Code. A shared checkout exposes file changes, not another task's complete
+conversation. Separate worktrees or hosts may not even share those files. This does not
+deny either host's native handoff, messaging, or resume capabilities when available and
+authorized; it only states that this repository installs no shared startup hook, event
+bus, or background context service.
 
 ## Fixed points and corrections
 

@@ -20,6 +20,24 @@ class PackageValidationTests(unittest.TestCase):
         transform(files)
         return validate_files(files)
 
+    def test_claude_model_drift(self):
+        def change(files):
+            path = "claude/agents/delivery-reviewer.md"
+            files[path] = files[path].replace('model: "opus"', 'model: "sonnet"')
+        self.assertTrue(any("Claude adapter drift" in e for e in self.mutated(change)))
+
+    def test_missing_claude_profile(self):
+        errors = self.mutated(lambda f: f.pop("claude/agents/delivery-worker.md"))
+        self.assertTrue(any("Claude adapter drift" in e for e in errors))
+
+    def test_missing_shared_instruction_import(self):
+        errors = self.mutated(lambda f: f.update({"CLAUDE.md": "# Adapter without import"}))
+        self.assertTrue(any("must import" in e for e in errors))
+
+    def test_portable_identity(self):
+        errors = self.mutated(lambda f: f.update({"AGENTS.md": "Sign as Furkan Tasci"}))
+        self.assertTrue(any("personal identity" in e for e in errors))
+
     def test_current_package(self):
         self.assertEqual([], validate_files(self.baseline))
 

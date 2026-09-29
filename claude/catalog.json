@@ -1,0 +1,1871 @@
+{
+  "snapshot_date": "2026-09-15",
+  "provider": "anthropic",
+  "model_policy": {
+    "default": "sonnet",
+    "review": "opus"
+  },
+  "agents": [
+    {
+      "source_name": "delivery_reviewer",
+      "name": "delivery-reviewer",
+      "source_path": "agents/delivery_reviewer.toml",
+      "path": "claude/agents/delivery-reviewer.md",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "delivery_worker",
+      "name": "delivery-worker",
+      "source_path": "agents/delivery_worker.toml",
+      "path": "claude/agents/delivery-worker.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "accessibility-tester",
+      "name": "accessibility-tester",
+      "source_path": "agents/specialists/accessibility-tester.toml",
+      "path": "claude/agents/specialists/accessibility-tester.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "ad-security-reviewer",
+      "name": "ad-security-reviewer",
+      "source_path": "agents/specialists/ad-security-reviewer.toml",
+      "path": "claude/agents/specialists/ad-security-reviewer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "agent-installer",
+      "name": "agent-installer",
+      "source_path": "agents/specialists/agent-installer.toml",
+      "path": "claude/agents/specialists/agent-installer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "agent-organizer",
+      "name": "agent-organizer",
+      "source_path": "agents/specialists/agent-organizer.toml",
+      "path": "claude/agents/specialists/agent-organizer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "ai-engineer",
+      "name": "ai-engineer",
+      "source_path": "agents/specialists/ai-engineer.toml",
+      "path": "claude/agents/specialists/ai-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "angular-architect",
+      "name": "angular-architect",
+      "source_path": "agents/specialists/angular-architect.toml",
+      "path": "claude/agents/specialists/angular-architect.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "api-designer",
+      "name": "api-designer",
+      "source_path": "agents/specialists/api-designer.toml",
+      "path": "claude/agents/specialists/api-designer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "architect-reviewer",
+      "name": "architect-reviewer",
+      "source_path": "agents/specialists/architect-reviewer.toml",
+      "path": "claude/agents/specialists/architect-reviewer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "azure-infra-engineer",
+      "name": "azure-infra-engineer",
+      "source_path": "agents/specialists/azure-infra-engineer.toml",
+      "path": "claude/agents/specialists/azure-infra-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "backend-developer",
+      "name": "backend-developer",
+      "source_path": "agents/specialists/backend-developer.toml",
+      "path": "claude/agents/specialists/backend-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "browser-debugger",
+      "name": "browser-debugger",
+      "source_path": "agents/specialists/browser-debugger.toml",
+      "path": "claude/agents/specialists/browser-debugger.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "business-analyst",
+      "name": "business-analyst",
+      "source_path": "agents/specialists/business-analyst.toml",
+      "path": "claude/agents/specialists/business-analyst.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "chaos-engineer",
+      "name": "chaos-engineer",
+      "source_path": "agents/specialists/chaos-engineer.toml",
+      "path": "claude/agents/specialists/chaos-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "cloud-architect",
+      "name": "cloud-architect",
+      "source_path": "agents/specialists/cloud-architect.toml",
+      "path": "claude/agents/specialists/cloud-architect.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "code-mapper",
+      "name": "code-mapper",
+      "source_path": "agents/specialists/code-mapper.toml",
+      "path": "claude/agents/specialists/code-mapper.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "code-reviewer",
+      "name": "code-reviewer",
+      "source_path": "agents/specialists/code-reviewer.toml",
+      "path": "claude/agents/specialists/code-reviewer.md",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "competitive-analyst",
+      "name": "competitive-analyst",
+      "source_path": "agents/specialists/competitive-analyst.toml",
+      "path": "claude/agents/specialists/competitive-analyst.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "compliance-auditor",
+      "name": "compliance-auditor",
+      "source_path": "agents/specialists/compliance-auditor.toml",
+      "path": "claude/agents/specialists/compliance-auditor.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "content-marketer",
+      "name": "content-marketer",
+      "source_path": "agents/specialists/content-marketer.toml",
+      "path": "claude/agents/specialists/content-marketer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "context-manager",
+      "name": "context-manager",
+      "source_path": "agents/specialists/context-manager.toml",
+      "path": "claude/agents/specialists/context-manager.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "cpp-pro",
+      "name": "cpp-pro",
+      "source_path": "agents/specialists/cpp-pro.toml",
+      "path": "claude/agents/specialists/cpp-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "csharp-developer",
+      "name": "csharp-developer",
+      "source_path": "agents/specialists/csharp-developer.toml",
+      "path": "claude/agents/specialists/csharp-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "customer-success-manager",
+      "name": "customer-success-manager",
+      "source_path": "agents/specialists/customer-success-manager.toml",
+      "path": "claude/agents/specialists/customer-success-manager.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "data-analyst",
+      "name": "data-analyst",
+      "source_path": "agents/specialists/data-analyst.toml",
+      "path": "claude/agents/specialists/data-analyst.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "data-engineer",
+      "name": "data-engineer",
+      "source_path": "agents/specialists/data-engineer.toml",
+      "path": "claude/agents/specialists/data-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "data-researcher",
+      "name": "data-researcher",
+      "source_path": "agents/specialists/data-researcher.toml",
+      "path": "claude/agents/specialists/data-researcher.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "data-scientist",
+      "name": "data-scientist",
+      "source_path": "agents/specialists/data-scientist.toml",
+      "path": "claude/agents/specialists/data-scientist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "database-administrator",
+      "name": "database-administrator",
+      "source_path": "agents/specialists/database-administrator.toml",
+      "path": "claude/agents/specialists/database-administrator.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "database-optimizer",
+      "name": "database-optimizer",
+      "source_path": "agents/specialists/database-optimizer.toml",
+      "path": "claude/agents/specialists/database-optimizer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "debugger",
+      "name": "debugger",
+      "source_path": "agents/specialists/debugger.toml",
+      "path": "claude/agents/specialists/debugger.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "default",
+      "name": "default",
+      "source_path": "agents/specialists/default.toml",
+      "path": "claude/agents/specialists/default.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "unknown"
+    },
+    {
+      "source_name": "deployment-engineer",
+      "name": "deployment-engineer",
+      "source_path": "agents/specialists/deployment-engineer.toml",
+      "path": "claude/agents/specialists/deployment-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "devops-engineer",
+      "name": "devops-engineer",
+      "source_path": "agents/specialists/devops-engineer.toml",
+      "path": "claude/agents/specialists/devops-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "devops-incident-responder",
+      "name": "devops-incident-responder",
+      "source_path": "agents/specialists/devops-incident-responder.toml",
+      "path": "claude/agents/specialists/devops-incident-responder.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "django-developer",
+      "name": "django-developer",
+      "source_path": "agents/specialists/django-developer.toml",
+      "path": "claude/agents/specialists/django-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "docker-expert",
+      "name": "docker-expert",
+      "source_path": "agents/specialists/docker-expert.toml",
+      "path": "claude/agents/specialists/docker-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "docs-researcher",
+      "name": "docs-researcher",
+      "source_path": "agents/specialists/docs-researcher.toml",
+      "path": "claude/agents/specialists/docs-researcher.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "dotnet-core-expert",
+      "name": "dotnet-core-expert",
+      "source_path": "agents/specialists/dotnet-core-expert.toml",
+      "path": "claude/agents/specialists/dotnet-core-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "dotnet-framework-4.8-expert",
+      "name": "dotnet-framework-4-8-expert",
+      "source_path": "agents/specialists/dotnet-framework-4.8-expert.toml",
+      "path": "claude/agents/specialists/dotnet-framework-4-8-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "electron-pro",
+      "name": "electron-pro",
+      "source_path": "agents/specialists/electron-pro.toml",
+      "path": "claude/agents/specialists/electron-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "elixir-expert",
+      "name": "elixir-expert",
+      "source_path": "agents/specialists/elixir-expert.toml",
+      "path": "claude/agents/specialists/elixir-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "error-coordinator",
+      "name": "error-coordinator",
+      "source_path": "agents/specialists/error-coordinator.toml",
+      "path": "claude/agents/specialists/error-coordinator.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "error-detective",
+      "name": "error-detective",
+      "source_path": "agents/specialists/error-detective.toml",
+      "path": "claude/agents/specialists/error-detective.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "explorer",
+      "name": "explorer",
+      "source_path": "agents/specialists/explorer.toml",
+      "path": "claude/agents/specialists/explorer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "unknown"
+    },
+    {
+      "source_name": "flutter-expert",
+      "name": "flutter-expert",
+      "source_path": "agents/specialists/flutter-expert.toml",
+      "path": "claude/agents/specialists/flutter-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "frontend-developer",
+      "name": "frontend-developer",
+      "source_path": "agents/specialists/frontend-developer.toml",
+      "path": "claude/agents/specialists/frontend-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "fullstack-developer",
+      "name": "fullstack-developer",
+      "source_path": "agents/specialists/fullstack-developer.toml",
+      "path": "claude/agents/specialists/fullstack-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "golang-pro",
+      "name": "golang-pro",
+      "source_path": "agents/specialists/golang-pro.toml",
+      "path": "claude/agents/specialists/golang-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "graphql-architect",
+      "name": "graphql-architect",
+      "source_path": "agents/specialists/graphql-architect.toml",
+      "path": "claude/agents/specialists/graphql-architect.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "incident-responder",
+      "name": "incident-responder",
+      "source_path": "agents/specialists/incident-responder.toml",
+      "path": "claude/agents/specialists/incident-responder.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "it-ops-orchestrator",
+      "name": "it-ops-orchestrator",
+      "source_path": "agents/specialists/it-ops-orchestrator.toml",
+      "path": "claude/agents/specialists/it-ops-orchestrator.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "java-architect",
+      "name": "java-architect",
+      "source_path": "agents/specialists/java-architect.toml",
+      "path": "claude/agents/specialists/java-architect.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "javascript-pro",
+      "name": "javascript-pro",
+      "source_path": "agents/specialists/javascript-pro.toml",
+      "path": "claude/agents/specialists/javascript-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "knowledge-synthesizer",
+      "name": "knowledge-synthesizer",
+      "source_path": "agents/specialists/knowledge-synthesizer.toml",
+      "path": "claude/agents/specialists/knowledge-synthesizer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "kotlin-specialist",
+      "name": "kotlin-specialist",
+      "source_path": "agents/specialists/kotlin-specialist.toml",
+      "path": "claude/agents/specialists/kotlin-specialist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "kubernetes-specialist",
+      "name": "kubernetes-specialist",
+      "source_path": "agents/specialists/kubernetes-specialist.toml",
+      "path": "claude/agents/specialists/kubernetes-specialist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "laravel-specialist",
+      "name": "laravel-specialist",
+      "source_path": "agents/specialists/laravel-specialist.toml",
+      "path": "claude/agents/specialists/laravel-specialist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "legal-advisor",
+      "name": "legal-advisor",
+      "source_path": "agents/specialists/legal-advisor.toml",
+      "path": "claude/agents/specialists/legal-advisor.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "llm-architect",
+      "name": "llm-architect",
+      "source_path": "agents/specialists/llm-architect.toml",
+      "path": "claude/agents/specialists/llm-architect.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "m365-admin",
+      "name": "m365-admin",
+      "source_path": "agents/specialists/m365-admin.toml",
+      "path": "claude/agents/specialists/m365-admin.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "machine-learning-engineer",
+      "name": "machine-learning-engineer",
+      "source_path": "agents/specialists/machine-learning-engineer.toml",
+      "path": "claude/agents/specialists/machine-learning-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "market-researcher",
+      "name": "market-researcher",
+      "source_path": "agents/specialists/market-researcher.toml",
+      "path": "claude/agents/specialists/market-researcher.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "microservices-architect",
+      "name": "microservices-architect",
+      "source_path": "agents/specialists/microservices-architect.toml",
+      "path": "claude/agents/specialists/microservices-architect.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "ml-engineer",
+      "name": "ml-engineer",
+      "source_path": "agents/specialists/ml-engineer.toml",
+      "path": "claude/agents/specialists/ml-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "mlops-engineer",
+      "name": "mlops-engineer",
+      "source_path": "agents/specialists/mlops-engineer.toml",
+      "path": "claude/agents/specialists/mlops-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "mobile-app-developer",
+      "name": "mobile-app-developer",
+      "source_path": "agents/specialists/mobile-app-developer.toml",
+      "path": "claude/agents/specialists/mobile-app-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "mobile-developer",
+      "name": "mobile-developer",
+      "source_path": "agents/specialists/mobile-developer.toml",
+      "path": "claude/agents/specialists/mobile-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "multi-agent-coordinator",
+      "name": "multi-agent-coordinator",
+      "source_path": "agents/specialists/multi-agent-coordinator.toml",
+      "path": "claude/agents/specialists/multi-agent-coordinator.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "network-engineer",
+      "name": "network-engineer",
+      "source_path": "agents/specialists/network-engineer.toml",
+      "path": "claude/agents/specialists/network-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "nextjs-developer",
+      "name": "nextjs-developer",
+      "source_path": "agents/specialists/nextjs-developer.toml",
+      "path": "claude/agents/specialists/nextjs-developer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "nlp-engineer",
+      "name": "nlp-engineer",
+      "source_path": "agents/specialists/nlp-engineer.toml",
+      "path": "claude/agents/specialists/nlp-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "payment-integration",
+      "name": "payment-integration",
+      "source_path": "agents/specialists/payment-integration.toml",
+      "path": "claude/agents/specialists/payment-integration.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "penetration-tester",
+      "name": "penetration-tester",
+      "source_path": "agents/specialists/penetration-tester.toml",
+      "path": "claude/agents/specialists/penetration-tester.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "performance-engineer",
+      "name": "performance-engineer",
+      "source_path": "agents/specialists/performance-engineer.toml",
+      "path": "claude/agents/specialists/performance-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "performance-monitor",
+      "name": "performance-monitor",
+      "source_path": "agents/specialists/performance-monitor.toml",
+      "path": "claude/agents/specialists/performance-monitor.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "php-pro",
+      "name": "php-pro",
+      "source_path": "agents/specialists/php-pro.toml",
+      "path": "claude/agents/specialists/php-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "platform-engineer",
+      "name": "platform-engineer",
+      "source_path": "agents/specialists/platform-engineer.toml",
+      "path": "claude/agents/specialists/platform-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "postgres-pro",
+      "name": "postgres-pro",
+      "source_path": "agents/specialists/postgres-pro.toml",
+      "path": "claude/agents/specialists/postgres-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "powershell-5.1-expert",
+      "name": "powershell-5-1-expert",
+      "source_path": "agents/specialists/powershell-5.1-expert.toml",
+      "path": "claude/agents/specialists/powershell-5-1-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "powershell-7-expert",
+      "name": "powershell-7-expert",
+      "source_path": "agents/specialists/powershell-7-expert.toml",
+      "path": "claude/agents/specialists/powershell-7-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "powershell-security-hardening",
+      "name": "powershell-security-hardening",
+      "source_path": "agents/specialists/powershell-security-hardening.toml",
+      "path": "claude/agents/specialists/powershell-security-hardening.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "product-manager",
+      "name": "product-manager",
+      "source_path": "agents/specialists/product-manager.toml",
+      "path": "claude/agents/specialists/product-manager.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "project-manager",
+      "name": "project-manager",
+      "source_path": "agents/specialists/project-manager.toml",
+      "path": "claude/agents/specialists/project-manager.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "prompt-engineer",
+      "name": "prompt-engineer",
+      "source_path": "agents/specialists/prompt-engineer.toml",
+      "path": "claude/agents/specialists/prompt-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "python-pro",
+      "name": "python-pro",
+      "source_path": "agents/specialists/python-pro.toml",
+      "path": "claude/agents/specialists/python-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "qa-expert",
+      "name": "qa-expert",
+      "source_path": "agents/specialists/qa-expert.toml",
+      "path": "claude/agents/specialists/qa-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "quant-analyst",
+      "name": "quant-analyst",
+      "source_path": "agents/specialists/quant-analyst.toml",
+      "path": "claude/agents/specialists/quant-analyst.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "rails-expert",
+      "name": "rails-expert",
+      "source_path": "agents/specialists/rails-expert.toml",
+      "path": "claude/agents/specialists/rails-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "react-specialist",
+      "name": "react-specialist",
+      "source_path": "agents/specialists/react-specialist.toml",
+      "path": "claude/agents/specialists/react-specialist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "research-analyst",
+      "name": "research-analyst",
+      "source_path": "agents/specialists/research-analyst.toml",
+      "path": "claude/agents/specialists/research-analyst.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "resume-refiner",
+      "name": "resume-refiner",
+      "source_path": "agents/specialists/resume-refiner.toml",
+      "path": "claude/agents/specialists/resume-refiner.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "reviewer",
+      "name": "reviewer",
+      "source_path": "agents/specialists/reviewer.toml",
+      "path": "claude/agents/specialists/reviewer.md",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "rust-engineer",
+      "name": "rust-engineer",
+      "source_path": "agents/specialists/rust-engineer.toml",
+      "path": "claude/agents/specialists/rust-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "sales-engineer",
+      "name": "sales-engineer",
+      "source_path": "agents/specialists/sales-engineer.toml",
+      "path": "claude/agents/specialists/sales-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "scientific-literature-researcher",
+      "name": "scientific-literature-researcher",
+      "source_path": "agents/specialists/scientific-literature-researcher.toml",
+      "path": "claude/agents/specialists/scientific-literature-researcher.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "scrum-master",
+      "name": "scrum-master",
+      "source_path": "agents/specialists/scrum-master.toml",
+      "path": "claude/agents/specialists/scrum-master.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "search-specialist",
+      "name": "search-specialist",
+      "source_path": "agents/specialists/search-specialist.toml",
+      "path": "claude/agents/specialists/search-specialist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "security-auditor",
+      "name": "security-auditor",
+      "source_path": "agents/specialists/security-auditor.toml",
+      "path": "claude/agents/specialists/security-auditor.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "security-engineer",
+      "name": "security-engineer",
+      "source_path": "agents/specialists/security-engineer.toml",
+      "path": "claude/agents/specialists/security-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "seo-specialist",
+      "name": "seo-specialist",
+      "source_path": "agents/specialists/seo-specialist.toml",
+      "path": "claude/agents/specialists/seo-specialist.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "spring-boot-engineer",
+      "name": "spring-boot-engineer",
+      "source_path": "agents/specialists/spring-boot-engineer.toml",
+      "path": "claude/agents/specialists/spring-boot-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "sql-pro",
+      "name": "sql-pro",
+      "source_path": "agents/specialists/sql-pro.toml",
+      "path": "claude/agents/specialists/sql-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "sre-engineer",
+      "name": "sre-engineer",
+      "source_path": "agents/specialists/sre-engineer.toml",
+      "path": "claude/agents/specialists/sre-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "swift-expert",
+      "name": "swift-expert",
+      "source_path": "agents/specialists/swift-expert.toml",
+      "path": "claude/agents/specialists/swift-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "task-distributor",
+      "name": "task-distributor",
+      "source_path": "agents/specialists/task-distributor.toml",
+      "path": "claude/agents/specialists/task-distributor.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "technical-writer",
+      "name": "technical-writer",
+      "source_path": "agents/specialists/technical-writer.toml",
+      "path": "claude/agents/specialists/technical-writer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "terraform-engineer",
+      "name": "terraform-engineer",
+      "source_path": "agents/specialists/terraform-engineer.toml",
+      "path": "claude/agents/specialists/terraform-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "terragrunt-expert",
+      "name": "terragrunt-expert",
+      "source_path": "agents/specialists/terragrunt-expert.toml",
+      "path": "claude/agents/specialists/terragrunt-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "test-automator",
+      "name": "test-automator",
+      "source_path": "agents/specialists/test-automator.toml",
+      "path": "claude/agents/specialists/test-automator.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "trend-analyst",
+      "name": "trend-analyst",
+      "source_path": "agents/specialists/trend-analyst.toml",
+      "path": "claude/agents/specialists/trend-analyst.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "typescript-pro",
+      "name": "typescript-pro",
+      "source_path": "agents/specialists/typescript-pro.toml",
+      "path": "claude/agents/specialists/typescript-pro.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "ui-designer",
+      "name": "ui-designer",
+      "source_path": "agents/specialists/ui-designer.toml",
+      "path": "claude/agents/specialists/ui-designer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "ui-fixer",
+      "name": "ui-fixer",
+      "source_path": "agents/specialists/ui-fixer.toml",
+      "path": "claude/agents/specialists/ui-fixer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "ux-researcher",
+      "name": "ux-researcher",
+      "source_path": "agents/specialists/ux-researcher.toml",
+      "path": "claude/agents/specialists/ux-researcher.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "vue-expert",
+      "name": "vue-expert",
+      "source_path": "agents/specialists/vue-expert.toml",
+      "path": "claude/agents/specialists/vue-expert.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "websocket-engineer",
+      "name": "websocket-engineer",
+      "source_path": "agents/specialists/websocket-engineer.toml",
+      "path": "claude/agents/specialists/websocket-engineer.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "windows-infra-admin",
+      "name": "windows-infra-admin",
+      "source_path": "agents/specialists/windows-infra-admin.toml",
+      "path": "claude/agents/specialists/windows-infra-admin.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    },
+    {
+      "source_name": "wordpress-master",
+      "name": "wordpress-master",
+      "source_path": "agents/specialists/wordpress-master.toml",
+      "path": "claude/agents/specialists/wordpress-master.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "write"
+    },
+    {
+      "source_name": "worker",
+      "name": "worker",
+      "source_path": "agents/specialists/worker.toml",
+      "path": "claude/agents/specialists/worker.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Edit",
+        "Write",
+        "Bash"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "unknown"
+    },
+    {
+      "source_name": "workflow-orchestrator",
+      "name": "workflow-orchestrator",
+      "source_path": "agents/specialists/workflow-orchestrator.toml",
+      "path": "claude/agents/specialists/workflow-orchestrator.md",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "permissionMode": "default",
+      "source_sandbox_mode": "read-only"
+    }
+  ]
+}

@@ -1,8 +1,15 @@
-# Codex Delivery Workflow
+# Codex and Claude Code Delivery Workflow
 
-How I organize AI-assisted software development with a primary Codex session, specialist agents, explicit task ownership, and independent review.
+How I organize AI-assisted software development with a primary Codex or Claude Code session, specialist agents, explicit task ownership, and independent review.
 
 This repository documents a real personal workflow and ships a portable version of its agent profiles and development skills. The first release contained only two starter roles. The expanded reference includes a **120-role specialist snapshot**, the **six-skill delivery workflow pack**, context and tool boundaries, and worked examples with stated evidence limits.
+
+The same delivery rules now have two native adapters: Codex TOML profiles and generated Claude Code Markdown profiles. Shared project instructions live in [AGENTS.md](AGENTS.md); [CLAUDE.md](CLAUDE.md) imports them. Neither file changes your global configuration.
+
+| Environment | Agent profiles | Models | Setup |
+| --- | --- | --- | --- |
+| Codex | [120 specialists + 2 starters](agents/catalog.json) | Source Terra / high; chosen primary preserved | [Codex installation](docs/guides/installation.md) |
+| Claude Code | [122 generated profiles](claude/catalog.json) | `sonnet` specialists; `opus` delivery/code reviewers | [Claude Code guide](docs/guides/claude-code.md) |
 
 ## Explore the system
 
@@ -33,7 +40,7 @@ This repository documents a real personal workflow and ships a portable version 
 | audit | Primary implements and verifies a material-risk change. | A fresh reviewer checks Standards and Spec separately. |
 | full | Specialists implement scoped work; primary integrates and verifies it. | A fresh reviewer checks the fixed result. |
 
-A new agent is not required for every phase. Shared-file work stays sequential unless it is genuinely isolated. Concurrency is limited by the running Codex environment and includes the primary. Missing context goes back to the owner; it is not a reason for blind retries.
+A new agent is not required for every phase. Shared-file work stays sequential unless it is genuinely isolated. Concurrency is limited by the running host environment and includes the primary. Missing context goes back to the owner; it is not a reason for blind retries.
 
 The source setup prefers Astra / medium for the primary and Terra / high for specialists. These are configuration choices, not a guarantee of model availability or live routing. Preserve an explicitly selected primary model. A fresh reviewer provides context separation, not independent model training.
 
@@ -41,7 +48,7 @@ The source setup prefers Astra / medium for the primary and Terra / high for spe
 
 Browse the catalog and select roles that match your work. The full catalog is not a recommended bulk installation. Existing skill names may collide with personal or plugin skills; the installation guide explains that boundary.
 
-The repository does not contain personal account settings, credentials, local machine paths, private projects, session logs, or scheduled job-application instructions. It does not implement a new agent runtime or automatic cross-task context synchronization. Codex and connected tools perform execution.
+The repository does not contain personal account settings, credentials, local machine paths, private projects, session logs, or scheduled job-application instructions. It does not implement a new agent runtime or automatic cross-task context synchronization. Codex or Claude Code and their connected tools perform execution.
 
 Passing static validation does not prove that a particular host loaded a skill, used the configured model, enforced a sandbox, or ran an application correctly. We do not claim measured token savings or production reliability from the size of this catalog.
 
@@ -50,6 +57,7 @@ Passing static validation does not prove that a particular host loaded a skill, 
 Use Python 3.11 or newer from the repository root:
 
 ```sh
+python -X utf8 scripts/export_claude.py --check
 python -X utf8 scripts/validate.py
 python -B -m unittest discover -s tests -v
 ```
