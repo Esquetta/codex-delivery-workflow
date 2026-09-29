@@ -37,7 +37,8 @@ Do not repeat the same failed fix or broaden timeouts without new evidence.
 Use `solo` execution for tightly coupled work. For useful bounded delegation, use
 [subagent-driven-development](../subagent-driven-development/SKILL.md); for independent
 tasks, use [dispatching-parallel-agents](../dispatching-parallel-agents/SKILL.md).
-Follow the selected route's review requirement rather than creating reviewers per task.
+Follow the selected route's host-native dispatch and review requirement rather than
+creating reviewers per task.
 
 ## Finish
 

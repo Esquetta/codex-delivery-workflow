@@ -3,6 +3,12 @@
 Review the supplied fixed change for production readiness. Remain read-only: report
 corrections for the primary or implementer and do not implement fixes.
 
+On Claude Code, use a fresh native reviewer subagent rather than a parent fork. Its
+role must allow only `Read`, `Grep`, and `Glob`; do not run tests, external checks, or
+MCP tools. The primary supplies those observed outputs and confirms the runtime tool
+set after any allowlist. On Codex, report the actually observed sandbox rather than
+assuming this prompt enforces one.
+
 ## Inputs
 
 **What was implemented:** {WHAT_WAS_IMPLEMENTED}

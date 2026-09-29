@@ -7,10 +7,14 @@ description: Review a fixed change against requirements and repository standards
 
 Review a fixed change boundary through two independent evidence passes. A trivial
 change can be checked by the primary; use a fresh reviewer for material risk, an
-explicit review request, or an applicable repository gate. Select an available
-Terra/high reviewer: `delivery_reviewer` in the starter pack or a runtime-available
-`reviewer` in a wider installed catalog. Use fresh context (`fork_turns: none`) and no
-model or effort overrides for a pinned role.
+explicit review request, or an applicable repository gate. Identify the host before
+selecting a reviewer. On Codex, select the available Terra/high `delivery_reviewer` in
+the starter pack or a runtime-available `reviewer`, use fresh context (`fork_turns:
+none`), and attach no model or effort overrides to a pinned role. On Claude Code, use
+a fresh native `Agent` with `subagent_type` `delivery-reviewer` or a normalized
+`reviewer`; do not fork the parent conversation and do not send Codex dispatch fields.
+The Claude aliases are account-available runtime names, not fixed model IDs or a claim
+of equivalent model behavior.
 
 ## Fix the review boundary
 

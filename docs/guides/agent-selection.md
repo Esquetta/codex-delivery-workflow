@@ -1,5 +1,7 @@
 # Selecting an agent
 
+For Claude Code, use the corresponding entry in the [Claude catalog](../../claude/catalog.json). It maps each source name to its installed name: underscores and periods become hyphens, for example `delivery_reviewer` becomes `delivery-reviewer` and `dotnet-framework-4.8-expert` becomes `dotnet-framework-4-8-expert`. The role categories below describe both adapters; TOML links refer to the canonical source. Claude defaults to `sonnet`, with `opus` for `delivery-reviewer`, `reviewer`, and `code-reviewer`. See [compatibility](claude-code.md) before installation.
+
 This repository carries a **2026-09-15 snapshot** of 120 local specialist profiles, plus the two independent starter roles: [`delivery_worker`](../../agents/delivery_worker.toml) and [`delivery_reviewer`](../../agents/delivery_reviewer.toml). The snapshot records the local catalog at export time; it is not a claim about a universal or live installation.
 
 Every included specialist declares `gpt-5.6-terra` with `high` reasoning. Sandbox mode is profile-specific; [`catalog.json`](../../agents/catalog.json) records it for each profile. `default`, `explorer`, and `worker` have no explicit local sandbox declaration, so their catalog value is `null`.

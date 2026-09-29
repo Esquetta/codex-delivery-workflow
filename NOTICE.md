@@ -4,6 +4,8 @@ Copyright (c) 2026 Furkan Tasci. This repository is a local adaptation of a pers
 
 The specialist files are a dated export of locally adapted VoltAgent profiles; the workflow skills also adapt local Superpowers-based procedures. Public role fields and source/license comments are retained. Local MCP connection blocks were omitted from browser-debugger and docs-researcher. This export does not claim per-file equality with the latest upstream catalog.
 
+The Claude Code profiles are deterministic adaptations of this public Codex snapshot, not an export of a personal Claude installation or a separate upstream Claude catalog. They retain role instructions and provenance while translating model selection, names, and tool access. See `scripts/export_claude.py` and `claude/catalog.json`.
+
 ## Sol Advisor
 
 Source: <https://github.com/DannyMac180/sol-advisor/blob/main/LICENSE>

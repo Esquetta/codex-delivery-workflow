@@ -18,11 +18,14 @@ packet with objective, ownership, interfaces, constraints, verification, and ret
 format from [codex-delivery-workflow](../codex-delivery-workflow/SKILL.md). Preserve
 worktrees and concurrent edits.
 
-Select only runtime-available specialist roles; use the starter `delivery_worker` if
-that is the installed option. Omit model and effort overrides for pinned Terra/high
-roles. Respect the runtime slot limit, including the primary and descendants. Dispatch
-in batches where needed, and retain useful primary work instead of creating workers
-merely to wait. Do not duplicate investigation.
+Identify the host before dispatch. On Codex, select only runtime-available specialist
+roles and use the starter `delivery_worker` if that is installed; omit model and effort
+overrides for its pinned Terra/high role. On Claude Code, use a native `Agent` and the
+installed normalized `subagent_type`, including `delivery-worker` when it is the
+starter option. Do not send Codex dispatch or effort fields to Claude. Respect the
+runtime slot limit, including the primary and descendants. Dispatch in batches where
+needed, and retain useful primary work instead of creating workers merely to wait. Do
+not duplicate investigation.
 
 ## Integrate
 

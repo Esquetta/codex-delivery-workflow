@@ -2,7 +2,8 @@
 
 Use only for a specific risk or an explicit requirement that needs a separate Spec
 owner. The normal [review workflow](../requesting-code-review/SKILL.md) keeps Standards
-and Spec as distinct passes in one fresh reviewer.
+and Spec as distinct passes in one fresh reviewer. On Claude Code use a fresh native
+read-only subagent, never a parent fork; its allowlist is `Read`, `Grep`, and `Glob`.
 
 ```md
 Remain read-only. Inspect the fixed change set, not the implementer’s claims. Do not

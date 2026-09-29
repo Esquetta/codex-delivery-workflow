@@ -17,9 +17,12 @@ interfaces, file ownership, constraints, and verification. Inspect current works
 state and preserve unrelated changes. Resolve a material question before dependent work
 starts; do not reopen settled design or request approval already supplied.
 
-Choose an installed Terra/high domain specialist. In the starter pack, use
-`delivery_worker`; in a wider installed catalog, select a runtime-available role that
-matches the task. Omit model and effort overrides for pinned roles. Give the worker the
+Identify the host before selecting a specialist. On Codex, choose an installed
+Terra/high domain specialist; use `delivery_worker` in the starter pack and omit model
+and effort overrides for that pinned role. On Claude Code, use its native `Agent` and a
+runtime-available normalized `subagent_type`; use `delivery-worker` in the starter
+pack. Keep the user's selected primary Anthropic model, use aliases supplied by the
+generated catalog, and do not copy Codex effort or dispatch fields. Give the worker the
 complete [implementer prompt](implementer-prompt.md), with enough context to act safely.
 Prefer fresh bounded context, but include relevant history when the task depends on it.
 
@@ -53,6 +56,7 @@ One reviewer normally runs both Standards and Spec passes. The optional separate
 [Standards reviewer](code-quality-reviewer-prompt.md) help only when a specific risk
 or explicit requirement warrants split ownership; they do not automatically add agents.
 
-A reviewer does not fix findings. The primary or original owner applies a correction,
+A reviewer does not fix findings. On Claude Code it must be a fresh native subagent,
+not a fork of the parent conversation. The primary or original owner applies a correction,
 re-verifies it, and obtains a fresh review of the changed result. Complete only when
 scope, acceptance criteria, relevant checks, integration, and any required review pass.

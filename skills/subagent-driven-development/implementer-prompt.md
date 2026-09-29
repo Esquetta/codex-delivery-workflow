@@ -1,7 +1,10 @@
 # Implementer Prompt
 
-Select an available Terra/high domain specialist; use `delivery_worker` with the starter
-pack. Omit model and effort overrides for a pinned role. Adapt this packet to applicable
+Identify the host before dispatch. On Codex, select an available Terra/high domain
+specialist and use `delivery_worker` with the starter pack; omit model and effort
+overrides for its pinned role. On Claude Code, use a native `Agent` with an installed
+normalized `subagent_type`, including `delivery-worker` with the starter pack. Do not
+send Codex dispatch fields or copy Codex effort. Adapt this packet to applicable
 repository instructions.
 
 ```md

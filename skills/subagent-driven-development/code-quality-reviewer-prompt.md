@@ -2,7 +2,8 @@
 
 Use only for a specific risk or explicit requirement that needs a separate Standards
 owner. The normal [review workflow](../requesting-code-review/SKILL.md) already runs
-both independent passes in one fresh reviewer.
+both independent passes in one fresh reviewer. On Claude Code use a fresh native
+read-only subagent, never a parent fork; its allowlist is `Read`, `Grep`, and `Glob`.
 
 ```md
 Remain read-only. Inspect the fixed change set and supplied requirements, constraints,

@@ -2,6 +2,8 @@
 
 Choose what to install. Browsing this repository installs nothing, and the 120-role catalog is not a recommendation to load every role.
 
+The existing personal-root procedure below is for Codex. For Claude Code, use the project-scoped procedure at the end. Neither procedure installs or replaces global instruction files.
+
 ## Starter or full workflow pack
 
 | Mode | Skills | Roles |
@@ -86,3 +88,55 @@ The payload is text and uses relative paths. Copy the same selected folders/file
 5. If a model/role is unavailable, stop that lane and adapt the configuration intentionally.
 
 The repository validator checks package consistency, not any of these runtime steps. Automated installation, background context synchronization, token benchmarking, and end-to-end host compatibility testing are not included.
+
+## Claude Code: project-scoped installation
+
+Choose an existing target project, then run from this distribution repository. This copies selected profiles into the target's `.claude/agents/` and skills into `.claude/skills/`. Starter names use hyphens. For the full pack, select names from [claude/catalog.json](../../claude/catalog.json).
+
+Inspect active project, personal, and plugin catalogs for duplicate names first. The block checks the project destination and default personal roots; it cannot enumerate managed/plugin configuration. It intentionally does not overwrite files. Do not run concurrently with another installer.
+
+```powershell
+$ErrorActionPreference = 'Stop'
+$deliveryRepo = (Get-Location).Path
+$deliveryProject = Read-Host 'Existing target project directory'
+if (-not (Test-Path -LiteralPath $deliveryProject -PathType Container)) { throw 'Target project must exist.' }
+$deliveryProject = (Resolve-Path -LiteralPath $deliveryProject).Path
+$deliveryMode = 'starter'
+$deliveryRoleNames = @('code-mapper', 'fullstack-developer', 'reviewer')
+$deliverySkillNames = if ($deliveryMode -eq 'starter') {
+    @('codex-delivery-workflow')
+} elseif ($deliveryMode -eq 'full') {
+    @('codex-delivery-workflow', 'writing-plans', 'executing-plans',
+      'subagent-driven-development', 'dispatching-parallel-agents', 'requesting-code-review')
+} else { throw 'Choose starter or full.' }
+$deliveryAgentNames = if ($deliveryMode -eq 'starter') {
+    @('delivery-worker', 'delivery-reviewer')
+} else { $deliveryRoleNames }
+$deliveryAgentSource = if ($deliveryMode -eq 'starter') { 'claude/agents' } else { 'claude/agents/specialists' }
+$deliveryCopies = @()
+foreach ($deliveryName in $deliverySkillNames) {
+    $deliverySource = Join-Path $deliveryRepo "skills/$deliveryName"
+    $deliveryTarget = Join-Path $deliveryProject ".claude/skills/$deliveryName"
+    if (-not (Test-Path -LiteralPath (Join-Path $deliverySource 'SKILL.md') -PathType Leaf)) { throw "Missing skill: $deliveryName" }
+    if ((Test-Path -LiteralPath $deliveryTarget) -or
+        (Test-Path -LiteralPath (Join-Path $HOME ".claude/skills/$deliveryName"))) { throw "Existing skill: $deliveryName" }
+    $deliveryCopies += @{ Source = $deliverySource; Target = $deliveryTarget }
+}
+foreach ($deliveryName in $deliveryAgentNames) {
+    if ($deliveryName -notmatch '^[a-z0-9][a-z0-9-]*$') { throw 'Use a Claude catalog name.' }
+    $deliverySource = Join-Path $deliveryRepo "$deliveryAgentSource/$deliveryName.md"
+    $deliveryTarget = Join-Path $deliveryProject ".claude/agents/$deliveryName.md"
+    if (-not (Test-Path -LiteralPath $deliverySource -PathType Leaf)) { throw "Missing role: $deliveryName" }
+    if ((Test-Path -LiteralPath $deliveryTarget) -or
+        (Test-Path -LiteralPath (Join-Path $HOME ".claude/agents/$deliveryName.md"))) { throw "Existing role: $deliveryName" }
+    $deliveryCopies += @{ Source = $deliverySource; Target = $deliveryTarget }
+}
+foreach ($deliveryCopy in $deliveryCopies) {
+    New-Item -ItemType Directory -Force -Path (Split-Path -Parent $deliveryCopy.Target) | Out-Null
+    Copy-Item -LiteralPath $deliveryCopy.Source -Destination $deliveryCopy.Target -Recurse
+}
+```
+
+Review and merge the distribution's root [AGENTS.md](../../AGENTS.md) and [CLAUDE.md](../../CLAUDE.md) into the target project's instruction files separately. Keep `@AGENTS.md` in `CLAUDE.md` and keep both files at the same project root. Adapt its documentation link for the target. Existing project instructions must be reconciled, not overwritten. No personal global instruction file is involved.
+
+On other operating systems, copy the same selected files and directories after equivalent collision checks. Users who intentionally prefer personal Claude installation can use `~/.claude/agents/` and `~/.claude/skills/`, but project instructions remain a separate adoption decision. Follow the [Claude smoke-test checklist](claude-code.md) after reopening the host.

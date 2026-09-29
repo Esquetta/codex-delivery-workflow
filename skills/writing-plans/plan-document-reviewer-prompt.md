@@ -1,9 +1,11 @@
 # Plan Document Reviewer Prompt
 
 Use this only when material risk, an explicit request, or an applicable gate justifies
-independent plan review. Small plans receive the primary’s self-review. Select an
-available Terra/high reviewer, use fresh context and no model or effort overrides, and
-instruct it to remain read-only.
+independent plan review. Small plans receive the primary’s self-review. On Codex,
+select an available Terra/high reviewer, use fresh context and no model or effort
+overrides. On Claude Code, use a fresh native `Agent` with a read-only normalized
+reviewer role; do not fork the parent, copy Codex effort, or send Codex dispatch
+fields. In either host, instruct it to remain read-only.
 
 ```md
 You are reviewing a plan document. Remain read-only: do not edit the plan or implement
