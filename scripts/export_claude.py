@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -108,12 +109,14 @@ def safe_target(root: Path, relative: str, *, generated: bool) -> Path:
     if generated and not GENERATED_PATH.fullmatch(relative):
         raise ValueError(f"invalid generated path: {relative}")
     target = root
-    if target.is_symlink():
-        raise ValueError(f"symlinked export root: {root}")
+    if target.is_symlink() or getattr(target, "is_junction", lambda: False)():
+        raise ValueError(f"symlinked or junction export root: {root}")
     for part in PurePosixPath(relative).parts:
         target /= part
-        if target.is_symlink():
-            raise ValueError(f"symlinked path is not allowed: {relative}")
+        if target.is_symlink() or getattr(target, "is_junction", lambda: False)():
+            raise ValueError(f"symlinked or junction path is not allowed: {relative}")
+        if not target.resolve().is_relative_to(root.resolve()):
+            raise ValueError(f"path escapes export root: {relative}")
     return target
 
 
@@ -131,6 +134,24 @@ def markdown(profile: dict[str, object], source_path: str, tools: list[str], not
         f"{key}: {json.dumps(value, ensure_ascii=False)}" for key, value in fields.items()
     )
     instructions = adapted_text(source_name, str(profile["developer_instructions"])).strip()
+    if name == "browser-debugger":
+        instructions += (
+            "\n\nBrowser MCP prerequisite:\n"
+            "- This portable profile does not configure a browser MCP server or grant its tools.\n"
+            "- Before browser work, the installer must select an already-authorized server and add "
+            "only the exact browser MCP tool names exposed by that server to the installed tools allowlist. "
+            "A tools allowlist also filters MCP tools; do not omit it to inherit all tools.\n"
+            "- Verify the selected tools are available in the running subagent. If not, return BLOCKED "
+            "with the missing prerequisite. Do not install a server, change permissions, use Bash as "
+            "a browser workaround, or claim live browser evidence."
+        )
+    if name == "search-specialist":
+        instructions += (
+            "\n\nExternal search prerequisite:\n"
+            "- Use WebSearch and WebFetch only when available and allowed by the host. "
+            "If unavailable, report the external research as BLOCKED; local search can still proceed. "
+            "Do not claim unobserved web results or bypass restrictions through shell tools."
+        )
     if name in REVIEWERS:
         instructions += (
             "\n\nReview-only operating limits:\n"
@@ -184,6 +205,8 @@ def build_outputs(files: dict[str, str]) -> dict[str, str]:
         normalized.add(name)
         sandbox = source_sandbox(profile["sandbox_mode"])
         tools = READ_TOOLS if name in REVIEWERS or sandbox == "read-only" else WRITE_TOOLS
+        if name == "search-specialist":
+            tools = [*READ_TOOLS, "WebSearch", "WebFetch"]
         relative = (
             f"claude/agents/{name}.md"
             if source_path in STARTERS
@@ -192,6 +215,7 @@ def build_outputs(files: dict[str, str]) -> dict[str, str]:
         content = markdown(profile, source_path, tools, source_notice(files[source_path]))
         outputs[relative] = content
         entries.append({
+            "content_sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
             "source_name": source_name,
             "name": name,
             "source_path": source_path,
@@ -241,9 +265,41 @@ def check_outputs(root: Path, expected: dict[str, str]) -> list[str]:
 
 def write_outputs(root: Path, outputs: dict[str, str]) -> None:
     targets = [(safe_target(root, path, generated=True), content) for path, content in outputs.items()]
+    # Only a previous catalog entry with matching content establishes deletion ownership.
+    # Unlisted files and user edits are never removed, and all checks precede writes.
+    obsolete = []
+    owned = set()
+    catalog_path = safe_target(root, "claude/catalog.json", generated=True)
+    if catalog_path.is_file():
+        previous = json.loads(catalog_path.read_text(encoding="utf-8"))
+        for entry in previous.get("agents", []):
+            relative = entry["path"]
+            target = safe_target(root, relative, generated=True)
+            if relative == "claude/catalog.json":
+                raise ValueError("invalid profile ownership path")
+            if entry.get("content_sha256"):
+                owned.add(relative)
+            if target.exists() and (relative not in outputs or entry.get("content_sha256")):
+                digest = hashlib.sha256(target.read_text(encoding="utf-8").encode("utf-8")).hexdigest()
+                if digest != entry.get("content_sha256"):
+                    raise ValueError(f"modified file or missing ownership hash: {relative}")
+                if relative not in outputs:
+                    obsolete.append(target)
     for target, content in targets:
+        relative = target.relative_to(root).as_posix()
+        if target != catalog_path and relative not in owned and target.exists():
+            if target.read_text(encoding="utf-8") != content:
+                raise ValueError(f"missing ownership for existing file: {relative}")
+    for target, content in targets:
+        if target == catalog_path:
+            continue
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(content, encoding="utf-8", newline="\n")
+    for target in obsolete:
+        target.unlink()
+    if "claude/catalog.json" in outputs:
+        catalog_path.parent.mkdir(parents=True, exist_ok=True)
+        catalog_path.write_text(outputs["claude/catalog.json"], encoding="utf-8", newline="\n")
 
 
 def main(argv: list[str] | None = None) -> int:

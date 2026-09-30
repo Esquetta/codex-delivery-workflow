@@ -193,6 +193,25 @@ def check_links(files: dict[str, str], errors: list[str]) -> None:
                     errors.append(f"starter skill is not standalone: {destination}")
 
 
+def has_shared_import(text: str) -> bool:
+    """Require this package's standalone import outside Markdown code examples."""
+    fence = None
+    prose = []
+    for line in text.splitlines():
+        marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+        if fence:
+            if marker and marker[1][0] == fence[0] and len(marker[1]) >= len(fence) and not marker[2].strip():
+                fence = None
+            continue
+        if marker:
+            fence = marker[1]
+            continue
+        prose.append(line)
+    # Code spans can cross line boundaries and use multiple backticks.
+    visible = re.sub(r"(?<!`)(`+)(?!`).*?(?<!`)\1(?!`)", " ", "\n".join(prose), flags=re.S)
+    return any(line.strip() == "@AGENTS.md" for line in visible.splitlines())
+
+
 def validate_files(files: dict[str, str]) -> list[str]:
     errors = [f"missing required file: {p}" for p in sorted(REQUIRED - set(files))]
     for path, content in files.items():
@@ -213,7 +232,7 @@ def validate_files(files: dict[str, str]) -> list[str]:
         for path in sorted(set(expected) | set(actual)):
             if expected.get(path) != actual.get(path):
                 errors.append(f"Claude adapter drift: {path}")
-    if "@AGENTS.md" not in files.get("CLAUDE.md", "").splitlines():
+    if not has_shared_import(files.get("CLAUDE.md", "")):
         errors.append("CLAUDE.md must import @AGENTS.md")
     if any(name in files.get("AGENTS.md", "") for name in ("Furkan Tasci", "Esquetta")):
         errors.append("portable AGENTS.md contains personal identity")

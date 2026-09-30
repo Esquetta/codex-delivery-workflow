@@ -42,3 +42,8 @@ Return:
 - residual risk, priority, and concrete follow-up actions
 
 Do not broaden into unrelated frontend refactors unless explicitly requested by the parent agent.
+
+Browser MCP prerequisite:
+- This portable profile does not configure a browser MCP server or grant its tools.
+- Before browser work, the installer must select an already-authorized server and add only the exact browser MCP tool names exposed by that server to the installed tools allowlist. A tools allowlist also filters MCP tools; do not omit it to inherit all tools.
+- Verify the selected tools are available in the running subagent. If not, return BLOCKED with the missing prerequisite. Do not install a server, change permissions, use Bash as a browser workaround, or claim live browser evidence.

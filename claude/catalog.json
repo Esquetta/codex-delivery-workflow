@@ -7,6 +7,7 @@
   },
   "agents": [
     {
+      "content_sha256": "fa8cb07739a759fe96cd1c85d9071f3c73e962700bd51ffc51446f0b1d1c418e",
       "source_name": "delivery_reviewer",
       "name": "delivery-reviewer",
       "source_path": "agents/delivery_reviewer.toml",
@@ -21,6 +22,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "99c1f58f384e3084569cae373712cb8252062b2731c3b6fa736b4555d8203de0",
       "source_name": "delivery_worker",
       "name": "delivery-worker",
       "source_path": "agents/delivery_worker.toml",
@@ -38,6 +40,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "86f46679cdc588c5a797829576e52de7ea8f8e370fe2ba11ac6bfb9631cf8418",
       "source_name": "accessibility-tester",
       "name": "accessibility-tester",
       "source_path": "agents/specialists/accessibility-tester.toml",
@@ -52,6 +55,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "4618d634bd251b9eec457d9b5d1bce7ca8ac7c788aa12ee81197198b35b1e5f2",
       "source_name": "ad-security-reviewer",
       "name": "ad-security-reviewer",
       "source_path": "agents/specialists/ad-security-reviewer.toml",
@@ -66,6 +70,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "8198db81e183c01a3d2cdf9590a3cabd130868529be27488e5a38d9e947c7a40",
       "source_name": "agent-installer",
       "name": "agent-installer",
       "source_path": "agents/specialists/agent-installer.toml",
@@ -80,6 +85,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "4fbd9f1bf7c3c1805a24a5a41c9b378b0cb5090cc5eec1e199fcf5b78a84ef7f",
       "source_name": "agent-organizer",
       "name": "agent-organizer",
       "source_path": "agents/specialists/agent-organizer.toml",
@@ -94,6 +100,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "3f9beddea8be81cfc2334d9eb65f75dd358b373a4bf2212ccc9fabd21bb0f8b6",
       "source_name": "ai-engineer",
       "name": "ai-engineer",
       "source_path": "agents/specialists/ai-engineer.toml",
@@ -111,6 +118,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "e85fbfaacef481b2bf8a4e9046c1488d3f4bea61a80aeeb3b58e13ee99db7706",
       "source_name": "angular-architect",
       "name": "angular-architect",
       "source_path": "agents/specialists/angular-architect.toml",
@@ -128,6 +136,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "9906e195c69b941f6960cb2fc94ade890b4a0d079eca46a64d56ca8f01852d3c",
       "source_name": "api-designer",
       "name": "api-designer",
       "source_path": "agents/specialists/api-designer.toml",
@@ -142,6 +151,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5035a528854319dbc9922f9d3e4dc1ae85681643d6bff16cdebd384eda71f67b",
       "source_name": "architect-reviewer",
       "name": "architect-reviewer",
       "source_path": "agents/specialists/architect-reviewer.toml",
@@ -156,6 +166,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "46bbb092f84d653f91fa929652f0b6de05af0d694cb5dd4d6af0561f490d398d",
       "source_name": "azure-infra-engineer",
       "name": "azure-infra-engineer",
       "source_path": "agents/specialists/azure-infra-engineer.toml",
@@ -170,6 +181,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "96e4a8b418c15f5b9538df0a8a59a5192c069ddbf0d14f1ba440f2e0e2ee6e92",
       "source_name": "backend-developer",
       "name": "backend-developer",
       "source_path": "agents/specialists/backend-developer.toml",
@@ -187,6 +199,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "7f0f0f4096e04b2971807adbe6d2a406b41bb0c193883916e8e9787e0f22f195",
       "source_name": "browser-debugger",
       "name": "browser-debugger",
       "source_path": "agents/specialists/browser-debugger.toml",
@@ -204,6 +217,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "fddf30f8c5c1c36c30aca5792d6bfaeab82bf04dd4801937ca10aebc844b52f7",
       "source_name": "business-analyst",
       "name": "business-analyst",
       "source_path": "agents/specialists/business-analyst.toml",
@@ -218,6 +232,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "c072bc78aa9b1649917f2eace0b71d7f714693d4bd92e161419c3193fb9c62b0",
       "source_name": "chaos-engineer",
       "name": "chaos-engineer",
       "source_path": "agents/specialists/chaos-engineer.toml",
@@ -232,6 +247,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "c7210d0867dba101f71d523ffade8754bf1ad80d78eef5bd2a1315a5b645b407",
       "source_name": "cloud-architect",
       "name": "cloud-architect",
       "source_path": "agents/specialists/cloud-architect.toml",
@@ -246,6 +262,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "81e381afa328ce96e0e73fb9adad784abd72512d19b0b4b349ef09ca63c7c7da",
       "source_name": "code-mapper",
       "name": "code-mapper",
       "source_path": "agents/specialists/code-mapper.toml",
@@ -260,6 +277,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "ebc21839480eed26a2cb8028654d15a82c214b8a2ce7f1d9fd3a0d2817583f7c",
       "source_name": "code-reviewer",
       "name": "code-reviewer",
       "source_path": "agents/specialists/code-reviewer.toml",
@@ -274,6 +292,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "03f2a84e25ea59cb3610bec33ce1846961f852c88a4e4b08f2371d58d26ec2ba",
       "source_name": "competitive-analyst",
       "name": "competitive-analyst",
       "source_path": "agents/specialists/competitive-analyst.toml",
@@ -288,6 +307,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "998f673d1f4d526f686dfe06798b68ac0126f47a991459262368f63c220b8fc2",
       "source_name": "compliance-auditor",
       "name": "compliance-auditor",
       "source_path": "agents/specialists/compliance-auditor.toml",
@@ -302,6 +322,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "306b5749dfe0c7d4affa81a0db7149a8d068e843332c7de792a0056ab77ad614",
       "source_name": "content-marketer",
       "name": "content-marketer",
       "source_path": "agents/specialists/content-marketer.toml",
@@ -316,6 +337,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "b6889f848be342b9b367a752a0ecc3f4beec6289248abf44e585a2681e278e7a",
       "source_name": "context-manager",
       "name": "context-manager",
       "source_path": "agents/specialists/context-manager.toml",
@@ -330,6 +352,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "4dd3915c4cc8e622d6872fea589f5f5977c765b66cfd16749169e0a618065f34",
       "source_name": "cpp-pro",
       "name": "cpp-pro",
       "source_path": "agents/specialists/cpp-pro.toml",
@@ -347,6 +370,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "815f022289af6a36ff453677a43c4203a72cf12945ae118a6b3edfe3cd249586",
       "source_name": "csharp-developer",
       "name": "csharp-developer",
       "source_path": "agents/specialists/csharp-developer.toml",
@@ -364,6 +388,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "622d6d9d18ba883b4996c1a1c5043a0895cc1ec81040907d7ac742145b293c32",
       "source_name": "customer-success-manager",
       "name": "customer-success-manager",
       "source_path": "agents/specialists/customer-success-manager.toml",
@@ -378,6 +403,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5a872b8329962fab82f5731a80e642471d0b55e63ce1e5ad2363b475d7bc94ca",
       "source_name": "data-analyst",
       "name": "data-analyst",
       "source_path": "agents/specialists/data-analyst.toml",
@@ -392,6 +418,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "fadad6a3861d7e8b6e09c0d9fcf97039154e3c80de46310303c35933a8b77d2a",
       "source_name": "data-engineer",
       "name": "data-engineer",
       "source_path": "agents/specialists/data-engineer.toml",
@@ -409,6 +436,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "6f0cb0f3262327af9057baf1926e02effc0b5ee06f64557957600f0bb20e85de",
       "source_name": "data-researcher",
       "name": "data-researcher",
       "source_path": "agents/specialists/data-researcher.toml",
@@ -423,6 +451,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "f445880ef07b4c8dc4a5a9ddbae1282dd6a9c036a38698b636313a773edb6777",
       "source_name": "data-scientist",
       "name": "data-scientist",
       "source_path": "agents/specialists/data-scientist.toml",
@@ -437,6 +466,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "7a0b7c37a6a096d686f651f7f150f4edef43ca42331789c3cac8b75cc436f79e",
       "source_name": "database-administrator",
       "name": "database-administrator",
       "source_path": "agents/specialists/database-administrator.toml",
@@ -451,6 +481,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "599e989137c67375a3aad39906c29e7073c10d2a96e069695128dcdf4ec171d5",
       "source_name": "database-optimizer",
       "name": "database-optimizer",
       "source_path": "agents/specialists/database-optimizer.toml",
@@ -465,6 +496,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "482f3eecebc0182c47afc832a014ef90202d3c48aaabaf634e165657c939707a",
       "source_name": "debugger",
       "name": "debugger",
       "source_path": "agents/specialists/debugger.toml",
@@ -479,6 +511,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "76bcac4c2f0ba8dc5564d485fb8601d8ba7d979ef87565d26d5236b94da3a3da",
       "source_name": "default",
       "name": "default",
       "source_path": "agents/specialists/default.toml",
@@ -496,6 +529,7 @@
       "source_sandbox_mode": "unknown"
     },
     {
+      "content_sha256": "dd288a9157a95312adf26a8b535421aab1b6c6dbbf7624b20258fbb4084ac8ce",
       "source_name": "deployment-engineer",
       "name": "deployment-engineer",
       "source_path": "agents/specialists/deployment-engineer.toml",
@@ -513,6 +547,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "1528b0c5997d9b9b04649172ec6710237057832a2070788911a7da8f6a011bf0",
       "source_name": "devops-engineer",
       "name": "devops-engineer",
       "source_path": "agents/specialists/devops-engineer.toml",
@@ -530,6 +565,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "6889018d1e13a2ee1900f3ffe5a0c587fe39a817693376160e4f7967373fdf13",
       "source_name": "devops-incident-responder",
       "name": "devops-incident-responder",
       "source_path": "agents/specialists/devops-incident-responder.toml",
@@ -544,6 +580,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5aa51b140a0427c18dea43968d28c408cbd8af49c4d79dfad9c672fa596226e6",
       "source_name": "django-developer",
       "name": "django-developer",
       "source_path": "agents/specialists/django-developer.toml",
@@ -561,6 +598,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "b6bd3049b3bd1e649b718018f9ae493dd3457895ee6ddadc2759a71432262de9",
       "source_name": "docker-expert",
       "name": "docker-expert",
       "source_path": "agents/specialists/docker-expert.toml",
@@ -578,6 +616,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "c348853ad8ac549d41c2828fd0e2d0f151776454cb94870e537901bf93e73f17",
       "source_name": "docs-researcher",
       "name": "docs-researcher",
       "source_path": "agents/specialists/docs-researcher.toml",
@@ -592,6 +631,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "d50c7be3c70648ea76f49f06629f01235a587daf9708915ee2674463376e093b",
       "source_name": "dotnet-core-expert",
       "name": "dotnet-core-expert",
       "source_path": "agents/specialists/dotnet-core-expert.toml",
@@ -609,6 +649,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "d25d413396d36452ea6656d2a08a9839b47903d5b10f69a45abceb26cbb867c1",
       "source_name": "dotnet-framework-4.8-expert",
       "name": "dotnet-framework-4-8-expert",
       "source_path": "agents/specialists/dotnet-framework-4.8-expert.toml",
@@ -626,6 +667,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "ffa5b0ed762d7bacf82a4be274bc8c9acdc85edc381312ef986a00538ebfaf70",
       "source_name": "electron-pro",
       "name": "electron-pro",
       "source_path": "agents/specialists/electron-pro.toml",
@@ -643,6 +685,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "e3b87c04025ea5b12c3184a22b8285eee7769350ca4519aa8070f5ae1a9e24fa",
       "source_name": "elixir-expert",
       "name": "elixir-expert",
       "source_path": "agents/specialists/elixir-expert.toml",
@@ -660,6 +703,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "786316162deecff42cc3b946619ccda3f5ee9afa3d63dc944931c7b1106d50f3",
       "source_name": "error-coordinator",
       "name": "error-coordinator",
       "source_path": "agents/specialists/error-coordinator.toml",
@@ -674,6 +718,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "d4d9cdca048590fa6a65d51e98fdf3b7918a5c936ecaac28754cdf3c941794c1",
       "source_name": "error-detective",
       "name": "error-detective",
       "source_path": "agents/specialists/error-detective.toml",
@@ -688,6 +733,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "9b6cbbff7fb0dbba2912cf198d992e415223096b3027dc02d97fa7db20635fb7",
       "source_name": "explorer",
       "name": "explorer",
       "source_path": "agents/specialists/explorer.toml",
@@ -705,6 +751,7 @@
       "source_sandbox_mode": "unknown"
     },
     {
+      "content_sha256": "c3b78249186b121cdd331fa2c89b6bce58eb5d3ab78027d6f673a530eab686f4",
       "source_name": "flutter-expert",
       "name": "flutter-expert",
       "source_path": "agents/specialists/flutter-expert.toml",
@@ -722,6 +769,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "4564306fede64be38d9adaaa379422e97bca45b4620a96a2dd30fd823346ddaf",
       "source_name": "frontend-developer",
       "name": "frontend-developer",
       "source_path": "agents/specialists/frontend-developer.toml",
@@ -739,6 +787,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "b0f2cdee9b48ddc9181391f7e81481f884bb6b2471c6647f154f74771e570c20",
       "source_name": "fullstack-developer",
       "name": "fullstack-developer",
       "source_path": "agents/specialists/fullstack-developer.toml",
@@ -756,6 +805,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "c6dacf8a30dc0519e271dcc66aaaaebdb62b3de86af64f0401cf5d7084fc7042",
       "source_name": "golang-pro",
       "name": "golang-pro",
       "source_path": "agents/specialists/golang-pro.toml",
@@ -773,6 +823,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "57a52064397115bc186fd7592fc35c27f0c5ff9f4725a3dc5e4a3dcae04ddbf1",
       "source_name": "graphql-architect",
       "name": "graphql-architect",
       "source_path": "agents/specialists/graphql-architect.toml",
@@ -787,6 +838,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "17b3a99d07a091b7a7ceffdb5c99697fb7f87a31d412d018278f9dc486c758ab",
       "source_name": "incident-responder",
       "name": "incident-responder",
       "source_path": "agents/specialists/incident-responder.toml",
@@ -801,6 +853,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5f8f29b00cb247cd4899b1d42d69a4fd93558d4373bea028888d1e23ce068af3",
       "source_name": "it-ops-orchestrator",
       "name": "it-ops-orchestrator",
       "source_path": "agents/specialists/it-ops-orchestrator.toml",
@@ -815,6 +868,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "1d526f462ca5dbde39e3fd6797158b3e901698a940aaebaaf4d18a0ea872c5f4",
       "source_name": "java-architect",
       "name": "java-architect",
       "source_path": "agents/specialists/java-architect.toml",
@@ -832,6 +886,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "bc030bf5341764d18ae14792932c958015de5b323cbd1575d5ce8431345111e6",
       "source_name": "javascript-pro",
       "name": "javascript-pro",
       "source_path": "agents/specialists/javascript-pro.toml",
@@ -849,6 +904,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "37e469876d2b9e4f24bc8a07ebdd6510534aa93e6323bfb8f3d37ddec608362c",
       "source_name": "knowledge-synthesizer",
       "name": "knowledge-synthesizer",
       "source_path": "agents/specialists/knowledge-synthesizer.toml",
@@ -863,6 +919,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "d7dca5ae694181a8a598ef3972ed46d1dc00ab735b3c847f4bad22481ba8160a",
       "source_name": "kotlin-specialist",
       "name": "kotlin-specialist",
       "source_path": "agents/specialists/kotlin-specialist.toml",
@@ -880,6 +937,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "8b648a94b95638abc73af04d1641f41fd0054cbe2f9cf6dfb11365a871716d45",
       "source_name": "kubernetes-specialist",
       "name": "kubernetes-specialist",
       "source_path": "agents/specialists/kubernetes-specialist.toml",
@@ -894,6 +952,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "e5e6572a474e19b7c8ff5ccca73f66ecc1c037131bc9ca468934f6440c2862e3",
       "source_name": "laravel-specialist",
       "name": "laravel-specialist",
       "source_path": "agents/specialists/laravel-specialist.toml",
@@ -911,6 +970,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "c26396f0a35ec992ec784fea17e7a4de8a2ddb596c39767bf2e838fd4f1ec29a",
       "source_name": "legal-advisor",
       "name": "legal-advisor",
       "source_path": "agents/specialists/legal-advisor.toml",
@@ -925,6 +985,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "27dbe43ac7e1b4dc782eb45acc8f1f3b94bd051e81cede4ca380a6f202e47dcc",
       "source_name": "llm-architect",
       "name": "llm-architect",
       "source_path": "agents/specialists/llm-architect.toml",
@@ -939,6 +1000,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "bf0acdb1ffdab3407f7d613df708d1983b32c086e8962e608fd90958ad3354b9",
       "source_name": "m365-admin",
       "name": "m365-admin",
       "source_path": "agents/specialists/m365-admin.toml",
@@ -953,6 +1015,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "81531c5a71efb63de2cf6c9b1f1a3a961acada6a23b75b198a9dd45b703fd125",
       "source_name": "machine-learning-engineer",
       "name": "machine-learning-engineer",
       "source_path": "agents/specialists/machine-learning-engineer.toml",
@@ -970,6 +1033,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "8f78d709d27dbd493f465a8e1bf28d480ed3d49932d88167d4aa64d0ea4e4d76",
       "source_name": "market-researcher",
       "name": "market-researcher",
       "source_path": "agents/specialists/market-researcher.toml",
@@ -984,6 +1048,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5b8ccd0c90573202205ec05bab3eeaafd3145af78c3ffa64275ed2feedfbec16",
       "source_name": "microservices-architect",
       "name": "microservices-architect",
       "source_path": "agents/specialists/microservices-architect.toml",
@@ -998,6 +1063,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "c43fcdb11864ee4c5757aedd05427a0ece4d2a6bd21c8809b8af8843815910dd",
       "source_name": "ml-engineer",
       "name": "ml-engineer",
       "source_path": "agents/specialists/ml-engineer.toml",
@@ -1015,6 +1081,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "66b51ae97ac594fbbf6159b5d2208dfe71c16d3c1b624371b4c4099fcf06b02f",
       "source_name": "mlops-engineer",
       "name": "mlops-engineer",
       "source_path": "agents/specialists/mlops-engineer.toml",
@@ -1032,6 +1099,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "fb9d1dc40f43ee93a57d3a936ba76fa43e3066b34ed9f070f1bf42148ca2a7e0",
       "source_name": "mobile-app-developer",
       "name": "mobile-app-developer",
       "source_path": "agents/specialists/mobile-app-developer.toml",
@@ -1049,6 +1117,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "9ae9d38a5213762df6a8b426f70ee9ea3c0802bd912e336ed8e599c09c6f4aa9",
       "source_name": "mobile-developer",
       "name": "mobile-developer",
       "source_path": "agents/specialists/mobile-developer.toml",
@@ -1066,6 +1135,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "a980560e6f9834d41b9d73dfcb373c7a094ca77160134baf50f9cfe095f0f186",
       "source_name": "multi-agent-coordinator",
       "name": "multi-agent-coordinator",
       "source_path": "agents/specialists/multi-agent-coordinator.toml",
@@ -1080,6 +1150,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "3975009b059baf3ee2a5233589632e935123dc1693d597e2768b7037ecaed651",
       "source_name": "network-engineer",
       "name": "network-engineer",
       "source_path": "agents/specialists/network-engineer.toml",
@@ -1094,6 +1165,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "2cc274807a5700e748bd8b5864214f27e5c507975889a17e7a680c52ac3979e4",
       "source_name": "nextjs-developer",
       "name": "nextjs-developer",
       "source_path": "agents/specialists/nextjs-developer.toml",
@@ -1111,6 +1183,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "90f266eb2293c27285921f190bdafe051cba7c3268ff15ede271e5ef5eeee6e5",
       "source_name": "nlp-engineer",
       "name": "nlp-engineer",
       "source_path": "agents/specialists/nlp-engineer.toml",
@@ -1128,6 +1201,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "eb1f2681f37ca9612c12e323230dda6307ae3c3138c8bcd4a92a395508259532",
       "source_name": "payment-integration",
       "name": "payment-integration",
       "source_path": "agents/specialists/payment-integration.toml",
@@ -1145,6 +1219,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "28ec38ceb41d91ef59fc6c2f54b046c95ccf2e1045f660b9f9d43aa440c08007",
       "source_name": "penetration-tester",
       "name": "penetration-tester",
       "source_path": "agents/specialists/penetration-tester.toml",
@@ -1159,6 +1234,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "284745c95f550197d5ff22ad68defec38410ee523a0dc48bdc59a148a1395e5c",
       "source_name": "performance-engineer",
       "name": "performance-engineer",
       "source_path": "agents/specialists/performance-engineer.toml",
@@ -1173,6 +1249,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "8105b3402360cf96c6fe492cc4c1febc784249defe156181705e6743a9dc4af1",
       "source_name": "performance-monitor",
       "name": "performance-monitor",
       "source_path": "agents/specialists/performance-monitor.toml",
@@ -1187,6 +1264,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "43741b50cc71dd56304ffb47d2ce3783cca57a6e6b62460c87049add7770f76b",
       "source_name": "php-pro",
       "name": "php-pro",
       "source_path": "agents/specialists/php-pro.toml",
@@ -1204,6 +1282,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "c5682eb97182775cbd1efbba2051d01916b68cd19f71978d0bd65e4ca121858f",
       "source_name": "platform-engineer",
       "name": "platform-engineer",
       "source_path": "agents/specialists/platform-engineer.toml",
@@ -1218,6 +1297,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "419f2a95d265af238bfa209fec25c47a0a090e617a57276d7c6a8365b51199e2",
       "source_name": "postgres-pro",
       "name": "postgres-pro",
       "source_path": "agents/specialists/postgres-pro.toml",
@@ -1232,6 +1312,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "b98f52cbb4d70b64b6ab206fc25f7b48893e435b8d06a1f117eee0b8df4bece2",
       "source_name": "powershell-5.1-expert",
       "name": "powershell-5-1-expert",
       "source_path": "agents/specialists/powershell-5.1-expert.toml",
@@ -1249,6 +1330,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "0cad55e9805f5a9b99981a7dc2e6a42c9fde1e7ee057e01f5693fea0132b02a4",
       "source_name": "powershell-7-expert",
       "name": "powershell-7-expert",
       "source_path": "agents/specialists/powershell-7-expert.toml",
@@ -1266,6 +1348,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "d50216dd8fa9753bc52d754abcdd9728f57fbdbc1ef3fc5ff05f50c2a9c35bd6",
       "source_name": "powershell-security-hardening",
       "name": "powershell-security-hardening",
       "source_path": "agents/specialists/powershell-security-hardening.toml",
@@ -1280,6 +1363,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "22e148fc375c130f2017cc3130160699802ac0a678167fcda0afe3195a80dc38",
       "source_name": "product-manager",
       "name": "product-manager",
       "source_path": "agents/specialists/product-manager.toml",
@@ -1294,6 +1378,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5503da29f71196a00bd99804f1423bfe2f6440822205145bf4d52bd0f36fd7d7",
       "source_name": "project-manager",
       "name": "project-manager",
       "source_path": "agents/specialists/project-manager.toml",
@@ -1308,6 +1393,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "cf4b7401fc402943e64cf77225cfcd80d83c6a04a90a2943fe3b3c4a995fee75",
       "source_name": "prompt-engineer",
       "name": "prompt-engineer",
       "source_path": "agents/specialists/prompt-engineer.toml",
@@ -1322,6 +1408,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "1a00e942245ced127c647b71695b5908d22b5cc1df984ab9bbd8527148fdceda",
       "source_name": "python-pro",
       "name": "python-pro",
       "source_path": "agents/specialists/python-pro.toml",
@@ -1339,6 +1426,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "209a2bcf7e4a51d3374b75852a0f04fa891000d24ef216f8629e1411322b9ac4",
       "source_name": "qa-expert",
       "name": "qa-expert",
       "source_path": "agents/specialists/qa-expert.toml",
@@ -1353,6 +1441,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "d04a68c30b8da29bbb52af9de11257784157c7ffda37e0058bb1aecdb43cce79",
       "source_name": "quant-analyst",
       "name": "quant-analyst",
       "source_path": "agents/specialists/quant-analyst.toml",
@@ -1367,6 +1456,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "b3f85480b0478e3ac3e833fc5c308d70d5347a1338a2dedba5c36ee45f7c0b71",
       "source_name": "rails-expert",
       "name": "rails-expert",
       "source_path": "agents/specialists/rails-expert.toml",
@@ -1384,6 +1474,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "aee2f0153c29e4b915dd1def1e4bdb4182d40a94325c1fc0ceb6b205d26def1b",
       "source_name": "react-specialist",
       "name": "react-specialist",
       "source_path": "agents/specialists/react-specialist.toml",
@@ -1401,6 +1492,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "05bd6b97aea42a2d7f3522f5c48a8f48cc6e8a2cc126d0344b24fb0b2fd4b5b5",
       "source_name": "research-analyst",
       "name": "research-analyst",
       "source_path": "agents/specialists/research-analyst.toml",
@@ -1415,6 +1507,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "61c282ee23b5f43efd6cfa9a27cad43ff10068797c35907889a9e2f894bab3d5",
       "source_name": "resume-refiner",
       "name": "resume-refiner",
       "source_path": "agents/specialists/resume-refiner.toml",
@@ -1429,6 +1522,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "e2a7c33460f19ff90a07fe01e08d89628d507778577bcc84d52aeb8ab7760c4e",
       "source_name": "reviewer",
       "name": "reviewer",
       "source_path": "agents/specialists/reviewer.toml",
@@ -1443,6 +1537,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "80f6d8390859c8fcb3cb7fa2870e5315a2a02fc5a6cc3750ef9c560f742e6195",
       "source_name": "rust-engineer",
       "name": "rust-engineer",
       "source_path": "agents/specialists/rust-engineer.toml",
@@ -1460,6 +1555,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "12ee00f524b55a7bd60a041e9a9996ccc41f201803776efa09af84f6d1d6670b",
       "source_name": "sales-engineer",
       "name": "sales-engineer",
       "source_path": "agents/specialists/sales-engineer.toml",
@@ -1474,6 +1570,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "123aa5fc5faac3d6cf4e5b0f55c4bd073540eef4640f5336b16a06e1620e5145",
       "source_name": "scientific-literature-researcher",
       "name": "scientific-literature-researcher",
       "source_path": "agents/specialists/scientific-literature-researcher.toml",
@@ -1488,6 +1585,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "720c5c1accdddb01e86984a80a650c768d4d55f60cef370e93fe86daa2eeb54c",
       "source_name": "scrum-master",
       "name": "scrum-master",
       "source_path": "agents/specialists/scrum-master.toml",
@@ -1502,6 +1600,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "6838e1642b975c149066ae527642a59167c80d857dad52fda7fef6628b50d30a",
       "source_name": "search-specialist",
       "name": "search-specialist",
       "source_path": "agents/specialists/search-specialist.toml",
@@ -1510,12 +1609,15 @@
       "tools": [
         "Read",
         "Grep",
-        "Glob"
+        "Glob",
+        "WebSearch",
+        "WebFetch"
       ],
       "permissionMode": "default",
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "d59ee6fc586bfe9676982f2974ac4fa857789357fb115d29d5906a8524d54584",
       "source_name": "security-auditor",
       "name": "security-auditor",
       "source_path": "agents/specialists/security-auditor.toml",
@@ -1530,6 +1632,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "5866c6c7c4be3de0c548f1b68d1e22c4f409f5b6b67d961c7e01be750ff51166",
       "source_name": "security-engineer",
       "name": "security-engineer",
       "source_path": "agents/specialists/security-engineer.toml",
@@ -1544,6 +1647,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "a2774ef241d53355c2443b4597f39f0e77202d782722a480c9c96ebc67dfd3c7",
       "source_name": "seo-specialist",
       "name": "seo-specialist",
       "source_path": "agents/specialists/seo-specialist.toml",
@@ -1558,6 +1662,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "545f83fc311390cf9882a5b453091848daecc6394f6b1475e35b711617a06a88",
       "source_name": "spring-boot-engineer",
       "name": "spring-boot-engineer",
       "source_path": "agents/specialists/spring-boot-engineer.toml",
@@ -1575,6 +1680,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "d6088c1353a2870e51ce6384dd599702925cb244ebb43c1b64dbeba887463b65",
       "source_name": "sql-pro",
       "name": "sql-pro",
       "source_path": "agents/specialists/sql-pro.toml",
@@ -1589,6 +1695,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "a0671b84edded5e2b0eedf3bec12eb23bceffc930b1235b9a75fdd5465fbe632",
       "source_name": "sre-engineer",
       "name": "sre-engineer",
       "source_path": "agents/specialists/sre-engineer.toml",
@@ -1603,6 +1710,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "82f8af7017015ad8420fe0114a05eb2f370d6681b786a72704a1c6bfc6b66e04",
       "source_name": "swift-expert",
       "name": "swift-expert",
       "source_path": "agents/specialists/swift-expert.toml",
@@ -1620,6 +1728,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "4893cd781411cf04485cd4147b79f177d47ef34aa9d77e316ca20443a3e5ff8f",
       "source_name": "task-distributor",
       "name": "task-distributor",
       "source_path": "agents/specialists/task-distributor.toml",
@@ -1634,6 +1743,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "46d0935eb5026851de1c54177e4d6ae4c0ba7ccaed8cd72743c4917511c769c3",
       "source_name": "technical-writer",
       "name": "technical-writer",
       "source_path": "agents/specialists/technical-writer.toml",
@@ -1651,6 +1761,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "a9266401998229a7e1838a69b92b2d1617b15cecddfb5c2cdf1bfb6ec5b09176",
       "source_name": "terraform-engineer",
       "name": "terraform-engineer",
       "source_path": "agents/specialists/terraform-engineer.toml",
@@ -1665,6 +1776,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "e1f2806a134647f73feaefba8538e9271dcedfece5be12e2e82b72d5f0c150bc",
       "source_name": "terragrunt-expert",
       "name": "terragrunt-expert",
       "source_path": "agents/specialists/terragrunt-expert.toml",
@@ -1679,6 +1791,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "0dd485fde5671cca1d63cb67cf5e305dfa475b61c8bed7c38faa1868a64cdaaa",
       "source_name": "test-automator",
       "name": "test-automator",
       "source_path": "agents/specialists/test-automator.toml",
@@ -1696,6 +1809,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "69e464b970b7ca31c22ac2f9f866747192fef454be37b5ca90afe7cfbd805e58",
       "source_name": "trend-analyst",
       "name": "trend-analyst",
       "source_path": "agents/specialists/trend-analyst.toml",
@@ -1710,6 +1824,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "f13f246d5d8a9dfcba2521ef78e6ec079beab440c9f362b6f9c0783cd6125f9d",
       "source_name": "typescript-pro",
       "name": "typescript-pro",
       "source_path": "agents/specialists/typescript-pro.toml",
@@ -1727,6 +1842,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "fba8b8d6d12c5a69ebe5d91adc3219ba6238fd8171c7aebc65252211f10f87bd",
       "source_name": "ui-designer",
       "name": "ui-designer",
       "source_path": "agents/specialists/ui-designer.toml",
@@ -1741,6 +1857,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "ec986b11112f70c5f3810dba32a4002aa97e6d81dd486561aa3f0e12188e3051",
       "source_name": "ui-fixer",
       "name": "ui-fixer",
       "source_path": "agents/specialists/ui-fixer.toml",
@@ -1758,6 +1875,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "8262a2a3d413fce6ebc3403ec36429adf3e7a455d47d12c7af13e27d1a259a47",
       "source_name": "ux-researcher",
       "name": "ux-researcher",
       "source_path": "agents/specialists/ux-researcher.toml",
@@ -1772,6 +1890,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "48afc222fd342d93d9d0205def0b3ec261f4c8c6bfd3803b2e5e0a7dfcbe32b9",
       "source_name": "vue-expert",
       "name": "vue-expert",
       "source_path": "agents/specialists/vue-expert.toml",
@@ -1789,6 +1908,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "c0f114edb5257120e86b56f19840989aa6c1ff5910ae1f4332e43b315b26dca9",
       "source_name": "websocket-engineer",
       "name": "websocket-engineer",
       "source_path": "agents/specialists/websocket-engineer.toml",
@@ -1806,6 +1926,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "c6a4d72e724a868e78338ce947e614535f164c07c122b092d74d7257d48673d3",
       "source_name": "windows-infra-admin",
       "name": "windows-infra-admin",
       "source_path": "agents/specialists/windows-infra-admin.toml",
@@ -1820,6 +1941,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
+      "content_sha256": "ccad0be7af4b2364a6ffdbd201784d617dbb8b9acd58437fac1c8a9dec873bcd",
       "source_name": "wordpress-master",
       "name": "wordpress-master",
       "source_path": "agents/specialists/wordpress-master.toml",
@@ -1837,6 +1959,7 @@
       "source_sandbox_mode": "write"
     },
     {
+      "content_sha256": "4586679e620738dde0e9731dfff6fa65b72ebab0053de6c0eb223efa66e86e71",
       "source_name": "worker",
       "name": "worker",
       "source_path": "agents/specialists/worker.toml",
@@ -1854,6 +1977,7 @@
       "source_sandbox_mode": "unknown"
     },
     {
+      "content_sha256": "61c813119f925012dda8d373ab2972419ad4c13df5873f01e35638580ed1b0a9",
       "source_name": "workflow-orchestrator",
       "name": "workflow-orchestrator",
       "source_path": "agents/specialists/workflow-orchestrator.toml",

@@ -2,6 +2,7 @@
 import json
 import sys
 import unittest
+import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -50,6 +51,116 @@ class ClaudeExportTests(unittest.TestCase):
             sorted(entry["source_path"] for entry in catalog["agents"]),
             [entry["source_path"] for entry in catalog["agents"]],
         )
+
+    def test_search_has_web_tools_without_write_or_shell_access(self):
+        fields = parse_frontmatter(self.outputs()["claude/agents/specialists/search-specialist.md"])
+        self.assertEqual(["Read", "Grep", "Glob", "WebSearch", "WebFetch"], fields["tools"])
+
+    def test_browser_reports_unconfigured_mcp_without_guessing_tools(self):
+        text = self.outputs()["claude/agents/specialists/browser-debugger.md"]
+        fields = parse_frontmatter(text)
+        self.assertIn("BLOCKED", text)
+        self.assertIn("exact browser MCP tool names", text)
+        self.assertNotIn("mcpServers", fields)
+        self.assertFalse(any(tool.startswith("mcp__") for tool in fields["tools"]))
+
+    def test_export_prunes_removed_and_renamed_owned_profiles(self):
+        before = self.outputs()
+        def rename(files):
+            catalog = json.loads(files["agents/catalog.json"])
+            catalog["agents"] = [e for e in catalog["agents"] if e["name"] != "search-specialist"]
+            entry = next(e for e in catalog["agents"] if e["name"] == "browser-debugger")
+            entry.update(name="browser-investigator", path="agents/specialists/browser-investigator.toml")
+            files[entry["path"]] = files.pop("agents/specialists/browser-debugger.toml").replace('name = "browser-debugger"', 'name = "browser-investigator"')
+            files["agents/catalog.json"] = json.dumps(catalog)
+        after = self.outputs(rename)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_outputs(root, before)
+            custom = root / "claude/agents/custom.md"
+            custom.write_text("User-owned profile", encoding="utf-8")
+            write_outputs(root, after)
+            self.assertFalse((root / "claude/agents/specialists/search-specialist.md").exists())
+            self.assertFalse((root / "claude/agents/specialists/browser-debugger.md").exists())
+            self.assertTrue((root / "claude/agents/specialists/browser-investigator.md").exists())
+            self.assertEqual("User-owned profile", custom.read_text(encoding="utf-8"))
+
+    def test_user_file_at_new_output_path_is_preserved(self):
+        outputs = self.outputs()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / "claude/agents/delivery-worker.md"
+            target.parent.mkdir(parents=True)
+            target.write_text("User-owned profile", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "ownership"):
+                write_outputs(root, outputs)
+            self.assertEqual("User-owned profile", target.read_text(encoding="utf-8"))
+            self.assertFalse((root / "claude/catalog.json").exists())
+
+    def test_owned_profile_accepts_git_crlf_checkout(self):
+        outputs = self.outputs()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_outputs(root, outputs)
+            target = root / "claude/agents/delivery-worker.md"
+            target.write_bytes(target.read_bytes().replace(b"\n", b"\r\n"))
+            write_outputs(root, outputs)
+            self.assertEqual([], check_outputs(root, outputs))
+
+    def test_modified_current_profile_is_preserved(self):
+        outputs = self.outputs()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_outputs(root, outputs)
+            target = root / "claude/agents/specialists/search-specialist.md"
+            target.write_text("User edits", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "modified"):
+                write_outputs(root, outputs)
+            self.assertEqual("User edits", target.read_text(encoding="utf-8"))
+
+    def test_obsolete_legacy_profile_without_hash_is_preserved(self):
+        outputs = self.outputs()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_outputs(root, outputs)
+            catalog = json.loads(outputs["claude/catalog.json"])
+            for entry in catalog["agents"]:
+                entry.pop("content_sha256")
+            (root / "claude/catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+            relative = "claude/agents/specialists/search-specialist.md"
+            after = dict(outputs)
+            after.pop(relative)
+            with self.assertRaisesRegex(ValueError, "ownership"):
+                write_outputs(root, after)
+            self.assertTrue((root / relative).is_file())
+
+    def test_obsolete_catalog_path_cannot_escape_export_root(self):
+        outputs = self.outputs()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_outputs(root, outputs)
+            path = root / "claude/catalog.json"
+            catalog = json.loads(path.read_text(encoding="utf-8"))
+            catalog["agents"][0]["path"] = "../outside.md"
+            path.write_text(json.dumps(catalog), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "invalid generated path"):
+                write_outputs(root, outputs)
+            self.assertEqual("../outside.md", json.loads(path.read_text(encoding="utf-8"))["agents"][0]["path"])
+
+    def test_modified_obsolete_profile_blocks_export_before_writes(self):
+        before = self.outputs()
+        after = dict(before)
+        relative = "claude/agents/specialists/search-specialist.md"
+        after.pop(relative)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_outputs(root, before)
+            target = root / relative
+            target.write_text("User edits", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "modified|ownership"):
+                write_outputs(root, after)
+            self.assertEqual("User edits", target.read_text(encoding="utf-8"))
+            self.assertEqual(before["claude/catalog.json"], (root / "claude/catalog.json").read_text(encoding="utf-8"))
 
     def test_source_metadata_drift_changes_generated_output(self):
         before = self.outputs()["claude/agents/specialists/backend-developer.md"]
@@ -164,6 +275,22 @@ class ClaudeExportTests(unittest.TestCase):
         ):
             with self.assertRaisesRegex(ValueError, "symlink"):
                 read_sources(ROOT)
+
+    def test_pruning_rejects_junction_before_any_mutation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            outputs = self.outputs()
+            write_outputs(root, outputs)
+            with patch.object(
+                Path, "is_junction", lambda path: path.name == "specialists", create=True,
+            ), patch.object(Path, "write_text", autospec=True) as write_text, patch.object(
+                Path, "unlink", autospec=True
+            ) as unlink:
+                with self.assertRaisesRegex(ValueError, "junction"):
+                    write_outputs(root, {"claude/catalog.json": "{}\n"})
+            write_text.assert_not_called()
+            unlink.assert_not_called()
+            self.assertEqual([], check_outputs(root, outputs))
 
     def test_write_outputs_rejects_symlink_escape_before_writing(self):
         with patch.object(
