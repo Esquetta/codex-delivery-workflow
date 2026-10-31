@@ -18,7 +18,7 @@ settings, effort settings, permission claims, or follow-up APIs between hosts.
 | Host | Native roles and dispatch | Model and permission contract |
 | --- | --- | --- |
 | Codex | Use native Codex delegation with `delivery_worker` or `delivery_reviewer`; a wider catalog may provide an installed specialist or `reviewer`. | The source primary preference is Astra/medium only for Codex. The included roles remain pinned to `gpt-5.6-terra` with `high` reasoning effort. Preserve the user's selected primary model, verify runtime role metadata, and do not attach overrides to a pinned role. |
-| Claude Code | Use a native `Agent` with `subagent_type` `delivery-worker` or `delivery-reviewer`; a generated `claude/catalog.json` may provide normalized source names, with dots and underscores changed to hyphens. | Keep the user's selected Anthropic primary model; Sonnet is the default suggestion and Opus is optional for complex work. Generated roles use aliases available to the account, not fixed model IDs. Use Sonnet for most roles and Opus for `reviewer`, `code-reviewer`, and `delivery-reviewer`; do not copy Codex `high` effort into Claude. Generated roles pin Claude effort (`medium`, `high` for reviewers) so they do not inherit an Ultracode `xhigh` session; on built-in agents and workflow `agent()` calls, set `effort` explicitly (`low` mechanical, `medium` implementation, `high` review) and use `xhigh`/`max` only when the user asks. |
+| Claude Code | Use a native `Agent` with `subagent_type` `delivery-worker` or `delivery-reviewer`; a generated `claude/catalog.json` may provide normalized source names, with dots and underscores changed to hyphens. | Keep the user's selected Anthropic primary model; Sonnet is the default suggestion and Opus is optional for complex work. Generated roles use aliases available to the account, not fixed model IDs. Use Sonnet for most roles and Opus for `reviewer`, `code-reviewer`, and `delivery-reviewer`; do not copy Codex `high` effort into Claude. Generated roles pin Claude effort (`medium`, `high` for reviewers) so they do not inherit an Ultracode `xhigh` session; on built-in agents and workflow `agent()` calls, set `model` and `effort` explicitly (`low` mechanical, `medium` implementation, `high` review; `haiku` only for single-shot lookups) and use `xhigh`/`max` only when the user asks. |
 
 On Claude Code, do not copy Codex `spawn_agent` calls or their `fork_turns`,
 `agent_type`, and `reasoning_effort` arguments. Configure `model` through the native
@@ -40,11 +40,16 @@ implies a one-to-one intelligence, cost, or pricing comparison across model fami
   primary does useful non-duplicate work and verifies the result.
 - `audit`: the primary implements and verifies, then a fresh reviewer inspects a
   material-risk change, an explicitly requested review, or a repository review gate.
+  A change to a verification mechanism that can pass silently (CI or merge gates,
+  hooks, build or deploy steps, test harnesses or mocks) is material risk at any size.
 - `full`: a specialist implements a bounded area, the primary verifies it, then a
   fresh reviewer inspects the fixed result for broad or high-risk work.
 
 Do not delegate merely to restate information already known to the primary. One helper
-is usually enough. Use parallel workers only when file ownership and interfaces are
+is usually enough. Cheapen mechanics, never judgment: a cheaper role may take
+deterministic or easily checked work, while blocked-task diagnosis, severity
+calibration, rejecting a finding, and scope decisions stay with the primary or the
+reviewer. Use parallel workers only when file ownership and interfaces are
 independent; preserve concurrent edits and respect the runtime concurrency limit,
 including the primary and descendants. Do not encode a permanent slot count.
 
@@ -74,7 +79,9 @@ never invent a commit, push, merge, or deployment authorization.
 
 ## Worker packet
 
-Every delegated prompt supplies a complete bounded packet:
+Every delegated prompt supplies a complete bounded packet. Point to specs, plans,
+notes, and earlier commits by path instead of pasting them; inline only what no file
+holds yet, such as decisions, resolved ambiguities, and interfaces from earlier tasks.
 
 ```md
 ## OBJECTIVE
@@ -93,10 +100,12 @@ Every delegated prompt supplies a complete bounded packet:
 [Commands or inspection evidence, meaningful success and failure paths, expected results.]
 
 ## RETURN
-Status: DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED
+Write the full report to [a named report file outside the repository]:
 - Actual changes and behavior delivered
 - Exact checks and observed results
 - Decisions, missing context, residual risks, and incomplete work
+Reply with only the status (DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED), the
+report path, a one-line check summary, and concerns.
 ```
 
 The owner changes only assigned files, self-reviews, and reports actual evidence.
@@ -112,8 +121,10 @@ For `audit` and `full`, after primary verification dispatch a fresh read-only re
 On Codex use a fresh reviewer with `fork_turns: none` and no model or reasoning
 override. On Claude Code use a fresh native subagent rather than a parent fork. Give it the approved
 requirements, exact changed scope, interfaces, constraints, verification evidence,
-and a fixed base/head range or exact artifacts and hashes. The reviewer never fixes its
-own findings. When installed, `requesting-code-review` supplies the review template.
+and a fixed base/head range or exact artifacts and hashes. Hand the diff over as a file
+written outside the repository (commit list, stat, and `git diff -U10` for the range)
+so it does not enter the primary's context. The reviewer never fixes its own findings.
+When installed, `requesting-code-review` supplies the review template.
 
 One reviewer performs two separate evidence passes on the same fixed point:
 
@@ -122,11 +133,24 @@ One reviewer performs two separate evidence passes on the same fixed point:
 2. **Spec:** required behavior, contradictions, unauthorized additions, and evidence
    for acceptance claims.
 
+The reviewer starts from the diff and reads other code only for a concrete risk it can
+name. Requirements that cannot be verified from the diff are listed for the primary,
+which resolves each one; a confirmed gap is a failed Spec finding.
+
 The reviewer returns `ship`, `fix-first`, or `rethink`. Green tests do not prove Spec
-fidelity, and a design preference is not a requirement. If a correction changes the
-reviewed artifact, the owning implementer or primary fixes it, the primary re-verifies,
-and a fresh reviewer checks the revised fixed point. Fresh context is independent
-review context, not evidence of different model-family independence.
+fidelity, and a design preference is not a requirement. Minor findings stay advisory
+and never enter the fix loop. Fix loop, at most two rounds:
+
+- The original owner fixes: send the findings verbatim to the same implementer, or the
+  primary fixes its own change, then re-runs the covering checks.
+- A fresh reviewer receives the previous findings and the fix-only diff, marks each
+  finding addressed or not addressed, and flags new breakage in the fix diff only.
+- If findings remain after round two, stop the loop. The primary adjudicates each one
+  as wrong or real but not load-bearing; a real Critical or Important finding goes to
+  the user.
+
+Fresh context is independent review context, not evidence of different model-family
+independence.
 
 A review verdict never authorizes a commit, push, merge, release, deployment, or other
 external write. Report permission or sandbox enforcement only when runtime evidence

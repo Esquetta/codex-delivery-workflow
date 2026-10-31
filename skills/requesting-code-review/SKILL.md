@@ -56,7 +56,10 @@ verdict. The reviewer returns `ship`, `fix-first`, or `rethink` with evidence.
 Fix Critical findings before proceeding. Fix Important findings before merge unless the
 requirement owner accepts the risk. Minor findings are advisory. The reviewer never
 implements fixes. After a correction, the owner re-verifies and a fresh reviewer checks
-the revised fixed point.
+only the fix: it receives the previous findings and the fix-only diff, marks each
+finding addressed or not addressed, and flags new breakage in the fix diff. Stop after
+two fix rounds; the primary adjudicates what remains and takes a real Critical or
+Important finding to the requirement owner.
 
 Review never authorizes commit, merge, push, comments, labels, releases, deployments,
 or other external writes. Completion requires an explicit boundary or limitation,
