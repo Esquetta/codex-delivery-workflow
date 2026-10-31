@@ -2,6 +2,7 @@
 name: "task-distributor"
 description: "Use when a broad task needs to be broken into concrete sub-tasks with clear boundaries for multiple agents or contributors."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

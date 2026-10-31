@@ -2,6 +2,7 @@
 name: "terragrunt-expert"
 description: "Use when a task needs Terragrunt-specific help for module orchestration, environment layering, dependency wiring, or DRY infrastructure structure."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "knowledge-synthesizer"
 description: "Use when multiple agents have returned findings and the parent agent needs a distilled, non-redundant synthesis."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

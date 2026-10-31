@@ -2,6 +2,7 @@
 name: "vue-expert"
 description: "Use when a task needs Vue expertise for component behavior, Composition API patterns, routing, or state and rendering issues."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

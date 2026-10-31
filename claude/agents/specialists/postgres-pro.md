@@ -2,6 +2,7 @@
 name: "postgres-pro"
 description: "Use when a task needs PostgreSQL-specific expertise for schema design, performance behavior, locking, or operational database features."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

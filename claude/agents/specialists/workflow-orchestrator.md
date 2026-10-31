@@ -2,6 +2,7 @@
 name: "workflow-orchestrator"
 description: "Use when the parent agent needs an explicit Claude Code subagent workflow for a complex task with multiple stages."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -10,14 +10,16 @@ The six shared skills branch on the actual host. Their existing `codex-delivery-
 
 ## Models and permissions
 
-| Purpose | Claude model | Tools |
-| --- | --- | --- |
-| Task execution with source write access or unspecified sandbox | `sonnet` | Read, Grep, Glob, Edit, Write, Bash |
-| `search-specialist` | `sonnet` | Read, Grep, Glob, WebSearch, WebFetch |
-| Other source read-only specialist | `sonnet` | Read, Grep, Glob |
-| `delivery-reviewer`, `reviewer`, `code-reviewer` | `opus` | Read, Grep, Glob |
+| Purpose | Claude model | Effort | Tools |
+| --- | --- | --- | --- |
+| Task execution with source write access or unspecified sandbox | `sonnet` | `medium` | Read, Grep, Glob, Edit, Write, Bash |
+| `search-specialist` | `sonnet` | `medium` | Read, Grep, Glob, WebSearch, WebFetch |
+| Other source read-only specialist | `sonnet` | `medium` | Read, Grep, Glob |
+| `delivery-reviewer`, `reviewer`, `code-reviewer` | `opus` | `high` | Read, Grep, Glob |
 
-These are workflow defaults, not performance benchmark results. Keep the user's primary model choice. Aliases resolve differently by provider, installed Claude Code version, and account configuration, and can change over time. Inspect the actual model before accepting a result. This adapter does not copy OpenAI's `high` reasoning setting into Claude; Claude effort follows its native configuration.
+These are workflow defaults, not performance benchmark results. Keep the user's primary model choice. Aliases resolve differently by provider, installed Claude Code version, and account configuration, and can change over time. Inspect the actual model before accepting a result. This adapter does not copy OpenAI's `high` reasoning setting into Claude. It pins a Claude-native `effort` instead: a subagent without one inherits the session effort, and Claude Code's Ultracode mode raises the session to `xhigh`, so every delegated role would otherwise run at `xhigh`.
+
+Built-in agents (`Explore`, `Plan`, `general-purpose`) and workflow `agent()` calls have no generated profile. Set `effort` on those calls: `low` for search and mechanical work, `medium` for bounded implementation, `high` for planning, review, and verify or judge stages. Use `xhigh` or `max` for a subagent only when the user asks. An explicit `effort` on the call overrides the profile value.
 
 Every generated role uses `permissionMode: default`. A tool allowlist is not an operating-system sandbox. Parent permission settings and host policies can affect enforcement. Read-only profiles cannot run shell tests or browse via Bash; the primary supplies the relevant command output or gathered evidence. No MCP servers, hooks, permission bypass, credentials, or nested-agent tool access are bundled.
 

@@ -2,6 +2,7 @@
 name: "rails-expert"
 description: "Use when a task needs Ruby on Rails expertise for models, controllers, jobs, callbacks, or convention-driven application changes."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

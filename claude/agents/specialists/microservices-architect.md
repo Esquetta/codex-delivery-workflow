@@ -2,6 +2,7 @@
 name: "microservices-architect"
 description: "Use when a task needs service-boundary design, inter-service contract review, or distributed-system architecture decisions."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

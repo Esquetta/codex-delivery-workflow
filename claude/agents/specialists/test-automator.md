@@ -2,6 +2,7 @@
 name: "test-automator"
 description: "Use when a task needs implementation of automated tests, test harness improvements, or targeted regression coverage."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

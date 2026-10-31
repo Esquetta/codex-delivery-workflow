@@ -2,6 +2,7 @@
 name: "search-specialist"
 description: "Use when a task needs fast, high-signal searching of the codebase or external sources before deeper analysis begins."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "WebSearch", "WebFetch"]
 permissionMode: "default"
 ---

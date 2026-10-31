@@ -2,6 +2,7 @@
 name: "market-researcher"
 description: "Use when a task needs market landscape, positioning, or demand-side research tied to a technical product or category."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "data-analyst"
 description: "Use when a task needs data interpretation, metric breakdown, trend explanation, or decision support from existing analytics outputs."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "wordpress-master"
 description: "Use when a task needs WordPress-specific implementation or debugging across themes, plugins, content architecture, or operational site behavior."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "flutter-expert"
 description: "Use when a task needs Flutter expertise for widget behavior, state management, rendering issues, or mobile cross-platform implementation."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

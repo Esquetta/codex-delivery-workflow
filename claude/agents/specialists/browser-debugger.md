@@ -2,6 +2,7 @@
 name: "browser-debugger"
 description: "Use when a task needs browser-based reproduction, UI evidence gathering, or client-side debugging through a browser MCP server."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

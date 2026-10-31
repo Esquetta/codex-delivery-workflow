@@ -46,6 +46,7 @@ class ClaudeExportTests(unittest.TestCase):
         catalog = json.loads(first["claude/catalog.json"])
         self.assertEqual("anthropic", catalog["provider"])
         self.assertEqual({"default": "sonnet", "review": "opus"}, catalog["model_policy"])
+        self.assertEqual({"default": "medium", "review": "high"}, catalog["effort_policy"])
         self.assertEqual(122, len(catalog["agents"]))
         self.assertEqual(
             sorted(entry["source_path"] for entry in catalog["agents"]),
@@ -205,11 +206,14 @@ class ClaudeExportTests(unittest.TestCase):
         specialist = parse_frontmatter(outputs["claude/agents/specialists/code-reviewer.md"])
 
         self.assertEqual("opus", reviewer["model"])
+        self.assertEqual("high", reviewer["effort"])
         self.assertEqual(["Read", "Grep", "Glob"], reviewer["tools"])
         self.assertEqual("default", reviewer["permissionMode"])
         self.assertEqual("sonnet", worker["model"])
+        self.assertEqual("medium", worker["effort"])
         self.assertEqual(["Read", "Grep", "Glob", "Edit", "Write", "Bash"], worker["tools"])
         self.assertEqual("opus", specialist["model"])
+        self.assertEqual("high", specialist["effort"])
         self.assertEqual(["Read", "Grep", "Glob"], specialist["tools"])
 
     def test_reviewer_lane_is_read_only_even_when_source_sandbox_allows_writes(self):

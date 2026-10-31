@@ -2,6 +2,7 @@
 name: "seo-specialist"
 description: "Use when a task needs search-focused technical review across crawlability, metadata, rendering, information architecture, or content discoverability."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

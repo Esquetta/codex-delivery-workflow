@@ -2,6 +2,7 @@
 name: "it-ops-orchestrator"
 description: "Use when a task needs coordinated operational planning across infrastructure, incident response, identity, endpoint, and admin workflows."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

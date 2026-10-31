@@ -2,6 +2,7 @@
 name: "explorer"
 description: "Read-heavy subagent for codebase exploration and focused investigation."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

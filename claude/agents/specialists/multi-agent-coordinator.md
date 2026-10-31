@@ -2,6 +2,7 @@
 name: "multi-agent-coordinator"
 description: "Use when a task needs a concrete multi-agent plan with clear role separation, dependencies, and result integration."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "error-coordinator"
 description: "Use when multiple errors or symptoms need to be grouped, prioritized, and assigned to the right debugging or review agents."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

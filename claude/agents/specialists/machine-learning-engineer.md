@@ -2,6 +2,7 @@
 name: "machine-learning-engineer"
 description: "Use when a task needs ML system implementation work across training pipelines, feature flow, model serving, or inference integration."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

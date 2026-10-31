@@ -2,6 +2,7 @@
 name: "ui-fixer"
 description: "Use when a UI issue is already reproduced and the parent agent wants the smallest safe patch."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

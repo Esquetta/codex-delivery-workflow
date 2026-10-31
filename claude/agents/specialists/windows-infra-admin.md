@@ -2,6 +2,7 @@
 name: "windows-infra-admin"
 description: "Use when a task needs Windows infrastructure administration across Active Directory, DNS, DHCP, GPO, or Windows automation."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

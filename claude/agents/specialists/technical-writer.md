@@ -2,6 +2,7 @@
 name: "technical-writer"
 description: "Use when a task needs release notes, migration notes, onboarding material, or developer-facing prose derived from real code changes."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

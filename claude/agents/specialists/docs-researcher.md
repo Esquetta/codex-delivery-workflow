@@ -2,6 +2,7 @@
 name: "docs-researcher"
 description: "Use when a task needs documentation-backed verification of APIs, version-specific behavior, or framework options."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

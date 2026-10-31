@@ -2,6 +2,7 @@
 name: "business-analyst"
 description: "Use when a task needs requirements clarified, scope normalized, or acceptance criteria extracted from messy inputs before engineering work starts."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

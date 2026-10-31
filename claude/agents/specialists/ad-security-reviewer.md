@@ -2,6 +2,7 @@
 name: "ad-security-reviewer"
 description: "Use when a task needs Active Directory security review across identity boundaries, delegation, GPO exposure, or directory hardening."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

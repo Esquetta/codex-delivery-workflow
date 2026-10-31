@@ -2,6 +2,7 @@
 name: "scrum-master"
 description: "Use when a task needs process facilitation, iteration planning, or workflow friction analysis for an engineering team."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

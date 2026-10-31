@@ -2,6 +2,7 @@
 name: "architect-reviewer"
 description: "Use when a task needs architectural review for coupling, system boundaries, long-term maintainability, or design coherence."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

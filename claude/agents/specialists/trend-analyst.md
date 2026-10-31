@@ -2,6 +2,7 @@
 name: "trend-analyst"
 description: "Use when a task needs trend synthesis across technology shifts, adoption patterns, or emerging implementation directions."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

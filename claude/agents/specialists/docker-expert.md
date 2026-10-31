@@ -2,6 +2,7 @@
 name: "docker-expert"
 description: "Use when a task needs Dockerfile review, image optimization, multi-stage build fixes, or container runtime debugging."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

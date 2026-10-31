@@ -2,6 +2,7 @@
 name: "php-pro"
 description: "Use when a task needs PHP expertise for application logic, framework integration, runtime debugging, or server-side code evolution."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

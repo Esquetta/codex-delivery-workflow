@@ -2,6 +2,7 @@
 name: "incident-responder"
 description: "Use when a task needs broad production incident triage, containment planning, or evidence-driven root cause analysis."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

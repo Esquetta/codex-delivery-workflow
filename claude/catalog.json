@@ -5,14 +5,19 @@
     "default": "sonnet",
     "review": "opus"
   },
+  "effort_policy": {
+    "default": "medium",
+    "review": "high"
+  },
   "agents": [
     {
-      "content_sha256": "fa8cb07739a759fe96cd1c85d9071f3c73e962700bd51ffc51446f0b1d1c418e",
+      "content_sha256": "c8ed25300b8fb3af8f4d49ca219235287e90603129b98f0e371d9f689feeb299",
       "source_name": "delivery_reviewer",
       "name": "delivery-reviewer",
       "source_path": "agents/delivery_reviewer.toml",
       "path": "claude/agents/delivery-reviewer.md",
       "model": "opus",
+      "effort": "high",
       "tools": [
         "Read",
         "Grep",
@@ -22,12 +27,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "99c1f58f384e3084569cae373712cb8252062b2731c3b6fa736b4555d8203de0",
+      "content_sha256": "fc34954c2666b617a91770332ee254674b3afc56f2b553cdca8b72ce8fa2f725",
       "source_name": "delivery_worker",
       "name": "delivery-worker",
       "source_path": "agents/delivery_worker.toml",
       "path": "claude/agents/delivery-worker.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -40,12 +46,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "86f46679cdc588c5a797829576e52de7ea8f8e370fe2ba11ac6bfb9631cf8418",
+      "content_sha256": "7bde7386bbfd8b3224d2b8efe00ab9d1fcb6935bfb8007c23b1161bd906b6a40",
       "source_name": "accessibility-tester",
       "name": "accessibility-tester",
       "source_path": "agents/specialists/accessibility-tester.toml",
       "path": "claude/agents/specialists/accessibility-tester.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -55,12 +62,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "4618d634bd251b9eec457d9b5d1bce7ca8ac7c788aa12ee81197198b35b1e5f2",
+      "content_sha256": "87f9c64115e83d69b4c60fdca8a4b36e5d00928c17ed3d908e322de6cf3caf68",
       "source_name": "ad-security-reviewer",
       "name": "ad-security-reviewer",
       "source_path": "agents/specialists/ad-security-reviewer.toml",
       "path": "claude/agents/specialists/ad-security-reviewer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -70,12 +78,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "8198db81e183c01a3d2cdf9590a3cabd130868529be27488e5a38d9e947c7a40",
+      "content_sha256": "b37912bb80e4f5f5b1092ef515b6805c58b5bd71cec3225ea41c8e095af3df9c",
       "source_name": "agent-installer",
       "name": "agent-installer",
       "source_path": "agents/specialists/agent-installer.toml",
       "path": "claude/agents/specialists/agent-installer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -85,12 +94,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "4fbd9f1bf7c3c1805a24a5a41c9b378b0cb5090cc5eec1e199fcf5b78a84ef7f",
+      "content_sha256": "b250a3472a80089fc1585194845838a74eed150d62d1b1b6dd7d480b520f1a69",
       "source_name": "agent-organizer",
       "name": "agent-organizer",
       "source_path": "agents/specialists/agent-organizer.toml",
       "path": "claude/agents/specialists/agent-organizer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -100,12 +110,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "3f9beddea8be81cfc2334d9eb65f75dd358b373a4bf2212ccc9fabd21bb0f8b6",
+      "content_sha256": "2afd7432bd433d53dd2626545bcd3dff4293dad2d96e523e5c719ae020250baf",
       "source_name": "ai-engineer",
       "name": "ai-engineer",
       "source_path": "agents/specialists/ai-engineer.toml",
       "path": "claude/agents/specialists/ai-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -118,12 +129,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "e85fbfaacef481b2bf8a4e9046c1488d3f4bea61a80aeeb3b58e13ee99db7706",
+      "content_sha256": "0ae266401afba15b8d4b37f86e7416e965a6bae6b62704a5a573267139b1ebd2",
       "source_name": "angular-architect",
       "name": "angular-architect",
       "source_path": "agents/specialists/angular-architect.toml",
       "path": "claude/agents/specialists/angular-architect.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -136,12 +148,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "9906e195c69b941f6960cb2fc94ade890b4a0d079eca46a64d56ca8f01852d3c",
+      "content_sha256": "e58c5f2dd6c6d611da41f42e424c7cd2b661568a341f33898c219011c860834f",
       "source_name": "api-designer",
       "name": "api-designer",
       "source_path": "agents/specialists/api-designer.toml",
       "path": "claude/agents/specialists/api-designer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -151,12 +164,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5035a528854319dbc9922f9d3e4dc1ae85681643d6bff16cdebd384eda71f67b",
+      "content_sha256": "1117b80bd3a15b9e077f9cb940a4a2177b3692ce492f35d01e621fbaab675902",
       "source_name": "architect-reviewer",
       "name": "architect-reviewer",
       "source_path": "agents/specialists/architect-reviewer.toml",
       "path": "claude/agents/specialists/architect-reviewer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -166,12 +180,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "46bbb092f84d653f91fa929652f0b6de05af0d694cb5dd4d6af0561f490d398d",
+      "content_sha256": "c9ca8be5956ff7a09aa16bf304aebad80ae2a689bf7a64d835382646e0dc7086",
       "source_name": "azure-infra-engineer",
       "name": "azure-infra-engineer",
       "source_path": "agents/specialists/azure-infra-engineer.toml",
       "path": "claude/agents/specialists/azure-infra-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -181,12 +196,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "96e4a8b418c15f5b9538df0a8a59a5192c069ddbf0d14f1ba440f2e0e2ee6e92",
+      "content_sha256": "8290aecb31ebc13ae8ae8f4f84a16eaab26dba048e9bb8b42609d67321489a46",
       "source_name": "backend-developer",
       "name": "backend-developer",
       "source_path": "agents/specialists/backend-developer.toml",
       "path": "claude/agents/specialists/backend-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -199,12 +215,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "7f0f0f4096e04b2971807adbe6d2a406b41bb0c193883916e8e9787e0f22f195",
+      "content_sha256": "46b2455c3bbeae53ac6267f0c876831312d392a4c7ae4b16b9c377b00dbbeeef",
       "source_name": "browser-debugger",
       "name": "browser-debugger",
       "source_path": "agents/specialists/browser-debugger.toml",
       "path": "claude/agents/specialists/browser-debugger.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -217,12 +234,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "fddf30f8c5c1c36c30aca5792d6bfaeab82bf04dd4801937ca10aebc844b52f7",
+      "content_sha256": "d2fdfa08b9fde199c46d8230da5f0f822865c582efcc1d51f625569f746487e5",
       "source_name": "business-analyst",
       "name": "business-analyst",
       "source_path": "agents/specialists/business-analyst.toml",
       "path": "claude/agents/specialists/business-analyst.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -232,12 +250,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "c072bc78aa9b1649917f2eace0b71d7f714693d4bd92e161419c3193fb9c62b0",
+      "content_sha256": "5f2da55b322d925aa12103f662f3b293b650c410ede665c0b6ae0563f6d92ebe",
       "source_name": "chaos-engineer",
       "name": "chaos-engineer",
       "source_path": "agents/specialists/chaos-engineer.toml",
       "path": "claude/agents/specialists/chaos-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -247,12 +266,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "c7210d0867dba101f71d523ffade8754bf1ad80d78eef5bd2a1315a5b645b407",
+      "content_sha256": "49a4334aaf7678f8b673d04163e7c7aeeba8c726ec98cf2ce7d6364f881778c5",
       "source_name": "cloud-architect",
       "name": "cloud-architect",
       "source_path": "agents/specialists/cloud-architect.toml",
       "path": "claude/agents/specialists/cloud-architect.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -262,12 +282,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "81e381afa328ce96e0e73fb9adad784abd72512d19b0b4b349ef09ca63c7c7da",
+      "content_sha256": "aa86efaab658b2e9bee17b3f9894281f6b9c3c4567987dc6be6b83941da32b8b",
       "source_name": "code-mapper",
       "name": "code-mapper",
       "source_path": "agents/specialists/code-mapper.toml",
       "path": "claude/agents/specialists/code-mapper.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -277,12 +298,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "ebc21839480eed26a2cb8028654d15a82c214b8a2ce7f1d9fd3a0d2817583f7c",
+      "content_sha256": "71679e019bbb0ac3ddf219b570ca90a798ffda07464c6d16b6f09a66e37c2baf",
       "source_name": "code-reviewer",
       "name": "code-reviewer",
       "source_path": "agents/specialists/code-reviewer.toml",
       "path": "claude/agents/specialists/code-reviewer.md",
       "model": "opus",
+      "effort": "high",
       "tools": [
         "Read",
         "Grep",
@@ -292,12 +314,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "03f2a84e25ea59cb3610bec33ce1846961f852c88a4e4b08f2371d58d26ec2ba",
+      "content_sha256": "be767f4c6a628b377c6858906bd9e824598fa55249aebd41a66caac5e4c7b66e",
       "source_name": "competitive-analyst",
       "name": "competitive-analyst",
       "source_path": "agents/specialists/competitive-analyst.toml",
       "path": "claude/agents/specialists/competitive-analyst.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -307,12 +330,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "998f673d1f4d526f686dfe06798b68ac0126f47a991459262368f63c220b8fc2",
+      "content_sha256": "fc6ef0d6fedf444582ff1af52b711dd4c0b2e9aa8275cd03118bf5d828d1fdbd",
       "source_name": "compliance-auditor",
       "name": "compliance-auditor",
       "source_path": "agents/specialists/compliance-auditor.toml",
       "path": "claude/agents/specialists/compliance-auditor.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -322,12 +346,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "306b5749dfe0c7d4affa81a0db7149a8d068e843332c7de792a0056ab77ad614",
+      "content_sha256": "e8759bd6449cca3709e41e8abc2350737807cd6aee57f7bb6a6730294d86b3ed",
       "source_name": "content-marketer",
       "name": "content-marketer",
       "source_path": "agents/specialists/content-marketer.toml",
       "path": "claude/agents/specialists/content-marketer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -337,12 +362,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "b6889f848be342b9b367a752a0ecc3f4beec6289248abf44e585a2681e278e7a",
+      "content_sha256": "37d1359cf7e42ea82e74fe3fc34e083d0e068f2f208cc2a658f366c00c90dc50",
       "source_name": "context-manager",
       "name": "context-manager",
       "source_path": "agents/specialists/context-manager.toml",
       "path": "claude/agents/specialists/context-manager.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -352,12 +378,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "4dd3915c4cc8e622d6872fea589f5f5977c765b66cfd16749169e0a618065f34",
+      "content_sha256": "5a82d2d28d4487311c6ca7425b7e4ec4bb3db412d288dd9b5544bbf252ca9fc2",
       "source_name": "cpp-pro",
       "name": "cpp-pro",
       "source_path": "agents/specialists/cpp-pro.toml",
       "path": "claude/agents/specialists/cpp-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -370,12 +397,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "815f022289af6a36ff453677a43c4203a72cf12945ae118a6b3edfe3cd249586",
+      "content_sha256": "ca2c48b101657715b7ab60524297c299e1c06bcd19fb82713846367dad70720d",
       "source_name": "csharp-developer",
       "name": "csharp-developer",
       "source_path": "agents/specialists/csharp-developer.toml",
       "path": "claude/agents/specialists/csharp-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -388,12 +416,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "622d6d9d18ba883b4996c1a1c5043a0895cc1ec81040907d7ac742145b293c32",
+      "content_sha256": "47cb8c8bfdfe7e3028104f82eb36f0ec57286861bfb40ae7369f3e86c4dc9749",
       "source_name": "customer-success-manager",
       "name": "customer-success-manager",
       "source_path": "agents/specialists/customer-success-manager.toml",
       "path": "claude/agents/specialists/customer-success-manager.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -403,12 +432,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5a872b8329962fab82f5731a80e642471d0b55e63ce1e5ad2363b475d7bc94ca",
+      "content_sha256": "e3b4771a87be9f61b48a334ff80749b16f8f82581fb32708fdb4aa1e542c32c6",
       "source_name": "data-analyst",
       "name": "data-analyst",
       "source_path": "agents/specialists/data-analyst.toml",
       "path": "claude/agents/specialists/data-analyst.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -418,12 +448,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "fadad6a3861d7e8b6e09c0d9fcf97039154e3c80de46310303c35933a8b77d2a",
+      "content_sha256": "c7528620d7f63f5a19aa25411ef467006b48c1316f912e5dda091841e87b6339",
       "source_name": "data-engineer",
       "name": "data-engineer",
       "source_path": "agents/specialists/data-engineer.toml",
       "path": "claude/agents/specialists/data-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -436,12 +467,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "6f0cb0f3262327af9057baf1926e02effc0b5ee06f64557957600f0bb20e85de",
+      "content_sha256": "6a8e1638dd1d800a4b9f8d9cfb3488a336637f6e3a766a68083fb0ee207e565e",
       "source_name": "data-researcher",
       "name": "data-researcher",
       "source_path": "agents/specialists/data-researcher.toml",
       "path": "claude/agents/specialists/data-researcher.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -451,12 +483,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "f445880ef07b4c8dc4a5a9ddbae1282dd6a9c036a38698b636313a773edb6777",
+      "content_sha256": "f2db8d20a5efa2f905f4cca2e2bfe91a74a0d887adcc275edf537a29eb17a406",
       "source_name": "data-scientist",
       "name": "data-scientist",
       "source_path": "agents/specialists/data-scientist.toml",
       "path": "claude/agents/specialists/data-scientist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -466,12 +499,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "7a0b7c37a6a096d686f651f7f150f4edef43ca42331789c3cac8b75cc436f79e",
+      "content_sha256": "03717ee725dbf2112d3d6843ee82a0c017dc2e147a1eef6047e0f0831f9c884d",
       "source_name": "database-administrator",
       "name": "database-administrator",
       "source_path": "agents/specialists/database-administrator.toml",
       "path": "claude/agents/specialists/database-administrator.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -481,12 +515,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "599e989137c67375a3aad39906c29e7073c10d2a96e069695128dcdf4ec171d5",
+      "content_sha256": "9977a2c05a0fa13d9d09675d97a27e5e405690f2863ce4247c7d26eee97d517f",
       "source_name": "database-optimizer",
       "name": "database-optimizer",
       "source_path": "agents/specialists/database-optimizer.toml",
       "path": "claude/agents/specialists/database-optimizer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -496,12 +531,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "482f3eecebc0182c47afc832a014ef90202d3c48aaabaf634e165657c939707a",
+      "content_sha256": "63d014258e3d9051d160d56fd84aeb7965e13c3a96f92e7e79d1bbeca5ef6b1e",
       "source_name": "debugger",
       "name": "debugger",
       "source_path": "agents/specialists/debugger.toml",
       "path": "claude/agents/specialists/debugger.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -511,12 +547,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "76bcac4c2f0ba8dc5564d485fb8601d8ba7d979ef87565d26d5236b94da3a3da",
+      "content_sha256": "b0e778a96500ccb3f15fc2e88671d930d10787f6be5c0da5faf113b112eeec22",
       "source_name": "default",
       "name": "default",
       "source_path": "agents/specialists/default.toml",
       "path": "claude/agents/specialists/default.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -529,12 +566,13 @@
       "source_sandbox_mode": "unknown"
     },
     {
-      "content_sha256": "dd288a9157a95312adf26a8b535421aab1b6c6dbbf7624b20258fbb4084ac8ce",
+      "content_sha256": "d4d87e354ded29de4b7587a4019a656ae72e2802dc7885bf12650494abff571f",
       "source_name": "deployment-engineer",
       "name": "deployment-engineer",
       "source_path": "agents/specialists/deployment-engineer.toml",
       "path": "claude/agents/specialists/deployment-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -547,12 +585,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "1528b0c5997d9b9b04649172ec6710237057832a2070788911a7da8f6a011bf0",
+      "content_sha256": "0a60794936e626cfeb35726b0d38f95874fa7380f185b7bb7ba0e8f1e680f6b8",
       "source_name": "devops-engineer",
       "name": "devops-engineer",
       "source_path": "agents/specialists/devops-engineer.toml",
       "path": "claude/agents/specialists/devops-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -565,12 +604,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "6889018d1e13a2ee1900f3ffe5a0c587fe39a817693376160e4f7967373fdf13",
+      "content_sha256": "32a7621e2e5170eb1d66fe74d2a3906ab6e82ddf7d26025c000ce3a9a4af1b51",
       "source_name": "devops-incident-responder",
       "name": "devops-incident-responder",
       "source_path": "agents/specialists/devops-incident-responder.toml",
       "path": "claude/agents/specialists/devops-incident-responder.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -580,12 +620,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5aa51b140a0427c18dea43968d28c408cbd8af49c4d79dfad9c672fa596226e6",
+      "content_sha256": "2970e71043ade429885794ed360aaec375c7fda8f7ae4426d0bd5a6c241304a5",
       "source_name": "django-developer",
       "name": "django-developer",
       "source_path": "agents/specialists/django-developer.toml",
       "path": "claude/agents/specialists/django-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -598,12 +639,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "b6bd3049b3bd1e649b718018f9ae493dd3457895ee6ddadc2759a71432262de9",
+      "content_sha256": "98fb37e905445d5a47208672e2f5b36ffdba69a2f3568c2fbe1e956cadb883a6",
       "source_name": "docker-expert",
       "name": "docker-expert",
       "source_path": "agents/specialists/docker-expert.toml",
       "path": "claude/agents/specialists/docker-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -616,12 +658,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "c348853ad8ac549d41c2828fd0e2d0f151776454cb94870e537901bf93e73f17",
+      "content_sha256": "41ed7dc4e1f904e5372a56b029ab7d4911ea6402bdfab6fda50de7f730af15f6",
       "source_name": "docs-researcher",
       "name": "docs-researcher",
       "source_path": "agents/specialists/docs-researcher.toml",
       "path": "claude/agents/specialists/docs-researcher.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -631,12 +674,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "d50c7be3c70648ea76f49f06629f01235a587daf9708915ee2674463376e093b",
+      "content_sha256": "3408405396110dd75b3207452e0339a23c45e58e575562e7f368e8333505209a",
       "source_name": "dotnet-core-expert",
       "name": "dotnet-core-expert",
       "source_path": "agents/specialists/dotnet-core-expert.toml",
       "path": "claude/agents/specialists/dotnet-core-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -649,12 +693,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "d25d413396d36452ea6656d2a08a9839b47903d5b10f69a45abceb26cbb867c1",
+      "content_sha256": "856033a6eb469d599b24aebcd9918827d3eefc0751d6527755891a2750c7d7aa",
       "source_name": "dotnet-framework-4.8-expert",
       "name": "dotnet-framework-4-8-expert",
       "source_path": "agents/specialists/dotnet-framework-4.8-expert.toml",
       "path": "claude/agents/specialists/dotnet-framework-4-8-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -667,12 +712,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "ffa5b0ed762d7bacf82a4be274bc8c9acdc85edc381312ef986a00538ebfaf70",
+      "content_sha256": "22f90a61ce51c06ea4e60faf3653d517c40291ba37cdb51058ca95a164c271d2",
       "source_name": "electron-pro",
       "name": "electron-pro",
       "source_path": "agents/specialists/electron-pro.toml",
       "path": "claude/agents/specialists/electron-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -685,12 +731,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "e3b87c04025ea5b12c3184a22b8285eee7769350ca4519aa8070f5ae1a9e24fa",
+      "content_sha256": "ab5f96c9ee3dbeb92cfff5bf7a3624ef919ce85f8f8e45e82dcacf252dff9545",
       "source_name": "elixir-expert",
       "name": "elixir-expert",
       "source_path": "agents/specialists/elixir-expert.toml",
       "path": "claude/agents/specialists/elixir-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -703,12 +750,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "786316162deecff42cc3b946619ccda3f5ee9afa3d63dc944931c7b1106d50f3",
+      "content_sha256": "d99f7ea2e27ecd483c2aaf0214812c0366082291b1a4e698f9e2a2e6aea733dd",
       "source_name": "error-coordinator",
       "name": "error-coordinator",
       "source_path": "agents/specialists/error-coordinator.toml",
       "path": "claude/agents/specialists/error-coordinator.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -718,12 +766,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "d4d9cdca048590fa6a65d51e98fdf3b7918a5c936ecaac28754cdf3c941794c1",
+      "content_sha256": "049afa59e426ad84c5a7b6cf784712c6963255295640ec9a31f7b7cc2e79884d",
       "source_name": "error-detective",
       "name": "error-detective",
       "source_path": "agents/specialists/error-detective.toml",
       "path": "claude/agents/specialists/error-detective.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -733,12 +782,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "9b6cbbff7fb0dbba2912cf198d992e415223096b3027dc02d97fa7db20635fb7",
+      "content_sha256": "cbce434e97352487826c8e41ea857b8590c6195c8f3becccdca3e2823fd91da0",
       "source_name": "explorer",
       "name": "explorer",
       "source_path": "agents/specialists/explorer.toml",
       "path": "claude/agents/specialists/explorer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -751,12 +801,13 @@
       "source_sandbox_mode": "unknown"
     },
     {
-      "content_sha256": "c3b78249186b121cdd331fa2c89b6bce58eb5d3ab78027d6f673a530eab686f4",
+      "content_sha256": "ef86fcdb8bf77107e6a472d1aabf9600ecfea69f706be82daa024f89b00966fe",
       "source_name": "flutter-expert",
       "name": "flutter-expert",
       "source_path": "agents/specialists/flutter-expert.toml",
       "path": "claude/agents/specialists/flutter-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -769,12 +820,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "4564306fede64be38d9adaaa379422e97bca45b4620a96a2dd30fd823346ddaf",
+      "content_sha256": "a8a54f9df764fa0bd8b2b02797afba768db044c2d1f66f79870d88c682bb2a06",
       "source_name": "frontend-developer",
       "name": "frontend-developer",
       "source_path": "agents/specialists/frontend-developer.toml",
       "path": "claude/agents/specialists/frontend-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -787,12 +839,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "b0f2cdee9b48ddc9181391f7e81481f884bb6b2471c6647f154f74771e570c20",
+      "content_sha256": "67558119f3da36a557b3e850d555f3e2c7488eeb89229fb36f67eee786e6abd5",
       "source_name": "fullstack-developer",
       "name": "fullstack-developer",
       "source_path": "agents/specialists/fullstack-developer.toml",
       "path": "claude/agents/specialists/fullstack-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -805,12 +858,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "c6dacf8a30dc0519e271dcc66aaaaebdb62b3de86af64f0401cf5d7084fc7042",
+      "content_sha256": "85e0d1da1d7d3df671f866ffbd589b95458ef858abd68574da8317c400830f3c",
       "source_name": "golang-pro",
       "name": "golang-pro",
       "source_path": "agents/specialists/golang-pro.toml",
       "path": "claude/agents/specialists/golang-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -823,12 +877,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "57a52064397115bc186fd7592fc35c27f0c5ff9f4725a3dc5e4a3dcae04ddbf1",
+      "content_sha256": "475a034c206b10c6b0bd8571d7f971352a06bd6e7d1470008a4e3dc52e10e391",
       "source_name": "graphql-architect",
       "name": "graphql-architect",
       "source_path": "agents/specialists/graphql-architect.toml",
       "path": "claude/agents/specialists/graphql-architect.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -838,12 +893,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "17b3a99d07a091b7a7ceffdb5c99697fb7f87a31d412d018278f9dc486c758ab",
+      "content_sha256": "808f43d59495b7011a65b7f44b2f2a2a620349892f6cd439cac1c379ef157e6f",
       "source_name": "incident-responder",
       "name": "incident-responder",
       "source_path": "agents/specialists/incident-responder.toml",
       "path": "claude/agents/specialists/incident-responder.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -853,12 +909,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5f8f29b00cb247cd4899b1d42d69a4fd93558d4373bea028888d1e23ce068af3",
+      "content_sha256": "6d442510003bcca8eee600bfd151cc643c614d3fb01a9e176e2a1c96e62fdbba",
       "source_name": "it-ops-orchestrator",
       "name": "it-ops-orchestrator",
       "source_path": "agents/specialists/it-ops-orchestrator.toml",
       "path": "claude/agents/specialists/it-ops-orchestrator.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -868,12 +925,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "1d526f462ca5dbde39e3fd6797158b3e901698a940aaebaaf4d18a0ea872c5f4",
+      "content_sha256": "36d343518cbe37ea3c027222ff09bafb0788ed84dbc578fc5bdb08094a2d38e6",
       "source_name": "java-architect",
       "name": "java-architect",
       "source_path": "agents/specialists/java-architect.toml",
       "path": "claude/agents/specialists/java-architect.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -886,12 +944,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "bc030bf5341764d18ae14792932c958015de5b323cbd1575d5ce8431345111e6",
+      "content_sha256": "5f90c5ae0b862d16ec72e11e851ffa1bd55259007160898933e8b0666259cdd7",
       "source_name": "javascript-pro",
       "name": "javascript-pro",
       "source_path": "agents/specialists/javascript-pro.toml",
       "path": "claude/agents/specialists/javascript-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -904,12 +963,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "37e469876d2b9e4f24bc8a07ebdd6510534aa93e6323bfb8f3d37ddec608362c",
+      "content_sha256": "bfc1e45d3849203ceaf1bf7e83f3efcefb14e7e7e2002eea52a10df456f7be5e",
       "source_name": "knowledge-synthesizer",
       "name": "knowledge-synthesizer",
       "source_path": "agents/specialists/knowledge-synthesizer.toml",
       "path": "claude/agents/specialists/knowledge-synthesizer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -919,12 +979,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "d7dca5ae694181a8a598ef3972ed46d1dc00ab735b3c847f4bad22481ba8160a",
+      "content_sha256": "f0681caa165c8f101a47c13962dffdc27d8a20fdaada1b87e466d690449b32fe",
       "source_name": "kotlin-specialist",
       "name": "kotlin-specialist",
       "source_path": "agents/specialists/kotlin-specialist.toml",
       "path": "claude/agents/specialists/kotlin-specialist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -937,12 +998,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "8b648a94b95638abc73af04d1641f41fd0054cbe2f9cf6dfb11365a871716d45",
+      "content_sha256": "db3d28070a39509fd352655d1cb5c69f12e2941c861a3dd1a6667dc5a77810b5",
       "source_name": "kubernetes-specialist",
       "name": "kubernetes-specialist",
       "source_path": "agents/specialists/kubernetes-specialist.toml",
       "path": "claude/agents/specialists/kubernetes-specialist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -952,12 +1014,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "e5e6572a474e19b7c8ff5ccca73f66ecc1c037131bc9ca468934f6440c2862e3",
+      "content_sha256": "1845ca333e7d21bc089902db03c9897e0e4a3e35deb59afbd753413068b1d003",
       "source_name": "laravel-specialist",
       "name": "laravel-specialist",
       "source_path": "agents/specialists/laravel-specialist.toml",
       "path": "claude/agents/specialists/laravel-specialist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -970,12 +1033,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "c26396f0a35ec992ec784fea17e7a4de8a2ddb596c39767bf2e838fd4f1ec29a",
+      "content_sha256": "29965af35be6a51179ef6cb874fc27dcc803281f30c9bfd85df5821178894c31",
       "source_name": "legal-advisor",
       "name": "legal-advisor",
       "source_path": "agents/specialists/legal-advisor.toml",
       "path": "claude/agents/specialists/legal-advisor.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -985,12 +1049,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "27dbe43ac7e1b4dc782eb45acc8f1f3b94bd051e81cede4ca380a6f202e47dcc",
+      "content_sha256": "9e04e7a1ceb74010156c437a6a74eca85a392c47da5b2688d8ed8a72e9e803b3",
       "source_name": "llm-architect",
       "name": "llm-architect",
       "source_path": "agents/specialists/llm-architect.toml",
       "path": "claude/agents/specialists/llm-architect.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1000,12 +1065,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "bf0acdb1ffdab3407f7d613df708d1983b32c086e8962e608fd90958ad3354b9",
+      "content_sha256": "4f4c4fccc15cce2bfe5ea0dd30a1fd03c985edf7f59ee34c59acf1b54c6cec96",
       "source_name": "m365-admin",
       "name": "m365-admin",
       "source_path": "agents/specialists/m365-admin.toml",
       "path": "claude/agents/specialists/m365-admin.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1015,12 +1081,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "81531c5a71efb63de2cf6c9b1f1a3a961acada6a23b75b198a9dd45b703fd125",
+      "content_sha256": "655fbd84784c5119e1772a6771298364f40de2dc32e9ccd9f73709ccafd3cdc8",
       "source_name": "machine-learning-engineer",
       "name": "machine-learning-engineer",
       "source_path": "agents/specialists/machine-learning-engineer.toml",
       "path": "claude/agents/specialists/machine-learning-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1033,12 +1100,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "8f78d709d27dbd493f465a8e1bf28d480ed3d49932d88167d4aa64d0ea4e4d76",
+      "content_sha256": "b03f14e22f056f923bda66e85e4ba1bf564a4b74cd947d23a7bf44d252c8eeab",
       "source_name": "market-researcher",
       "name": "market-researcher",
       "source_path": "agents/specialists/market-researcher.toml",
       "path": "claude/agents/specialists/market-researcher.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1048,12 +1116,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5b8ccd0c90573202205ec05bab3eeaafd3145af78c3ffa64275ed2feedfbec16",
+      "content_sha256": "e03730efaf96c1ff7e65b45f00dbc7f56272d0b8d1a4f0b9dc66bedbd35fda0a",
       "source_name": "microservices-architect",
       "name": "microservices-architect",
       "source_path": "agents/specialists/microservices-architect.toml",
       "path": "claude/agents/specialists/microservices-architect.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1063,12 +1132,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "c43fcdb11864ee4c5757aedd05427a0ece4d2a6bd21c8809b8af8843815910dd",
+      "content_sha256": "7863c2b5c3be6abe555d1a44751c117cd67fbac45ee2b92d661c5692ecc7d81c",
       "source_name": "ml-engineer",
       "name": "ml-engineer",
       "source_path": "agents/specialists/ml-engineer.toml",
       "path": "claude/agents/specialists/ml-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1081,12 +1151,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "66b51ae97ac594fbbf6159b5d2208dfe71c16d3c1b624371b4c4099fcf06b02f",
+      "content_sha256": "185b7d122595c52ffde79dd16d6385bf6f8244f92ba39127e9e4cb39a15fc0dd",
       "source_name": "mlops-engineer",
       "name": "mlops-engineer",
       "source_path": "agents/specialists/mlops-engineer.toml",
       "path": "claude/agents/specialists/mlops-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1099,12 +1170,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "fb9d1dc40f43ee93a57d3a936ba76fa43e3066b34ed9f070f1bf42148ca2a7e0",
+      "content_sha256": "adc8db2834c42c42bf9203749f7c5135643e97c4177715dc9395b650b7dc96eb",
       "source_name": "mobile-app-developer",
       "name": "mobile-app-developer",
       "source_path": "agents/specialists/mobile-app-developer.toml",
       "path": "claude/agents/specialists/mobile-app-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1117,12 +1189,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "9ae9d38a5213762df6a8b426f70ee9ea3c0802bd912e336ed8e599c09c6f4aa9",
+      "content_sha256": "acff29265d57683ae97fa00b3ca3cd1762ab17fb99fdf611d949b9070a4259e9",
       "source_name": "mobile-developer",
       "name": "mobile-developer",
       "source_path": "agents/specialists/mobile-developer.toml",
       "path": "claude/agents/specialists/mobile-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1135,12 +1208,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "a980560e6f9834d41b9d73dfcb373c7a094ca77160134baf50f9cfe095f0f186",
+      "content_sha256": "e2ba2f8dd572c15020e20e61de2c3ceda03f66a71705472c6bb071cc98f02f5c",
       "source_name": "multi-agent-coordinator",
       "name": "multi-agent-coordinator",
       "source_path": "agents/specialists/multi-agent-coordinator.toml",
       "path": "claude/agents/specialists/multi-agent-coordinator.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1150,12 +1224,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "3975009b059baf3ee2a5233589632e935123dc1693d597e2768b7037ecaed651",
+      "content_sha256": "bf70691f215f7c74238cf37ef303542264f77020f9e27f3a0b91c9597860ccb1",
       "source_name": "network-engineer",
       "name": "network-engineer",
       "source_path": "agents/specialists/network-engineer.toml",
       "path": "claude/agents/specialists/network-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1165,12 +1240,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "2cc274807a5700e748bd8b5864214f27e5c507975889a17e7a680c52ac3979e4",
+      "content_sha256": "c17a59394b4a11cf500694b31997471b983718dd9910736dd0f5c3c3159d8443",
       "source_name": "nextjs-developer",
       "name": "nextjs-developer",
       "source_path": "agents/specialists/nextjs-developer.toml",
       "path": "claude/agents/specialists/nextjs-developer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1183,12 +1259,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "90f266eb2293c27285921f190bdafe051cba7c3268ff15ede271e5ef5eeee6e5",
+      "content_sha256": "1c90ca1288b19c8f6f0e9294f9c7defda19a9f5fc6bc18dd9469c61311458982",
       "source_name": "nlp-engineer",
       "name": "nlp-engineer",
       "source_path": "agents/specialists/nlp-engineer.toml",
       "path": "claude/agents/specialists/nlp-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1201,12 +1278,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "eb1f2681f37ca9612c12e323230dda6307ae3c3138c8bcd4a92a395508259532",
+      "content_sha256": "97e799a4886115aec75172464d7d48366a2aee41f132e2cf66a3a54136273556",
       "source_name": "payment-integration",
       "name": "payment-integration",
       "source_path": "agents/specialists/payment-integration.toml",
       "path": "claude/agents/specialists/payment-integration.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1219,12 +1297,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "28ec38ceb41d91ef59fc6c2f54b046c95ccf2e1045f660b9f9d43aa440c08007",
+      "content_sha256": "fd45d6ef9b7e15053db5b3c4129b79b58a2964ec5fc7adaf91d362be66c82475",
       "source_name": "penetration-tester",
       "name": "penetration-tester",
       "source_path": "agents/specialists/penetration-tester.toml",
       "path": "claude/agents/specialists/penetration-tester.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1234,12 +1313,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "284745c95f550197d5ff22ad68defec38410ee523a0dc48bdc59a148a1395e5c",
+      "content_sha256": "cd2122b70f00547b042a57e946d9996942340c3d4745c4d8e5eb2ba36179757d",
       "source_name": "performance-engineer",
       "name": "performance-engineer",
       "source_path": "agents/specialists/performance-engineer.toml",
       "path": "claude/agents/specialists/performance-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1249,12 +1329,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "8105b3402360cf96c6fe492cc4c1febc784249defe156181705e6743a9dc4af1",
+      "content_sha256": "0ba8db677ba9b898c4a1042c32d0118ea3c87edd76f7b07bd8a01b8d361d4e02",
       "source_name": "performance-monitor",
       "name": "performance-monitor",
       "source_path": "agents/specialists/performance-monitor.toml",
       "path": "claude/agents/specialists/performance-monitor.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1264,12 +1345,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "43741b50cc71dd56304ffb47d2ce3783cca57a6e6b62460c87049add7770f76b",
+      "content_sha256": "b7e17e0c50de0efaf00b020a4ce81f2565a31a9268ace1a56c36fa7c6aa33489",
       "source_name": "php-pro",
       "name": "php-pro",
       "source_path": "agents/specialists/php-pro.toml",
       "path": "claude/agents/specialists/php-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1282,12 +1364,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "c5682eb97182775cbd1efbba2051d01916b68cd19f71978d0bd65e4ca121858f",
+      "content_sha256": "73dba8c2e6136922af87a9f3e3efa93a70bfdea2b1054d06097f36c3969de10a",
       "source_name": "platform-engineer",
       "name": "platform-engineer",
       "source_path": "agents/specialists/platform-engineer.toml",
       "path": "claude/agents/specialists/platform-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1297,12 +1380,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "419f2a95d265af238bfa209fec25c47a0a090e617a57276d7c6a8365b51199e2",
+      "content_sha256": "70d21c8fa02c3e640c74beb107f37b6f728ab26de62a6c14448c75245e6eaf22",
       "source_name": "postgres-pro",
       "name": "postgres-pro",
       "source_path": "agents/specialists/postgres-pro.toml",
       "path": "claude/agents/specialists/postgres-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1312,12 +1396,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "b98f52cbb4d70b64b6ab206fc25f7b48893e435b8d06a1f117eee0b8df4bece2",
+      "content_sha256": "8d3b9bd06afd7d014f97f1595b598394a57ff15eae762fd964204ae6f3036b93",
       "source_name": "powershell-5.1-expert",
       "name": "powershell-5-1-expert",
       "source_path": "agents/specialists/powershell-5.1-expert.toml",
       "path": "claude/agents/specialists/powershell-5-1-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1330,12 +1415,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "0cad55e9805f5a9b99981a7dc2e6a42c9fde1e7ee057e01f5693fea0132b02a4",
+      "content_sha256": "838d843f1a733f74c932351e7cecaca365f24e7b9086708150f4951d58475812",
       "source_name": "powershell-7-expert",
       "name": "powershell-7-expert",
       "source_path": "agents/specialists/powershell-7-expert.toml",
       "path": "claude/agents/specialists/powershell-7-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1348,12 +1434,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "d50216dd8fa9753bc52d754abcdd9728f57fbdbc1ef3fc5ff05f50c2a9c35bd6",
+      "content_sha256": "71f489f99ebb6f3f450fc0b0aec2759e0c6677da5024463fdadb49c661dda817",
       "source_name": "powershell-security-hardening",
       "name": "powershell-security-hardening",
       "source_path": "agents/specialists/powershell-security-hardening.toml",
       "path": "claude/agents/specialists/powershell-security-hardening.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1363,12 +1450,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "22e148fc375c130f2017cc3130160699802ac0a678167fcda0afe3195a80dc38",
+      "content_sha256": "f6c7bfc5e423f4d449b4f3cbbbaca2403c3aa572ade9fd15d5510ecb0cb15a0b",
       "source_name": "product-manager",
       "name": "product-manager",
       "source_path": "agents/specialists/product-manager.toml",
       "path": "claude/agents/specialists/product-manager.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1378,12 +1466,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5503da29f71196a00bd99804f1423bfe2f6440822205145bf4d52bd0f36fd7d7",
+      "content_sha256": "b7732f7cca0da12a9133ede19660dfdc534bf12f618588893c7997c3d295a581",
       "source_name": "project-manager",
       "name": "project-manager",
       "source_path": "agents/specialists/project-manager.toml",
       "path": "claude/agents/specialists/project-manager.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1393,12 +1482,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "cf4b7401fc402943e64cf77225cfcd80d83c6a04a90a2943fe3b3c4a995fee75",
+      "content_sha256": "7c89f046b46811603aeb054b394105859d5c9d04c77a24d56fb9980f238ba6de",
       "source_name": "prompt-engineer",
       "name": "prompt-engineer",
       "source_path": "agents/specialists/prompt-engineer.toml",
       "path": "claude/agents/specialists/prompt-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1408,12 +1498,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "1a00e942245ced127c647b71695b5908d22b5cc1df984ab9bbd8527148fdceda",
+      "content_sha256": "9cb790327aab206cb56804fd1eeaf8d6aad103aabdcc728422cf52ebafdb70ae",
       "source_name": "python-pro",
       "name": "python-pro",
       "source_path": "agents/specialists/python-pro.toml",
       "path": "claude/agents/specialists/python-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1426,12 +1517,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "209a2bcf7e4a51d3374b75852a0f04fa891000d24ef216f8629e1411322b9ac4",
+      "content_sha256": "3db0cee295063bcc50106189619a48c185578d290d0d6493ed3347b6a4ddb2fc",
       "source_name": "qa-expert",
       "name": "qa-expert",
       "source_path": "agents/specialists/qa-expert.toml",
       "path": "claude/agents/specialists/qa-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1441,12 +1533,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "d04a68c30b8da29bbb52af9de11257784157c7ffda37e0058bb1aecdb43cce79",
+      "content_sha256": "2d74b05f7877497b5ca04f8936ef768bef989a280a7474b02a5c60e9c0427c32",
       "source_name": "quant-analyst",
       "name": "quant-analyst",
       "source_path": "agents/specialists/quant-analyst.toml",
       "path": "claude/agents/specialists/quant-analyst.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1456,12 +1549,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "b3f85480b0478e3ac3e833fc5c308d70d5347a1338a2dedba5c36ee45f7c0b71",
+      "content_sha256": "05ca73b1df71c638e3b160ed307c9de110a6d71a41207c377d548de3ec9fb504",
       "source_name": "rails-expert",
       "name": "rails-expert",
       "source_path": "agents/specialists/rails-expert.toml",
       "path": "claude/agents/specialists/rails-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1474,12 +1568,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "aee2f0153c29e4b915dd1def1e4bdb4182d40a94325c1fc0ceb6b205d26def1b",
+      "content_sha256": "e3440bb5ddbb88fb06dd4b602bd0838c0138a3924fe3f27591eea7d98bba456b",
       "source_name": "react-specialist",
       "name": "react-specialist",
       "source_path": "agents/specialists/react-specialist.toml",
       "path": "claude/agents/specialists/react-specialist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1492,12 +1587,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "05bd6b97aea42a2d7f3522f5c48a8f48cc6e8a2cc126d0344b24fb0b2fd4b5b5",
+      "content_sha256": "f28a0e8b67664d6f8fff89eca57c989a0b86d99ec58e3e8742130febf832a8f4",
       "source_name": "research-analyst",
       "name": "research-analyst",
       "source_path": "agents/specialists/research-analyst.toml",
       "path": "claude/agents/specialists/research-analyst.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1507,12 +1603,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "61c282ee23b5f43efd6cfa9a27cad43ff10068797c35907889a9e2f894bab3d5",
+      "content_sha256": "87fbc044949a135349a5d43ad5e3fc72e71e85249dd752db92b187e217f09677",
       "source_name": "resume-refiner",
       "name": "resume-refiner",
       "source_path": "agents/specialists/resume-refiner.toml",
       "path": "claude/agents/specialists/resume-refiner.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1522,12 +1619,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "e2a7c33460f19ff90a07fe01e08d89628d507778577bcc84d52aeb8ab7760c4e",
+      "content_sha256": "7726e5fbe6b4dbb8cb517d7a8ea4d485abb212a85dceaf96a0b0ee2ee47f946c",
       "source_name": "reviewer",
       "name": "reviewer",
       "source_path": "agents/specialists/reviewer.toml",
       "path": "claude/agents/specialists/reviewer.md",
       "model": "opus",
+      "effort": "high",
       "tools": [
         "Read",
         "Grep",
@@ -1537,12 +1635,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "80f6d8390859c8fcb3cb7fa2870e5315a2a02fc5a6cc3750ef9c560f742e6195",
+      "content_sha256": "91d01de7b2f85eb7f87d9fb5d044eca6851ebb6db5a7aa808b609df25c9b1283",
       "source_name": "rust-engineer",
       "name": "rust-engineer",
       "source_path": "agents/specialists/rust-engineer.toml",
       "path": "claude/agents/specialists/rust-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1555,12 +1654,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "12ee00f524b55a7bd60a041e9a9996ccc41f201803776efa09af84f6d1d6670b",
+      "content_sha256": "d38749e6ba5fa385412fd0ba98e9296d4a712a2dc23063208118f4a1f2d3a950",
       "source_name": "sales-engineer",
       "name": "sales-engineer",
       "source_path": "agents/specialists/sales-engineer.toml",
       "path": "claude/agents/specialists/sales-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1570,12 +1670,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "123aa5fc5faac3d6cf4e5b0f55c4bd073540eef4640f5336b16a06e1620e5145",
+      "content_sha256": "b0bfc43edd6ed4966cc154930b5f7b7bac6ffa40e846af7f5773f376f4b28607",
       "source_name": "scientific-literature-researcher",
       "name": "scientific-literature-researcher",
       "source_path": "agents/specialists/scientific-literature-researcher.toml",
       "path": "claude/agents/specialists/scientific-literature-researcher.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1585,12 +1686,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "720c5c1accdddb01e86984a80a650c768d4d55f60cef370e93fe86daa2eeb54c",
+      "content_sha256": "137ac38807ffade2bf51d3a774eabe219e22026e70a8240af2a211a97310a7c8",
       "source_name": "scrum-master",
       "name": "scrum-master",
       "source_path": "agents/specialists/scrum-master.toml",
       "path": "claude/agents/specialists/scrum-master.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1600,12 +1702,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "6838e1642b975c149066ae527642a59167c80d857dad52fda7fef6628b50d30a",
+      "content_sha256": "c6c512587b5a1744ef12d5ceb5049085a1a97416a9513217f001e893c634feb4",
       "source_name": "search-specialist",
       "name": "search-specialist",
       "source_path": "agents/specialists/search-specialist.toml",
       "path": "claude/agents/specialists/search-specialist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1617,12 +1720,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "d59ee6fc586bfe9676982f2974ac4fa857789357fb115d29d5906a8524d54584",
+      "content_sha256": "9f50a26e498336ceb879628f48d7635d3faf72466cefae7297e05bfc97d08467",
       "source_name": "security-auditor",
       "name": "security-auditor",
       "source_path": "agents/specialists/security-auditor.toml",
       "path": "claude/agents/specialists/security-auditor.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1632,12 +1736,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "5866c6c7c4be3de0c548f1b68d1e22c4f409f5b6b67d961c7e01be750ff51166",
+      "content_sha256": "6380ddf7233c2e73ec52e0d6464a351d687ecd533785228f53f581965738a61d",
       "source_name": "security-engineer",
       "name": "security-engineer",
       "source_path": "agents/specialists/security-engineer.toml",
       "path": "claude/agents/specialists/security-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1647,12 +1752,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "a2774ef241d53355c2443b4597f39f0e77202d782722a480c9c96ebc67dfd3c7",
+      "content_sha256": "967d8073ade311501c34e4db0825d7a2eb8cd398bfa95abe35371767f99356e4",
       "source_name": "seo-specialist",
       "name": "seo-specialist",
       "source_path": "agents/specialists/seo-specialist.toml",
       "path": "claude/agents/specialists/seo-specialist.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1662,12 +1768,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "545f83fc311390cf9882a5b453091848daecc6394f6b1475e35b711617a06a88",
+      "content_sha256": "739c31f1dad0aad935725113abe54fe6c384cd26bbcecaa0c2a929ea84e40ee9",
       "source_name": "spring-boot-engineer",
       "name": "spring-boot-engineer",
       "source_path": "agents/specialists/spring-boot-engineer.toml",
       "path": "claude/agents/specialists/spring-boot-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1680,12 +1787,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "d6088c1353a2870e51ce6384dd599702925cb244ebb43c1b64dbeba887463b65",
+      "content_sha256": "5ffd38555406704bd2ecf2cf42a9b9562bc24b8f9652abf6fe9e849d5917fac4",
       "source_name": "sql-pro",
       "name": "sql-pro",
       "source_path": "agents/specialists/sql-pro.toml",
       "path": "claude/agents/specialists/sql-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1695,12 +1803,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "a0671b84edded5e2b0eedf3bec12eb23bceffc930b1235b9a75fdd5465fbe632",
+      "content_sha256": "15fd69a894f1b01e876cf4e02d13dfddeb79930d7e10e63714396f306dc346b8",
       "source_name": "sre-engineer",
       "name": "sre-engineer",
       "source_path": "agents/specialists/sre-engineer.toml",
       "path": "claude/agents/specialists/sre-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1710,12 +1819,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "82f8af7017015ad8420fe0114a05eb2f370d6681b786a72704a1c6bfc6b66e04",
+      "content_sha256": "2b5ad3391cf0688b4fdfe48996101448a7bb58e13a8ba342181f9e6ea65c6378",
       "source_name": "swift-expert",
       "name": "swift-expert",
       "source_path": "agents/specialists/swift-expert.toml",
       "path": "claude/agents/specialists/swift-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1728,12 +1838,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "4893cd781411cf04485cd4147b79f177d47ef34aa9d77e316ca20443a3e5ff8f",
+      "content_sha256": "8deedb82b6fec3404953383a47873c40cbb3c5096bf4cba840f29eed4e6a542a",
       "source_name": "task-distributor",
       "name": "task-distributor",
       "source_path": "agents/specialists/task-distributor.toml",
       "path": "claude/agents/specialists/task-distributor.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1743,12 +1854,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "46d0935eb5026851de1c54177e4d6ae4c0ba7ccaed8cd72743c4917511c769c3",
+      "content_sha256": "6cf707877d6f030cc7447af0dfdf01fa836d1c782cb0e6c5efd2d655a9cbcbfa",
       "source_name": "technical-writer",
       "name": "technical-writer",
       "source_path": "agents/specialists/technical-writer.toml",
       "path": "claude/agents/specialists/technical-writer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1761,12 +1873,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "a9266401998229a7e1838a69b92b2d1617b15cecddfb5c2cdf1bfb6ec5b09176",
+      "content_sha256": "0a147df9ebe3534c2c053c0bf54f8b541c33a0bceefdc858c7766a2e23d4e8c0",
       "source_name": "terraform-engineer",
       "name": "terraform-engineer",
       "source_path": "agents/specialists/terraform-engineer.toml",
       "path": "claude/agents/specialists/terraform-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1776,12 +1889,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "e1f2806a134647f73feaefba8538e9271dcedfece5be12e2e82b72d5f0c150bc",
+      "content_sha256": "7288c0731cde946458104f6237a72556fa33be314c1930d009609227ade37a5a",
       "source_name": "terragrunt-expert",
       "name": "terragrunt-expert",
       "source_path": "agents/specialists/terragrunt-expert.toml",
       "path": "claude/agents/specialists/terragrunt-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1791,12 +1905,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "0dd485fde5671cca1d63cb67cf5e305dfa475b61c8bed7c38faa1868a64cdaaa",
+      "content_sha256": "d2835b3b7a10d41cf23ebcf580cdd37967746e275d7ffdb35030f22d26136863",
       "source_name": "test-automator",
       "name": "test-automator",
       "source_path": "agents/specialists/test-automator.toml",
       "path": "claude/agents/specialists/test-automator.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1809,12 +1924,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "69e464b970b7ca31c22ac2f9f866747192fef454be37b5ca90afe7cfbd805e58",
+      "content_sha256": "6fb6d0201cd03de3c024d5ebfc1ddf8ed8a029a3d403bd6212246228457dece8",
       "source_name": "trend-analyst",
       "name": "trend-analyst",
       "source_path": "agents/specialists/trend-analyst.toml",
       "path": "claude/agents/specialists/trend-analyst.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1824,12 +1940,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "f13f246d5d8a9dfcba2521ef78e6ec079beab440c9f362b6f9c0783cd6125f9d",
+      "content_sha256": "59bea61c38dd1a6bd22902aa98b713e37df08e9b0ab12bf6436accb1cc888786",
       "source_name": "typescript-pro",
       "name": "typescript-pro",
       "source_path": "agents/specialists/typescript-pro.toml",
       "path": "claude/agents/specialists/typescript-pro.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1842,12 +1959,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "fba8b8d6d12c5a69ebe5d91adc3219ba6238fd8171c7aebc65252211f10f87bd",
+      "content_sha256": "3ac9736c506a430ea66df28a071a9f531d864d9659d5bce2b957646fdcc25951",
       "source_name": "ui-designer",
       "name": "ui-designer",
       "source_path": "agents/specialists/ui-designer.toml",
       "path": "claude/agents/specialists/ui-designer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1857,12 +1975,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "ec986b11112f70c5f3810dba32a4002aa97e6d81dd486561aa3f0e12188e3051",
+      "content_sha256": "58265bd5fae384e2f502d309db2245e6cb2ba254d4a1c45bcb774a9bcd7d2ce3",
       "source_name": "ui-fixer",
       "name": "ui-fixer",
       "source_path": "agents/specialists/ui-fixer.toml",
       "path": "claude/agents/specialists/ui-fixer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1875,12 +1994,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "8262a2a3d413fce6ebc3403ec36429adf3e7a455d47d12c7af13e27d1a259a47",
+      "content_sha256": "20aacc0ad572607d7d37063b3e302c86ba26ca85721b63c83b1129bf17a7b43e",
       "source_name": "ux-researcher",
       "name": "ux-researcher",
       "source_path": "agents/specialists/ux-researcher.toml",
       "path": "claude/agents/specialists/ux-researcher.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1890,12 +2010,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "48afc222fd342d93d9d0205def0b3ec261f4c8c6bfd3803b2e5e0a7dfcbe32b9",
+      "content_sha256": "a7ff7dd3b000ed87aaff2111d039cec951aaf672eb1ebd3036b6fb2b65c6a89d",
       "source_name": "vue-expert",
       "name": "vue-expert",
       "source_path": "agents/specialists/vue-expert.toml",
       "path": "claude/agents/specialists/vue-expert.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1908,12 +2029,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "c0f114edb5257120e86b56f19840989aa6c1ff5910ae1f4332e43b315b26dca9",
+      "content_sha256": "a358d7aba42ff2ee3b56e50b902a2ee3ab7bcea0f27811321a59cb87a9e5f217",
       "source_name": "websocket-engineer",
       "name": "websocket-engineer",
       "source_path": "agents/specialists/websocket-engineer.toml",
       "path": "claude/agents/specialists/websocket-engineer.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1926,12 +2048,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "c6a4d72e724a868e78338ce947e614535f164c07c122b092d74d7257d48673d3",
+      "content_sha256": "00beb89c219539090895e8d88d29becc60ac6e3d4433bc9ada4b94c9d0d2c2ec",
       "source_name": "windows-infra-admin",
       "name": "windows-infra-admin",
       "source_path": "agents/specialists/windows-infra-admin.toml",
       "path": "claude/agents/specialists/windows-infra-admin.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1941,12 +2064,13 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "ccad0be7af4b2364a6ffdbd201784d617dbb8b9acd58437fac1c8a9dec873bcd",
+      "content_sha256": "f0cc31c383af2fbd233553368b4bedd722b2585615a53be7e0713a6df592e4ff",
       "source_name": "wordpress-master",
       "name": "wordpress-master",
       "source_path": "agents/specialists/wordpress-master.toml",
       "path": "claude/agents/specialists/wordpress-master.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1959,12 +2083,13 @@
       "source_sandbox_mode": "write"
     },
     {
-      "content_sha256": "4586679e620738dde0e9731dfff6fa65b72ebab0053de6c0eb223efa66e86e71",
+      "content_sha256": "b71e0bb4efd5f4af082378aca87cfdbde60e43bd3f18889ef12bc7c6c6b10a21",
       "source_name": "worker",
       "name": "worker",
       "source_path": "agents/specialists/worker.toml",
       "path": "claude/agents/specialists/worker.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",
@@ -1977,12 +2102,13 @@
       "source_sandbox_mode": "unknown"
     },
     {
-      "content_sha256": "61c813119f925012dda8d373ab2972419ad4c13df5873f01e35638580ed1b0a9",
+      "content_sha256": "b25c58e2842c3f1bfe672271df879022569772193910b9c15f93b925cc28de0b",
       "source_name": "workflow-orchestrator",
       "name": "workflow-orchestrator",
       "source_path": "agents/specialists/workflow-orchestrator.toml",
       "path": "claude/agents/specialists/workflow-orchestrator.md",
       "model": "sonnet",
+      "effort": "medium",
       "tools": [
         "Read",
         "Grep",

@@ -2,6 +2,7 @@
 name: "django-developer"
 description: "Use when a task needs Django-specific work across models, views, forms, ORM behavior, or admin and middleware flows."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

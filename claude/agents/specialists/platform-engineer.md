@@ -2,6 +2,7 @@
 name: "platform-engineer"
 description: "Use when a task needs internal platform, golden-path, or self-service infrastructure design for developers."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

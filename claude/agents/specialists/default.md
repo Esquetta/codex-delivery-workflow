@@ -2,6 +2,7 @@
 name: "default"
 description: "General-purpose fallback subagent for delegated work."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

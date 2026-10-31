@@ -2,6 +2,7 @@
 name: "ui-designer"
 description: "Use when a task needs concrete UI decisions, interaction design, and implementation-ready design guidance before or during development."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

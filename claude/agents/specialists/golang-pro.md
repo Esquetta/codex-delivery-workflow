@@ -2,6 +2,7 @@
 name: "golang-pro"
 description: "Use when a task needs Go expertise for concurrency, service implementation, interfaces, tooling, or performance-sensitive backend paths."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "terraform-engineer"
 description: "Use when a task needs Terraform module design, plan review, state-aware change analysis, or IaC refactoring."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

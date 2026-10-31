@@ -2,6 +2,7 @@
 name: "rust-engineer"
 description: "Use when a task needs Rust expertise for ownership-heavy systems code, async runtime behavior, or performance-sensitive implementation."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "code-mapper"
 description: "Use when the parent agent needs a high-confidence map of code paths, ownership boundaries, and execution flow before changes are made."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

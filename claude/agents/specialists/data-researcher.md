@@ -2,6 +2,7 @@
 name: "data-researcher"
 description: "Use when a task needs source gathering and synthesis around datasets, metrics, data pipelines, or evidence-backed quantitative questions."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

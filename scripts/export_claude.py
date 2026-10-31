@@ -16,6 +16,8 @@ STARTERS = ("agents/delivery_worker.toml", "agents/delivery_reviewer.toml")
 READ_TOOLS = ["Read", "Grep", "Glob"]
 WRITE_TOOLS = [*READ_TOOLS, "Edit", "Write", "Bash"]
 REVIEWERS = {"delivery-reviewer", "code-reviewer", "reviewer"}
+# Pinned so subagents do not inherit a raised session effort (Ultracode runs at xhigh).
+EFFORT_POLICY = {"default": "medium", "review": "high"}
 SOURCE_NAME = re.compile(r"^[a-z0-9][a-z0-9_.-]*$")
 GENERATED_PATH = re.compile(
     r"^claude/(?:catalog\.json|agents/[a-z0-9][a-z0-9-]*\.md|agents/specialists/[a-z0-9][a-z0-9-]*\.md)$"
@@ -120,6 +122,10 @@ def safe_target(root: Path, relative: str, *, generated: bool) -> Path:
     return target
 
 
+def role_effort(name: str) -> str:
+    return EFFORT_POLICY["review"] if name in REVIEWERS else EFFORT_POLICY["default"]
+
+
 def markdown(profile: dict[str, object], source_path: str, tools: list[str], notice: str) -> str:
     source_name = str(profile["name"])
     name = normalize_name(source_name)
@@ -127,6 +133,7 @@ def markdown(profile: dict[str, object], source_path: str, tools: list[str], not
         "name": name,
         "description": adapted_text(source_name, str(profile["description"])),
         "model": "opus" if name in REVIEWERS else "sonnet",
+        "effort": role_effort(name),
         "tools": tools,
         "permissionMode": "default",
     }
@@ -221,6 +228,7 @@ def build_outputs(files: dict[str, str]) -> dict[str, str]:
             "source_path": source_path,
             "path": relative,
             "model": "opus" if name in REVIEWERS else "sonnet",
+            "effort": role_effort(name),
             "tools": tools,
             "permissionMode": "default",
             "source_sandbox_mode": sandbox,
@@ -231,6 +239,7 @@ def build_outputs(files: dict[str, str]) -> dict[str, str]:
         "snapshot_date": catalog.get("snapshot_date"),
         "provider": "anthropic",
         "model_policy": {"default": "sonnet", "review": "opus"},
+        "effort_policy": EFFORT_POLICY,
         "agents": entries,
     }, indent=2, ensure_ascii=False) + "\n"
     return dict(sorted(outputs.items()))

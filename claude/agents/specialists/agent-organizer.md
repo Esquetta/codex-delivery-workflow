@@ -2,6 +2,7 @@
 name: "agent-organizer"
 description: "Use when the parent agent needs help choosing subagents and dividing a larger task into clean delegated threads."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "database-administrator"
 description: "Use when a task needs operational database administration review for availability, backups, recovery, permissions, or runtime health."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

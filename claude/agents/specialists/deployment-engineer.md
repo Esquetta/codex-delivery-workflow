@@ -2,6 +2,7 @@
 name: "deployment-engineer"
 description: "Use when a task needs deployment workflow changes, release strategy updates, or rollout and rollback safety analysis."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

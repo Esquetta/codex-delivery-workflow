@@ -2,6 +2,7 @@
 name: "csharp-developer"
 description: "Use when a task needs C# or .NET application work involving services, APIs, async flows, or application architecture."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

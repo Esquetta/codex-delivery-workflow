@@ -2,6 +2,7 @@
 name: "laravel-specialist"
 description: "Use when a task needs Laravel-specific work across routing, Eloquent, queues, validation, or application structure."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

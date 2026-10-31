@@ -2,6 +2,7 @@
 name: "debugger"
 description: "Use when a task needs deep bug isolation across code paths, stack traces, runtime behavior, or failing tests."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

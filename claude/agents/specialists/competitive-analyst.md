@@ -2,6 +2,7 @@
 name: "competitive-analyst"
 description: "Use when a task needs a grounded comparison of tools, products, libraries, or implementation options."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---
