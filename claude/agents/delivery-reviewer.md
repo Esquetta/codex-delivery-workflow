@@ -2,6 +2,7 @@
 name: "delivery-reviewer"
 description: "Read-only reviewer for independent Standards and Spec passes."
 model: "opus"
+effort: "high"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

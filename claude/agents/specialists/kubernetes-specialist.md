@@ -2,6 +2,7 @@
 name: "kubernetes-specialist"
 description: "Use when a task needs Kubernetes manifest review, rollout safety analysis, or cluster workload debugging."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

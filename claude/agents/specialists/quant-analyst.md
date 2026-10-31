@@ -2,6 +2,7 @@
 name: "quant-analyst"
 description: "Use when a task needs quantitative analysis of models, strategies, simulations, or numeric decision logic."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

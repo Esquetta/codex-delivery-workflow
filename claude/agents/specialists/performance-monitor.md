@@ -2,6 +2,7 @@
 name: "performance-monitor"
 description: "Use when a task needs ongoing performance-signal interpretation across build, runtime, or operational metrics before deeper optimization starts."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

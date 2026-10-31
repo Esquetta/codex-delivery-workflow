@@ -2,6 +2,7 @@
 name: "ux-researcher"
 description: "Use when a task needs UI feedback synthesized into actionable product and implementation guidance."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

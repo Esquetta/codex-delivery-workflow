@@ -52,7 +52,8 @@ The primary also owns authorization boundaries. A reviewer saying `ship` establi
 
 The Claude adapter uses native Markdown and YAML subagent files. It does not translate
 Codex dispatch arguments (`fork_turns`, `agent_type`, `reasoning_effort`) or `spawn_agent` calls
-into Claude calls, and it does not copy the Codex `high` effort preference. The runtime
+into Claude calls, and it does not copy the Codex `high` effort preference; generated Claude roles pin a
+native `effort` (`medium`, `high` for reviewers) instead of inheriting the session effort. The runtime
 must confirm catalog discovery, actual tool access, model routing, and isolation.
 
 ## Tools are capabilities, not agents

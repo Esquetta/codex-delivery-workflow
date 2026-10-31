@@ -2,6 +2,7 @@
 name: "research-analyst"
 description: "Use when a task needs a structured investigation of a technical topic, implementation approach, or design question."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

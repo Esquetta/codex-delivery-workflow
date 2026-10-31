@@ -2,6 +2,7 @@
 name: "cloud-architect"
 description: "Use when a task needs cloud architecture review across compute, storage, networking, reliability, or multi-service design."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "api-designer"
 description: "Use when a task needs API contract design, evolution planning, or compatibility review before implementation starts."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

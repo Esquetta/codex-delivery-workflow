@@ -2,6 +2,7 @@
 name: "ai-engineer"
 description: "Use when a task needs implementation or debugging of model-backed application features, agent flows, or evaluation hooks."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

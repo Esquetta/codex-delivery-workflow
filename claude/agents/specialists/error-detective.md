@@ -2,6 +2,7 @@
 name: "error-detective"
 description: "Use when a task needs log, exception, or stack-trace analysis to identify the most probable failure source quickly."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

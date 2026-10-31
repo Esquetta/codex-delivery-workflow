@@ -2,6 +2,7 @@
 name: "mobile-app-developer"
 description: "Use when a task needs app-level mobile product work across screens, state, API integration, and release-sensitive mobile behavior."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

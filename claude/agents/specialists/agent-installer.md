@@ -2,6 +2,7 @@
 name: "agent-installer"
 description: "Use when a task needs help selecting, copying, or organizing custom agent files from this repository into Claude Code agent directories."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "security-engineer"
 description: "Use when a task needs infrastructure and platform security engineering across IAM, secrets, network controls, or hardening work."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

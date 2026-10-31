@@ -2,6 +2,7 @@
 name: "qa-expert"
 description: "Use when a task needs test strategy, acceptance coverage planning, or risk-based QA guidance for a feature or release."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "performance-engineer"
 description: "Use when a task needs performance investigation for slow requests, hot paths, rendering regressions, or scalability bottlenecks."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

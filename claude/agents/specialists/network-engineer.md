@@ -2,6 +2,7 @@
 name: "network-engineer"
 description: "Use when a task needs network-path analysis, service connectivity debugging, load-balancer review, or infrastructure network design input."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

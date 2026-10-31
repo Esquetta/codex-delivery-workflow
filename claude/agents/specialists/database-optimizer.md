@@ -2,6 +2,7 @@
 name: "database-optimizer"
 description: "Use when a task needs database performance analysis for query plans, schema design, indexing, or data access patterns."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

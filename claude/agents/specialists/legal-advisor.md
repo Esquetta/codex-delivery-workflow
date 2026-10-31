@@ -2,6 +2,7 @@
 name: "legal-advisor"
 description: "Use when a task needs legal-risk spotting in product or engineering behavior, especially around terms, data handling, or externally visible commitments."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -7,6 +7,7 @@ Use the shared project rules above and the installed delivery workflow skill.
 - Use native Claude Code subagents and their installed names; do not send Codex tool parameters to Claude.
 - Profiles under `claude/agents/` are distribution files. They become available only after deliberate installation into a Claude agent directory.
 - Select task owners from the Claude catalog. Preserve the user's chosen primary model. Specialists use `sonnet`; independent delivery/code reviewers use `opus`.
+- Generated roles pin `effort` (`medium`; `high` for reviewers) so they do not inherit a raised session effort. For built-in agents and workflow `agent()` calls, set `effort` explicitly: `low` for search/mechanical work, `medium` for implementation, `high` for planning and review. Never `xhigh` or `max` for a subagent unless the user asks.
 - Use the actual host model and tool metadata. Alias resolution and permissions depend on the running environment; static files are not runtime proof.
 - Read-only reviewers receive explicit evidence packets and have only Read, Grep, and Glob. The primary runs verification and provides outputs. Do not grant extra tools merely to complete a review.
 - Keep existing user authorization boundaries for outbound messages, commits, publication, and deployment.

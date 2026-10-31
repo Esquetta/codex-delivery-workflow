@@ -2,6 +2,7 @@
 name: "typescript-pro"
 description: "Use when a task needs strong TypeScript help for types, interfaces, refactors, or compiler-driven fixes."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

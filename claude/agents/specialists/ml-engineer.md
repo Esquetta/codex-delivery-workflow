@@ -2,6 +2,7 @@
 name: "ml-engineer"
 description: "Use when a task needs practical machine learning implementation across feature engineering, inference wiring, and model-backed application logic."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "angular-architect"
 description: "Use when a task needs Angular-specific help for component architecture, dependency injection, routing, signals, or enterprise application structure."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

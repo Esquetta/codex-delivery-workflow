@@ -2,6 +2,7 @@
 name: "worker"
 description: "Execution-focused subagent for implementation and fixes."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

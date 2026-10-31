@@ -2,6 +2,7 @@
 name: "react-specialist"
 description: "Use when a task needs a React-focused agent for component behavior, state flow, rendering bugs, or modern React patterns."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

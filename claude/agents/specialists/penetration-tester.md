@@ -2,6 +2,7 @@
 name: "penetration-tester"
 description: "Use when a task needs adversarial review of an application path for exploitability, abuse cases, or practical attack surface analysis."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

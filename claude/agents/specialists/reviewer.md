@@ -2,6 +2,7 @@
 name: "reviewer"
 description: "Use when a task needs PR-style review focused on correctness, security, behavior regressions, and missing tests."
 model: "opus"
+effort: "high"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "devops-incident-responder"
 description: "Use when a task needs rapid operational triage across CI, deployments, infrastructure automation, and service delivery failures."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

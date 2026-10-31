@@ -2,6 +2,7 @@
 name: "data-scientist"
 description: "Use when a task needs statistical reasoning, experiment interpretation, feature analysis, or model-oriented data exploration."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

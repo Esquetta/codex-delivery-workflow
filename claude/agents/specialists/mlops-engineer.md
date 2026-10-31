@@ -2,6 +2,7 @@
 name: "mlops-engineer"
 description: "Use when a task needs model deployment, registry, pipeline, monitoring, or environment orchestration for machine learning systems."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

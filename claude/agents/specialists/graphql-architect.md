@@ -2,6 +2,7 @@
 name: "graphql-architect"
 description: "Use when a task needs GraphQL schema evolution, resolver architecture, federation design, or distributed graph performance/security review."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

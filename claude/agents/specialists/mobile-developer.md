@@ -2,6 +2,7 @@
 name: "mobile-developer"
 description: "Use when a task needs mobile implementation or debugging across app lifecycle, API integration, and device/platform-specific UX constraints."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

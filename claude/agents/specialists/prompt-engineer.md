@@ -2,6 +2,7 @@
 name: "prompt-engineer"
 description: "Use when a task needs prompt revision, instruction design, eval-oriented prompt comparison, or prompt-output contract tightening."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

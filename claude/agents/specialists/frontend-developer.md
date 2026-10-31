@@ -2,6 +2,7 @@
 name: "frontend-developer"
 description: "Use when a task needs scoped frontend implementation or UI bug fixes with production-level behavior and quality."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

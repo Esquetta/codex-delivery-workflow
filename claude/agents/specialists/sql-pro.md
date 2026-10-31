@@ -2,6 +2,7 @@
 name: "sql-pro"
 description: "Use when a task needs SQL query design, query review, schema-aware debugging, or database migration analysis."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

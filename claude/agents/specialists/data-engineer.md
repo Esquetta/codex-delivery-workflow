@@ -2,6 +2,7 @@
 name: "data-engineer"
 description: "Use when a task needs ETL, ingestion, transformation, warehouse, or data-pipeline implementation and debugging."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

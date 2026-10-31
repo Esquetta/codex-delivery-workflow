@@ -2,6 +2,7 @@
 name: "content-marketer"
 description: "Use when a task needs product-adjacent content strategy or messaging that still has to stay grounded in real technical capabilities."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

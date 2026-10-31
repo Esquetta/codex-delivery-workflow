@@ -2,6 +2,7 @@
 name: "delivery-worker"
 description: "Bounded implementation subagent for a specified delivery packet."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

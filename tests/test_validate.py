@@ -34,6 +34,17 @@ class PackageValidationTests(unittest.TestCase):
         errors = self.mutated(lambda f: f.update({"CLAUDE.md": "# Adapter without import"}))
         self.assertTrue(any("must import" in e for e in errors))
 
+    def test_code_example_is_not_a_shared_instruction_import(self):
+        for text in ("```md\n@AGENTS.md\n```\n", "~~~~md\n@AGENTS.md\n~~~~\n",
+                     "````md\n```\n@AGENTS.md\n```\n````\n", "`@AGENTS.md`\n", "``\n@AGENTS.md\n``\n", "@AG`x`ENTS.md\n"):
+            with self.subTest(text=text):
+                errors = self.mutated(lambda f: f.update({"CLAUDE.md": text}))
+                self.assertTrue(any("must import" in e for e in errors))
+
+    def test_real_import_after_code_example_is_accepted(self):
+        errors = self.mutated(lambda f: f.update({"CLAUDE.md": "```md\n@OTHER.md\n```\n@AGENTS.md\n"}))
+        self.assertFalse(any("must import" in e for e in errors))
+
     def test_portable_identity(self):
         errors = self.mutated(lambda f: f.update({"AGENTS.md": "Sign as Furkan Tasci"}))
         self.assertTrue(any("personal identity" in e for e in errors))

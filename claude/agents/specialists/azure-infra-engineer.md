@@ -2,6 +2,7 @@
 name: "azure-infra-engineer"
 description: "Use when a task needs Azure-specific infrastructure review or implementation across resources, networking, identity, or automation."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

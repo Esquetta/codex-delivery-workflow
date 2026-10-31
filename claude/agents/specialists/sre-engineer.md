@@ -2,6 +2,7 @@
 name: "sre-engineer"
 description: "Use when a task needs reliability engineering work involving SLOs, alerting, error budgets, operational safety, or service resilience."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

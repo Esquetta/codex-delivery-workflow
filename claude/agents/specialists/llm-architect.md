@@ -2,6 +2,7 @@
 name: "llm-architect"
 description: "Use when a task needs architecture review for prompts, tool use, retrieval, evaluation, or multi-step LLM workflows."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

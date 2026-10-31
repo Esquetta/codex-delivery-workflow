@@ -2,6 +2,7 @@
 name: "product-manager"
 description: "Use when a task needs product framing, prioritization, or feature-shaping based on engineering reality and user impact."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

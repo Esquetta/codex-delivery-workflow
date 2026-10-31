@@ -2,6 +2,7 @@
 name: "customer-success-manager"
 description: "Use when a task needs support-pattern synthesis, adoption risk analysis, or customer-facing operational guidance from engineering context."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

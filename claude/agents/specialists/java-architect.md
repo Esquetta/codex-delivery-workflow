@@ -2,6 +2,7 @@
 name: "java-architect"
 description: "Use when a task needs Java application or service architecture help across framework boundaries, JVM behavior, or large codebase structure."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

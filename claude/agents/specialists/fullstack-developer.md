@@ -2,6 +2,7 @@
 name: "fullstack-developer"
 description: "Use when one bounded feature or bug spans frontend and backend and a single worker should own the entire path."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "accessibility-tester"
 description: "Use when a task needs an accessibility audit of UI changes, interaction flows, or component behavior."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

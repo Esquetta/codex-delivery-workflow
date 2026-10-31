@@ -2,6 +2,7 @@
 name: "backend-developer"
 description: "Use when a task needs scoped backend implementation or backend bug fixes after the owning path is known."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

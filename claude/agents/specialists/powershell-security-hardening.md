@@ -2,6 +2,7 @@
 name: "powershell-security-hardening"
 description: "Use when a task needs PowerShell-focused hardening across script safety, admin automation, execution controls, or Windows security posture."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

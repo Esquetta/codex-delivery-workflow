@@ -2,6 +2,7 @@
 name: "scientific-literature-researcher"
 description: "Use when a task needs evidence-grounded answers from published research, including methods, results, sample sizes, and quality-weighted synthesis."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

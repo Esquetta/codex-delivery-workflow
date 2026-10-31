@@ -2,6 +2,7 @@
 name: "spring-boot-engineer"
 description: "Use when a task needs Spring Boot expertise for service behavior, configuration, data access, or enterprise API implementation."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

@@ -2,6 +2,7 @@
 name: "security-auditor"
 description: "Use when a task needs focused security review of code, auth flows, secrets handling, input validation, or infrastructure configuration."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob"]
 permissionMode: "default"
 ---

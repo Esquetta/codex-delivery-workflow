@@ -2,6 +2,7 @@
 name: "devops-engineer"
 description: "Use when a task needs CI, deployment pipeline, release automation, or environment configuration work."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---

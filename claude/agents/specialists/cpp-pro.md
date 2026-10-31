@@ -2,6 +2,7 @@
 name: "cpp-pro"
 description: "Use when a task needs C++ work involving performance-sensitive code, memory ownership, concurrency, or systems-level integration."
 model: "sonnet"
+effort: "medium"
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 permissionMode: "default"
 ---
