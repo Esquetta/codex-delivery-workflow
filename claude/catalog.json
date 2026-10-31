@@ -11,7 +11,7 @@
   },
   "agents": [
     {
-      "content_sha256": "c8ed25300b8fb3af8f4d49ca219235287e90603129b98f0e371d9f689feeb299",
+      "content_sha256": "585ff6fce552d545cdbb9ab38d62a9e5f1cb0d92b944d57beeb12ebd64f6fae3",
       "source_name": "delivery_reviewer",
       "name": "delivery-reviewer",
       "source_path": "agents/delivery_reviewer.toml",
@@ -27,7 +27,7 @@
       "source_sandbox_mode": "read-only"
     },
     {
-      "content_sha256": "fc34954c2666b617a91770332ee254674b3afc56f2b553cdca8b72ce8fa2f725",
+      "content_sha256": "77fb68942e20975c10be88db65165fb137dfd4c455f27a08e762ef440e9be0e3",
       "source_name": "delivery_worker",
       "name": "delivery-worker",
       "source_path": "agents/delivery_worker.toml",

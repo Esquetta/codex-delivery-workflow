@@ -30,11 +30,16 @@ Use behavior-focused tests where they protect a meaningful regression. Self-revi
 scope, correctness, completeness, and evidence. Do not conceal failed checks or limits.
 
 ## RETURN
-Status: DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED
+Write the full report to [a named report file outside the repository]:
 - Actual files changed and behavior delivered
 - Exact checks and observed results
 - Self-review findings and decisions
 - Missing context, residual risks, and incomplete work
+Reply with only the status (DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED), the
+report path, a one-line check summary, and concerns.
+
+When review findings come back, fix only those, re-run the checks covering the amended
+code, and append the fix and its results to the same report file.
 
 If blocked, explain the evidence, attempts, and needed decision. Do not silently
 redesign architecture or keep retrying without a new hypothesis.

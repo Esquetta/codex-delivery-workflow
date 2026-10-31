@@ -29,6 +29,15 @@ For uncommitted or non-Git work, inspect the supplied fixed diff and exact hashe
 fixed point is unavailable, use only supplied artifacts and state what remains
 unverified. A changed artifact invalidates this verdict.
 
+Start from the diff and the changed files. Read other code only to check a concrete
+risk you can name, such as a changed contract, shared mutable state, lock ordering, or
+call sites of a changed signature. Skip anything linters, type checks, or formatters
+already enforce.
+
+For a re-review after a fix, the inputs are the previous findings and the fix-only
+diff. Mark each previous finding addressed or not addressed and flag new breakage in
+the fix diff only; report issues in untouched code as non-blocking Minor findings.
+
 ## Pass 1: Standards
 
 Inspect the fixed range independently for correctness, security, authorization,
@@ -60,6 +69,11 @@ Group as Critical, Important, and Minor. Write `None` for empty groups.
 
 For every finding include a tight file reference when available, evidence, impact, and
 the smallest appropriate remediation.
+
+### Cannot Verify From Diff
+
+List requirements that live outside the reviewed diff, each with what the primary
+should check. Write `None` when empty.
 
 ### Cross-Axis Risks
 

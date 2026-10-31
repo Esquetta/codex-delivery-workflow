@@ -57,6 +57,7 @@ One reviewer normally runs both Standards and Spec passes. The optional separate
 or explicit requirement warrants split ownership; they do not automatically add agents.
 
 A reviewer does not fix findings. On Claude Code it must be a fresh native subagent,
-not a fork of the parent conversation. The primary or original owner applies a correction,
-re-verifies it, and obtains a fresh review of the changed result. Complete only when
+not a fork of the parent conversation. The original owner applies a correction from the
+verbatim findings and re-verifies it; a fresh reviewer then checks the fix-only diff
+against those findings. Stop after two fix rounds and adjudicate what remains. Complete only when
 scope, acceptance criteria, relevant checks, integration, and any required review pass.
